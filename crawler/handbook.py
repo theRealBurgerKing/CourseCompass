@@ -89,6 +89,6 @@ for code in course_codes:
     time.sleep(2)
 
 df = pd.DataFrame(results)
-df.to_csv('unsw_8543_courses.csv', index=False, encoding='utf-8-sig')
+df.to_csv('../output/unsw_8543_courses.csv', index=False, encoding='utf-8-sig')
 print(f'\n完成！共抓取 {len(df)} 门课程')
 print(df)
