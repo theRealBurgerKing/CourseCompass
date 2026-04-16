@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react'
 import type { Message } from '@/types'
-import { sendMessage, clearSession } from '@/lib/api'
+import { streamMessage, clearSession } from '@/lib/api'
 import MessageBubble from './MessageBubble'
 import ChatInput from './ChatInput'
 
@@ -48,13 +48,23 @@ export default function ChatWindow() {
     setIsLoading(true)
 
     try {
-      const data = await sendMessage(text, sessionId)
-      setMessages((prev) =>
-        prev.map((m) =>
-          m.id === placeholderId
-            ? { ...m, content: data.answer, sources: data.sources }
-            : m,
-        ),
+      await streamMessage(
+        text,
+        sessionId,
+        (token) => {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === placeholderId ? { ...m, content: m.content + token } : m,
+            ),
+          )
+        },
+        (sources) => {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === placeholderId ? { ...m, sources } : m,
+            ),
+          )
+        },
       )
     } catch (err) {
       const errMsg = err instanceof Error ? err.message : 'Something went wrong.'

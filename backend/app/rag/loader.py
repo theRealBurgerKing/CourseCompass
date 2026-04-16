@@ -1,40 +1,59 @@
-import pandas as pd
+import json
 from langchain_core.documents import Document
 from pathlib import Path
 
-# E:/CourseCompass/output/unsw_8543_courses.csv
-DATA_PATH = Path(__file__).parent.parent.parent.parent / "output" / "unsw_8543_courses.csv"
+DATA_PATH = Path(__file__).parent.parent.parent.parent / "output" / "unsw_8543_courses.json"
 
 
 def load_course_documents() -> list[Document]:
-    """Load the UNSW course CSV and convert each row into a LangChain Document.
+    """Load the UNSW course JSON and convert each entry into a LangChain Document.
 
-    The page_content is a structured text block optimised for embedding.
-    All course fields are also stored in metadata for retrieval-time filtering.
+    page_content is a structured text block optimised for embedding — it includes
+    all meaningful fields so retrieval captures constraints, delivery modes, etc.
+    Metadata stores scalar fields used for post-retrieval display.
     """
-    df = pd.read_csv(DATA_PATH, encoding="utf-8-sig").fillna("")
+    with open(DATA_PATH, encoding="utf-8") as f:
+        courses: list[dict] = json.load(f)
 
     documents: list[Document] = []
-    for _, row in df.iterrows():
-        content = (
-            f"Course: {row['course_code']} - {row['course_name']}\n"
-            f"Units of Credit: {row['units_of_credit']}\n"
-            f"Faculty: {row['faculty']}\n"
-            f"Offering Terms: {row['offering_terms']}\n"
-            f"Campus: {row['campus']}\n"
-            f"Overview: {row['overview']}"
-        )
+    for course in courses:
+        # --- Format array fields as readable text ---
+        equiv = ", ".join(course.get("equivalent_courses") or []) or "None"
+
+        delivery_lines = []
+        for d in course.get("delivery") or []:
+            delivery_lines.append(
+                f"  - {d['delivery_mode']} / {d['delivery_format']} "
+                f"({d['contact_hours']}h contact)"
+            )
+        delivery_text = "\n".join(delivery_lines) or "  - Not specified"
+
+        # --- Build rich page_content for embedding ---
+        parts = [
+            f"Course: {course['course_code']} - {course['course_name']}",
+            f"Units of Credit: {course['units_of_credit']}",
+            f"Faculty: {course['faculty']}",
+            f"Offering Terms: {course['offering_terms']}",
+            f"Campus: {course['campus']}",
+            f"Overview: {course['overview']}",
+            f"Delivery:\n{delivery_text}",
+            f"Equivalent Courses: {equiv}",
+        ]
+        if course.get("additional_enrolment_constraints"):
+            parts.append(f"Enrolment Constraints: {course['additional_enrolment_constraints']}")
+        if course.get("notes"):
+            parts.append(f"Notes: {course['notes']}")
 
         metadata = {
-            "course_code": row["course_code"],
-            "course_name": row["course_name"],
-            "units_of_credit": row["units_of_credit"],
-            "offering_terms": row["offering_terms"],
-            "campus": row["campus"],
-            "faculty": row["faculty"],
+            "course_code": course["course_code"],
+            "course_name": course["course_name"],
+            "units_of_credit": course["units_of_credit"],
+            "offering_terms": course.get("offering_terms", ""),
+            "campus": course.get("campus", ""),
+            "faculty": course.get("faculty", ""),
         }
 
-        documents.append(Document(page_content=content, metadata=metadata))
+        documents.append(Document(page_content="\n".join(parts), metadata=metadata))
 
     print(f"[Loader] Loaded {len(documents)} course documents from {DATA_PATH.name}")
     return documents

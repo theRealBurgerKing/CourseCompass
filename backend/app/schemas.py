@@ -2,6 +2,13 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 
+class DeliveryInfo(BaseModel):
+    display: str
+    delivery_mode: str
+    delivery_format: str
+    contact_hours: str
+
+
 class ChatRequest(BaseModel):
     message: str
     session_id: str = "default"
@@ -23,9 +30,14 @@ class ChatResponse(BaseModel):
 
 class CourseItem(BaseModel):
     course_code: str
+    url: str
     course_name: str
     units_of_credit: str
     overview: str
+    additional_enrolment_constraints: str
+    equivalent_courses: List[str]
+    delivery: List[DeliveryInfo]
     offering_terms: str
     campus: str
     faculty: str
+    notes: str
