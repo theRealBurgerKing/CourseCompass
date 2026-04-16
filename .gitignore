@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+*.egg-info/
+dist/
+build/
+
+# FAISS index (generated, can be rebuilt)
+backend/faiss_index/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
