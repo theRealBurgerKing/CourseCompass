@@ -336,9 +336,20 @@ export default function ChatWindow() {
       <div className="flex flex-1 flex-col overflow-hidden bg-gray-50">
         {/* Header */}
         <div className="flex items-center border-b border-gray-200 bg-white px-6 py-3.5 shadow-sm">
-          <h1 className="truncate text-sm font-semibold text-gray-700">
+          <h1 className="flex-1 truncate text-sm font-semibold text-gray-700">
             {activeConv?.title ?? 'New conversation'}
           </h1>
+          <a
+            href="/doc"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="相关资料"
+            className="ml-3 rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </a>
         </div>
 
         <div className="flex-1 overflow-y-auto px-4 py-6">

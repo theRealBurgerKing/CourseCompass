@@ -110,7 +110,7 @@ export default function SettingsModal({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+        <div className="flex items-center justify-between border-b border-gray-100 px-4 py-2">
           <h2 className="text-sm font-semibold text-gray-800">设置</h2>
           <button
             onClick={onClose}
@@ -122,13 +122,11 @@ export default function SettingsModal({
           </button>
         </div>
 
-        <div className="p-5 space-y-8">
+        <div className="p-5 space-y-6">
 
           {/* ── 账户 ── */}
           <section>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">账户</p>
-
-            {/* Avatar + email */}
             <div className="flex items-center gap-4">
               <button
                 onClick={handleAvatarClick}
@@ -155,15 +153,13 @@ export default function SettingsModal({
                 </div>
               </button>
               <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleFileChange} />
-
               <div className="min-w-0">
                 <p className="truncate text-sm font-medium text-gray-800">{userEmail}</p>
                 <p className="mt-0.5 text-xs text-gray-400">点击头像可更换图片</p>
                 {uploadError && <p className="mt-1 text-xs text-red-500">{uploadError}</p>}
               </div>
             </div>
-
-            
+          </section>
 
           {/* ── Memory（占位符） ── */}
           <section>
@@ -176,7 +172,7 @@ export default function SettingsModal({
             </div>
           </section>
 
-          {/* ── 导出对话记录 ── */}
+          {/* ── 数据 ── */}
           <section>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">数据</p>
             <button
@@ -195,11 +191,11 @@ export default function SettingsModal({
             </button>
           </section>
 
-          
-          {/* Sign out */}
-          <button
+          {/* ── 退出登录 ── */}
+          <section>
+            <button
               onClick={onSignOut}
-              className="mt-4 flex w-full items-center gap-2 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-600 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
+              className="flex w-full items-center gap-2 rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-600 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -207,6 +203,7 @@ export default function SettingsModal({
               退出登录
             </button>
           </section>
+
         </div>
       </div>
     </div>
