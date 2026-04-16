@@ -43,9 +43,11 @@ export default function ChatWindow() {
         session = data.session
       }
       accessTokenRef.current = session?.access_token ?? ''
+      console.log('[Auth] Session JWT:', session?.access_token)
 
       supabase.auth.onAuthStateChange((_event, newSession) => {
         accessTokenRef.current = newSession?.access_token ?? ''
+        console.log('[Auth] Token refreshed JWT:', newSession?.access_token)
       })
 
       const { data: { user } } = await supabase.auth.getUser()

@@ -9,4 +9,4 @@ openai
 pandas
 python-dotenv
 pydantic
-PyJWT
+PyJWT[crypto]

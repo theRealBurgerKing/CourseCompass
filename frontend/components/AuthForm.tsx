@@ -26,8 +26,9 @@ export default function AuthForm() {
         if (error) throw error
         setMessage('Check your email for a confirmation link.')
       } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password })
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password })
         if (error) throw error
+        console.log('[Auth] Login success JWT:', data.session?.access_token)
       }
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Something went wrong.')
