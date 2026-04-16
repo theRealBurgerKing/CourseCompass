@@ -49,19 +49,20 @@ def hybrid_search(query: str, k: int = 10) -> list[Document]:
     two ranked lists. Course codes appearing in the query score very high
     in BM25 regardless of semantic similarity.
     """
-    fetch_k = min(k * 4, 40)
+    fetch_k_faiss = min(k * 3, 10)  # semantic recall benefits from wider net
+    fetch_k_bm25  = min(k * 2, 10)  # keyword match is precise, 20 is sufficient
 
     vs = get_vectorstore()
     bm25, bm25_docs = _get_bm25()
 
     # --- FAISS: semantic search ---
-    faiss_results: list[tuple[Document, float]] = vs.similarity_search_with_score(query, k=fetch_k)
+    faiss_results: list[tuple[Document, float]] = vs.similarity_search_with_score(query, k=fetch_k_faiss)
     faiss_results.sort(key=lambda x: x[1])  # ascending L2 distance → most similar first
 
     # --- BM25: keyword search ---
     tokens = _tokenize(query)
     bm25_scores = bm25.get_scores(tokens)
-    bm25_ranked_indices = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:fetch_k]
+    bm25_ranked_indices = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:fetch_k_bm25]
 
     # --- RRF fusion ---
     rrf_scores: dict[str, float] = {}

@@ -4,6 +4,7 @@ export interface CourseSource {
   units_of_credit: string
   offering_terms: string
   faculty: string
+  url?: string
 }
 
 export interface Message {

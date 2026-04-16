@@ -33,9 +33,12 @@ export default function SourceCards({ sources }: Props) {
       {open && (
         <div className="mt-2 grid gap-2 sm:grid-cols-2">
           {sources.map((s) => (
-            <div
+            <a
               key={s.course_code}
-              className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 shadow-sm"
+              href={s.url ?? '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-gray-200 bg-white px-3 py-2.5 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all block"
             >
               <div className="flex items-start justify-between gap-2">
                 <span className="font-semibold text-indigo-600 text-sm">
@@ -53,7 +56,7 @@ export default function SourceCards({ sources }: Props) {
                   {s.offering_terms}
                 </p>
               )}
-            </div>
+            </a>
           ))}
         </div>
       )}

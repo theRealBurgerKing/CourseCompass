@@ -9,14 +9,15 @@ import MessageBubble from './MessageBubble'
 import ChatInput from './ChatInput'
 import Sidebar from './Sidebar'
 
-// Welcome message is UI-only — never persisted to Supabase
-const WELCOME: Message = {
-  id: '__welcome__',
-  role: 'assistant',
-  content:
-    "你好！我是 **CourseCompass**，你的 UNSW 选课顾问。\n\n有任何问题都可以问我——课程推荐、课程对比、开课学期，或者针对特定目标该学什么。",
-  sources: [],
-}
+// Sentinel id — marks a conversation whose messages haven't loaded yet
+const LOADING_ID = '__loading__'
+const LOADING_MSG: Message = { id: LOADING_ID, role: 'assistant', content: '' }
+
+const EXAMPLE_QUESTIONS = [
+  '介绍 COMP9021',
+  '比较 COMP6080 和 COMP9020 的难度',
+  '如果我想学前端，应该选哪门课？',
+]
 
 export default function ChatWindow() {
   const [conversations, setConversations] = useState<Conversation[]>([])
@@ -29,25 +30,24 @@ export default function ChatWindow() {
   const bottomRef = useRef<HTMLDivElement>(null)
 
   const activeConv = conversations.find((c) => c.id === activeId)
-  const messages = activeConv?.messages ?? [WELCOME]
+  const allMessages = activeConv?.messages ?? [LOADING_MSG]
+  const messages = allMessages.filter((m) => m.id !== LOADING_ID)
+  const isConvLoading = allMessages.some((m) => m.id === LOADING_ID)
 
   // ── Load conversations + user on mount ──────────────────────────────────
   useEffect(() => {
     const init = async () => {
       const supabase = createClient()
 
-      // Get session token — onAuthStateChange keeps it fresh for the lifetime of the page
       let { data: { session } } = await supabase.auth.getSession()
       if (!session) {
         const { data } = await supabase.auth.refreshSession()
         session = data.session
       }
       accessTokenRef.current = session?.access_token ?? ''
-      //console.log('[Auth] Session JWT:', session?.access_token)
 
       supabase.auth.onAuthStateChange((_event, newSession) => {
         accessTokenRef.current = newSession?.access_token ?? ''
-        //console.log('[Auth] Token refreshed JWT:', newSession?.access_token)
       })
 
       const { data: { user } } = await supabase.auth.getUser()
@@ -62,13 +62,12 @@ export default function ChatWindow() {
         const convs: Conversation[] = convRows.map((r) => ({
           id: r.id,
           title: r.title,
-          messages: [WELCOME],           // placeholder until messages load
+          messages: [LOADING_MSG],
         }))
         setConversations(convs)
         setActiveId(convs[0].id)
         await loadMessages(convs[0].id, convs)
       } else {
-        // First-time user — create an initial conversation
         await createConversation()
       }
 
@@ -92,15 +91,12 @@ export default function ChatWindow() {
       .eq('conversation_id', convId)
       .order('created_at', { ascending: true })
 
-    const msgs: Message[] = [
-      WELCOME,
-      ...(data ?? []).map((m) => ({
-        id: m.id as string,
-        role: m.role as 'user' | 'assistant',
-        content: m.content as string,
-        sources: (m.sources as CourseSource[]) ?? [],
-      })),
-    ]
+    const msgs: Message[] = (data ?? []).map((m) => ({
+      id: m.id as string,
+      role: m.role as 'user' | 'assistant',
+      content: m.content as string,
+      sources: (m.sources as CourseSource[]) ?? [],
+    }))
 
     setConversations((prev) =>
       (baseConvs ?? prev).map((c) => (c.id === convId ? { ...c, messages: msgs } : c)),
@@ -119,17 +115,16 @@ export default function ChatWindow() {
 
     if (error || !data) return null
 
-    const conv: Conversation = { id: data.id, title: data.title, messages: [WELCOME] }
+    const conv: Conversation = { id: data.id, title: data.title, messages: [] }
     setConversations((prev) => [conv, ...prev])
     setActiveId(conv.id)
     setInput('')
     return conv.id
   }
 
-  // ── Handlers ─────────────────────────────────────────────────────────────
+  // ── Core send logic ───────────────────────────────────────────────────────
 
-  const handleSubmit = useCallback(async () => {
-    const text = input.trim()
+  const sendMessage = useCallback(async (text: string) => {
     if (!text || isLoading) return
 
     const convId = activeId
@@ -139,13 +134,11 @@ export default function ChatWindow() {
     const userMsg: Message = { id: userMsgId, role: 'user', content: text }
     const placeholder: Message = { id: placeholderId, role: 'assistant', content: '' }
 
-    // Build history from persisted messages (exclude welcome + placeholder)
     const currentMsgs = activeConv?.messages ?? []
     const history: HistoryItem[] = currentMsgs
-      .filter((m) => m.id !== '__welcome__' && m.content !== '')
+      .filter((m) => m.id !== LOADING_ID && m.content !== '')
       .map((m) => ({ role: m.role, content: m.content }))
 
-    // Optimistic UI update
     setConversations((prev) =>
       prev.map((c) => {
         if (c.id !== convId) return c
@@ -157,7 +150,6 @@ export default function ChatWindow() {
         }
       }),
     )
-    setInput('')
     setIsLoading(true)
 
     const accumulator = { answer: '', sources: [] as CourseSource[] }
@@ -196,7 +188,6 @@ export default function ChatWindow() {
         },
       )
 
-      // Persist to Supabase
       const supabase = createClient()
       const isFirst = !history.some((h) => h.role === 'user')
 
@@ -231,7 +222,20 @@ export default function ChatWindow() {
     } finally {
       setIsLoading(false)
     }
-  }, [input, isLoading, activeId, activeConv])
+  }, [isLoading, activeId, activeConv])
+
+  // ── Handlers ─────────────────────────────────────────────────────────────
+
+  const handleSubmit = useCallback(async () => {
+    const text = input.trim()
+    if (!text) return
+    setInput('')
+    await sendMessage(text)
+  }, [input, sendMessage])
+
+  const handleExampleClick = useCallback(async (question: string) => {
+    await sendMessage(question)
+  }, [sendMessage])
 
   const handleNewChat = async () => {
     if (isLoading) return
@@ -241,12 +245,28 @@ export default function ChatWindow() {
   const handleSelectConv = async (id: string) => {
     if (isLoading || id === activeId) return
     setActiveId(id)
-
-    // Load messages if not already loaded (only WELCOME present)
     const conv = conversations.find((c) => c.id === id)
-    if (conv && conv.messages.length <= 1) {
+    if (conv && conv.messages.length === 0) {
       await loadMessages(id)
     }
+  }
+
+  const handleDeleteConv = async (id: string) => {
+    const supabase = createClient()
+    await supabase.from('conversations').delete().eq('id', id)
+
+    setConversations((prev) => {
+      const next = prev.filter((c) => c.id !== id)
+      if (id === activeId) {
+        if (next.length > 0) {
+          setActiveId(next[0].id)
+          loadMessages(next[0].id, next)
+        } else {
+          createConversation()
+        }
+      }
+      return next
+    })
   }
 
   const handleSignOut = async () => {
@@ -276,6 +296,7 @@ export default function ChatWindow() {
         userEmail={userEmail}
         onSelect={handleSelectConv}
         onNewChat={handleNewChat}
+        onDelete={handleDeleteConv}
         onSignOut={handleSignOut}
         disabled={isLoading}
       />
@@ -283,9 +304,43 @@ export default function ChatWindow() {
       <div className="flex flex-1 flex-col overflow-hidden bg-gray-50">
         <div className="flex-1 overflow-y-auto px-4 py-6">
           <div className="mx-auto max-w-2xl space-y-5">
+
+            {/* Loading state */}
+            {isConvLoading && (
+              <div className="flex justify-center pt-20 text-gray-300">
+                <div className="h-6 w-6 animate-spin rounded-full border-2 border-gray-200 border-t-indigo-400" />
+              </div>
+            )}
+
+            {/* Welcome screen — shown when conversation is empty */}
+            {!isConvLoading && messages.length === 0 && (
+              <div className="flex flex-col items-center pt-24 text-center">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFD100] text-lg font-bold text-gray-900 shadow">
+                  CC
+                </div>
+                <h2 className="text-xl font-semibold text-gray-800">有什么可以帮你的？</h2>
+                <p className="mt-1.5 text-sm text-gray-400">UNSW 选课顾问 · 2026 年课程</p>
+
+                <div className="mt-8 w-full max-w-md space-y-2.5">
+                  {EXAMPLE_QUESTIONS.map((q) => (
+                    <button
+                      key={q}
+                      onClick={() => handleExampleClick(q)}
+                      disabled={isLoading}
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-left text-sm text-gray-600 shadow-sm transition-all hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 hover:shadow-md disabled:opacity-50"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Messages */}
             {messages.map((msg) => (
               <MessageBubble key={msg.id} message={msg} />
             ))}
+
             <div ref={bottomRef} />
           </div>
         </div>
