@@ -14,7 +14,7 @@ const WELCOME: Message = {
   id: '__welcome__',
   role: 'assistant',
   content:
-    "Hi! I'm **CourseCompass**, your UNSW course selection advisor.\n\nAsk me anything — course recommendations, comparisons, term schedules, or what to study for a specific goal.",
+    "你好！我是 **CourseCompass**，你的 UNSW 选课顾问。\n\n有任何问题都可以问我——课程推荐、课程对比、开课学期，或者针对特定目标该学什么。",
   sources: [],
 }
 
@@ -43,11 +43,11 @@ export default function ChatWindow() {
         session = data.session
       }
       accessTokenRef.current = session?.access_token ?? ''
-      console.log('[Auth] Session JWT:', session?.access_token)
+      //console.log('[Auth] Session JWT:', session?.access_token)
 
       supabase.auth.onAuthStateChange((_event, newSession) => {
         accessTokenRef.current = newSession?.access_token ?? ''
-        console.log('[Auth] Token refreshed JWT:', newSession?.access_token)
+        //console.log('[Auth] Token refreshed JWT:', newSession?.access_token)
       })
 
       const { data: { user } } = await supabase.auth.getUser()

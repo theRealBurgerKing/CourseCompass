@@ -7,33 +7,33 @@ Flow:
   4. LLM streams the answer token by token
   5. Yields SSE-style dicts
 """
+import re
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, BaseMessage
 from langchain_core.documents import Document
-from .vectorstore import get_vectorstore
+from .retriever import hybrid_search
 from typing import AsyncGenerator, List
 
 _CONTEXTUALIZE_Q_SYSTEM = (
-    "Given a chat history and the latest user question which might reference "
-    "context in the chat history, formulate a standalone question that can be "
-    "understood without the chat history. "
-    "Do NOT answer the question — just reformulate it if needed, otherwise return it as-is."
+    "给定一段对话历史和用户的最新问题（该问题可能引用了对话历史中的内容），"
+    "请将其改写为一个无需对话历史即可独立理解的问题。"
+    "不要回答该问题——如有必要请重新表述，否则原样返回。"
 )
 
-_QA_SYSTEM_PREFIX = """You are CourseCompass, an AI course selection advisor for UNSW \
-(University of New South Wales). Help students choose courses that match their \
-interests, background, and study goals.
+_QA_SYSTEM_PREFIX = """你是 CourseCompass，新南威尔士大学（UNSW）的 AI 选课顾问。\
+帮助学生根据其兴趣、背景和学习目标选择合适的课程。
 
-Guidelines:
-- Always cite specific course codes (e.g. COMP9020)
-- Mention offering terms and faculty when relevant
-- Compare courses objectively when asked
-- Only reference courses present in the context below
-- If a requested course is not in the context, say so honestly
+回答规范：
+- 必须使用中文（简体）输出回答
+- 始终引用具体课程代码（如 COMP9020）
+- 适时提及开课学期和所属院系
+- 被要求时客观地对比课程
+- 只引用下方上下文中出现的课程
+- 如果所询问的课程不在上下文中，请如实说明
 
-Retrieved course context:
+已检索到的课程上下文：
 """
 
 # ---------------------------------------------------------------------------
@@ -43,11 +43,25 @@ Retrieved course context:
 _llm: ChatOpenAI | None = None
 
 
+_condense_llm: ChatOpenAI | None = None
+
+
 def _get_llm() -> ChatOpenAI:
     global _llm
     if _llm is None:
         _llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0.3, streaming=True)
     return _llm
+
+
+def _get_condense_llm() -> ChatOpenAI:
+    """Separate LLM for question condensation — temperature=0 for deterministic output."""
+    global _condense_llm
+    if _condense_llm is None:
+        _condense_llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
+    return _condense_llm
+
+
+_COURSE_CODE_RE = re.compile(r'\b[A-Z]{4}\d{4}\b')
 
 
 # ---------------------------------------------------------------------------
@@ -65,9 +79,6 @@ async def stream_query(
     {"type": "error",   "content": "<msg>"}
     """
     llm = _get_llm()
-    retriever = get_vectorstore().as_retriever(
-        search_type="similarity", search_kwargs={"k": 5}
-    )
 
     # Convert history dicts → LangChain messages (keep last 20 = 10 turns)
     history: List[BaseMessage] = []
@@ -86,12 +97,18 @@ async def stream_query(
                 MessagesPlaceholder("chat_history"),
                 ("human", "{input}"),
             ])
-            standalone_question = (condense_prompt | llm | StrOutputParser()).invoke(
+            standalone_question = (condense_prompt | _get_condense_llm() | StrOutputParser()).invoke(
                 {"input": message, "chat_history": history}
             )
+            # Re-inject any course codes from the original message that were dropped during condensation
+            original_codes = _COURSE_CODE_RE.findall(message.upper())
+            condensed_codes = set(_COURSE_CODE_RE.findall(standalone_question.upper()))
+            missing_codes = [c for c in original_codes if c not in condensed_codes]
+            if missing_codes:
+                standalone_question += " " + " ".join(missing_codes)
 
-        # Step 2 — retrieve
-        docs: List[Document] = retriever.invoke(standalone_question)
+        # Step 2 — hybrid retrieve (BM25 + FAISS, fused via RRF)
+        docs: List[Document] = hybrid_search(standalone_question, k=4)
         context = "\n\n---\n\n".join(d.page_content for d in docs)
 
         # Step 3 — stream answer

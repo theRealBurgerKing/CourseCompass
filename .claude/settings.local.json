@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(python3)",
-      "Bash(pip list:*)"
+      "Bash(pip list:*)",
+      "Bash(where py:*)",
+      "Bash(where python3.11)",
+      "Bash(ls backend/venv/Scripts/python*)",
+      "Bash(ls backend/.venv/Scripts/python*)"
     ]
   }
 }

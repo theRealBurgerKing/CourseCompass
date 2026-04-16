@@ -30,7 +30,8 @@ def load_course_documents() -> list[Document]:
 
         # --- Build rich page_content for embedding ---
         parts = [
-            f"Course: {course['course_code']} - {course['course_name']}",
+            f"Course Code: {course['course_code']}",
+            f"Course Name: {course['course_name']}",
             f"Units of Credit: {course['units_of_credit']}",
             f"Faculty: {course['faculty']}",
             f"Offering Terms: {course['offering_terms']}",
@@ -51,6 +52,7 @@ def load_course_documents() -> list[Document]:
             "offering_terms": course.get("offering_terms", ""),
             "campus": course.get("campus", ""),
             "faculty": course.get("faculty", ""),
+            "url": course.get("url", ""),
         }
 
         documents.append(Document(page_content="\n".join(parts), metadata=metadata))
