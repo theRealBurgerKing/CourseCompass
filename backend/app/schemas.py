@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
 
 
 class DeliveryInfo(BaseModel):
@@ -9,9 +9,17 @@ class DeliveryInfo(BaseModel):
     contact_hours: str
 
 
+# ── Chat ────────────────────────────────────────────────────
+
+class HistoryItem(BaseModel):
+    role: str     # "user" | "assistant"
+    content: str
+
+
 class ChatRequest(BaseModel):
     message: str
-    session_id: str = "default"
+    conversation_id: str = "default"
+    history: List[HistoryItem] = []   # recent messages for multi-turn context
 
 
 class CourseSource(BaseModel):
@@ -25,8 +33,10 @@ class CourseSource(BaseModel):
 class ChatResponse(BaseModel):
     answer: str
     sources: List[CourseSource]
-    session_id: str
+    conversation_id: str
 
+
+# ── Courses ─────────────────────────────────────────────────
 
 class CourseItem(BaseModel):
     course_code: str

@@ -13,8 +13,8 @@ export interface Message {
   sources?: CourseSource[]
 }
 
-export interface ChatResponse {
-  answer: string
-  sources: CourseSource[]
-  session_id: string
+export interface Conversation {
+  id: string
+  title: string
+  messages: Message[]
 }

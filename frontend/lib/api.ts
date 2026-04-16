@@ -2,29 +2,35 @@ import type { CourseSource } from '@/types'
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000'
 
+export type HistoryItem = { role: 'user' | 'assistant'; content: string }
+
 export async function streamMessage(
   message: string,
-  sessionId: string,
+  conversationId: string,
+  history: HistoryItem[],
+  accessToken: string,
   onToken: (token: string) => void,
   onSources: (sources: CourseSource[]) => void,
 ): Promise<void> {
   const res = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, session_id: sessionId }),
+    headers: {
+      'Content-Type': 'application/json',
+      ...(accessToken && { Authorization: `Bearer ${accessToken}` }),
+    },
+    body: JSON.stringify({ message, conversation_id: conversationId, history }),
   })
 
   if (!res.ok || !res.body) {
-    let message = `HTTP ${res.status}`
+    let msg = `HTTP ${res.status}`
     try {
       const body = await res.json()
-      message = body.detail ?? body.message ?? message
+      msg = body.detail ?? body.message ?? msg
     } catch {
-      if (res.status === 502 || res.status === 503 || res.status === 504) {
-        message = 'Backend unreachable — is the FastAPI server running on port 8000?'
-      }
+      if ([502, 503, 504].includes(res.status))
+        msg = 'Backend unreachable — is the FastAPI server running on port 8000?'
     }
-    throw new Error(message)
+    throw new Error(msg)
   }
 
   const reader = res.body.getReader()
@@ -36,30 +42,20 @@ export async function streamMessage(
     if (done) break
 
     buffer += decoder.decode(value, { stream: true })
-
-    // Split on \n to get individual lines; keep any trailing incomplete line in buffer
     const lines = buffer.split('\n')
     buffer = lines.pop() ?? ''
 
     for (const rawLine of lines) {
-      const line = rawLine.trimEnd()       // strip trailing \r from CRLF
+      const line = rawLine.trimEnd()
       if (!line.startsWith('data: ')) continue
 
-      const data = line.slice(6)           // strip the "data: " prefix
+      const data = line.slice(6)
       if (data === '[DONE]') return
 
-      const event = JSON.parse(data)       // complete line → always valid JSON
-      if (event.type === 'token') {
-        onToken(event.content as string)
-      } else if (event.type === 'sources') {
-        onSources(event.sources as CourseSource[])
-      } else if (event.type === 'error') {
-        throw new Error(event.content as string)
-      }
+      const event = JSON.parse(data)
+      if (event.type === 'token')   onToken(event.content as string)
+      else if (event.type === 'sources') onSources(event.sources as CourseSource[])
+      else if (event.type === 'error')   throw new Error(event.content as string)
     }
   }
-}
-
-export async function clearSession(sessionId: string): Promise<void> {
-  await fetch(`${API_BASE}/api/chat/${sessionId}`, { method: 'DELETE' })
 }

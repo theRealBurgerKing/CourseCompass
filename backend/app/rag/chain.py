@@ -1,10 +1,11 @@
-"""RAG chain with streaming support — compatible with LangChain 1.x.
+"""Stateless RAG chain — history is supplied by the caller each request.
 
-Flow per request:
-  1. If history exists → condense (question + history) → standalone question
-  2. FAISS retrieves top-5 relevant courses
-  3. LLM streams answer token by token via astream()
-  4. Yields SSE-style dicts: {"type":"token","content":"..."} then {"type":"sources",...}
+Flow:
+  1. Convert history list → LangChain messages
+  2. If history exists, condense question into a standalone question
+  3. FAISS retrieves top-5 relevant courses
+  4. LLM streams the answer token by token
+  5. Yields SSE-style dicts
 """
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -12,11 +13,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, BaseMessage
 from langchain_core.documents import Document
 from .vectorstore import get_vectorstore
-from typing import AsyncGenerator, Dict, List
-
-# ---------------------------------------------------------------------------
-# Prompts
-# ---------------------------------------------------------------------------
+from typing import AsyncGenerator, List
 
 _CONTEXTUALIZE_Q_SYSTEM = (
     "Given a chat history and the latest user question which might reference "
@@ -40,28 +37,6 @@ Retrieved course context:
 """
 
 # ---------------------------------------------------------------------------
-# In-memory session store  (session_id → list[BaseMessage])
-# ---------------------------------------------------------------------------
-
-_sessions: Dict[str, List[BaseMessage]] = {}
-
-
-def get_history(session_id: str) -> List[BaseMessage]:
-    return _sessions.get(session_id, [])
-
-
-def _append_history(session_id: str, human: str, ai: str) -> None:
-    if session_id not in _sessions:
-        _sessions[session_id] = []
-    _sessions[session_id].extend([HumanMessage(content=human), AIMessage(content=ai)])
-    _sessions[session_id] = _sessions[session_id][-20:]
-
-
-def clear_session(session_id: str) -> None:
-    _sessions.pop(session_id, None)
-
-
-# ---------------------------------------------------------------------------
 # LLM singleton
 # ---------------------------------------------------------------------------
 
@@ -76,27 +51,34 @@ def _get_llm() -> ChatOpenAI:
 
 
 # ---------------------------------------------------------------------------
-# Public streaming query
+# Public streaming query (stateless)
 # ---------------------------------------------------------------------------
 
 async def stream_query(
-    message: str, session_id: str
+    message: str,
+    history_items: list,        # list of HistoryItem (role + content)
 ) -> AsyncGenerator[dict, None]:
-    """Async generator that yields SSE event dicts.
+    """Yield SSE event dicts.
 
-    Event shapes:
-      {"type": "token",   "content": "<chunk>"}   — one per streamed token
-      {"type": "sources", "sources": [...]}        — emitted once after streaming
-      {"type": "error",   "content": "<msg>"}      — emitted on failure
+    {"type": "token",   "content": "<chunk>"}
+    {"type": "sources", "sources": [...]}
+    {"type": "error",   "content": "<msg>"}
     """
     llm = _get_llm()
     retriever = get_vectorstore().as_retriever(
         search_type="similarity", search_kwargs={"k": 5}
     )
-    history = get_history(session_id)
+
+    # Convert history dicts → LangChain messages (keep last 20 = 10 turns)
+    history: List[BaseMessage] = []
+    for item in history_items[-20:]:
+        if item.role == "user":
+            history.append(HumanMessage(content=item.content))
+        else:
+            history.append(AIMessage(content=item.content))
 
     try:
-        # Step 1 — condense only when there is prior history
+        # Step 1 — condense when history exists
         standalone_question = message
         if history:
             condense_prompt = ChatPromptTemplate.from_messages([
@@ -104,37 +86,27 @@ async def stream_query(
                 MessagesPlaceholder("chat_history"),
                 ("human", "{input}"),
             ])
-            condense_chain = condense_prompt | llm | StrOutputParser()
-            standalone_question = condense_chain.invoke(
+            standalone_question = (condense_prompt | llm | StrOutputParser()).invoke(
                 {"input": message, "chat_history": history}
             )
 
-        # Step 2 — retrieve relevant course docs
+        # Step 2 — retrieve
         docs: List[Document] = retriever.invoke(standalone_question)
         context = "\n\n---\n\n".join(d.page_content for d in docs)
 
-        # Step 3 — build messages and stream answer
+        # Step 3 — stream answer
         messages: List[BaseMessage] = [
             SystemMessage(content=_QA_SYSTEM_PREFIX + context),
             *history,
             HumanMessage(content=message),
         ]
-
-        full_answer = ""
         async for chunk in llm.astream(messages):
             token: str = chunk.content
             if token:
-                full_answer += token
                 yield {"type": "token", "content": token}
 
-        # Step 4 — persist to session history
-        _append_history(session_id, message, full_answer)
-
-        # Step 5 — emit source metadata
-        yield {
-            "type": "sources",
-            "sources": [doc.metadata for doc in docs],
-        }
+        # Step 4 — emit sources
+        yield {"type": "sources", "sources": [doc.metadata for doc in docs]}
 
     except Exception as exc:
         yield {"type": "error", "content": str(exc)}
