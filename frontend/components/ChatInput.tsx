@@ -45,7 +45,7 @@ export default function ChatInput({ value, onChange, onSubmit, disabled }: Props
       <button
         onClick={onSubmit}
         disabled={disabled || !value.trim()}
-        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 text-white shadow-sm transition-all hover:bg-indigo-600 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-xl bg-indigo-500 text-white shadow-sm transition-all hover:bg-indigo-600 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
         aria-label="Send message"
       >
         <svg className="h-4 w-4 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">

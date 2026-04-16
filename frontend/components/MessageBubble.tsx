@@ -4,16 +4,27 @@ import SourceCards from './SourceCards'
 
 interface Props {
   message: Message
+  avatarUrl?: string
+  userEmail?: string
 }
 
-export default function MessageBubble({ message }: Props) {
+export default function MessageBubble({ message, avatarUrl, userEmail }: Props) {
   const isUser = message.role === 'user'
 
   if (isUser) {
     return (
-      <div className="flex justify-end">
+      <div className="flex items-center justify-end gap-2">
         <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-indigo-500 px-4 py-2.5 text-sm text-white shadow-sm">
           <p className="whitespace-pre-wrap leading-relaxed">{message.content}</p>
+        </div>
+        <div className="h-7 w-7 shrink-0 overflow-hidden rounded-full">
+          {avatarUrl ? (
+            <img src={avatarUrl} alt="avatar" className="h-full w-full object-cover" />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-indigo-500 text-[11px] font-semibold text-white">
+              {userEmail?.[0]?.toUpperCase() ?? '?'}
+            </div>
+          )}
         </div>
       </div>
     )

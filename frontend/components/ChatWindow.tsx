@@ -8,6 +8,7 @@ import { createClient } from '@/lib/supabase'
 import MessageBubble from './MessageBubble'
 import ChatInput from './ChatInput'
 import Sidebar from './Sidebar'
+import SettingsModal from './SettingsModal'
 
 // Sentinel id — marks a conversation whose messages haven't loaded yet
 const LOADING_ID = '__loading__'
@@ -26,6 +27,9 @@ export default function ChatWindow() {
   const [isLoading, setIsLoading] = useState(false)
   const [isInitializing, setIsInitializing] = useState(true)
   const [userEmail, setUserEmail] = useState<string>('')
+  const [avatarUrl, setAvatarUrl] = useState<string>('')
+  const [userId, setUserId] = useState<string>('')
+  const [showSettings, setShowSettings] = useState(false)
   const accessTokenRef = useRef<string>('')
   const bottomRef = useRef<HTMLDivElement>(null)
 
@@ -52,6 +56,20 @@ export default function ChatWindow() {
 
       const { data: { user } } = await supabase.auth.getUser()
       setUserEmail(user?.email ?? '')
+      const uid = user?.id ?? ''
+      setUserId(uid)
+
+      // Prefer custom uploaded avatar from Storage over OAuth metadata avatar
+      if (uid) {
+        const { data: files } = await supabase.storage.from('avatars').list(uid)
+        const avatarFile = files?.find((f) => f.name.startsWith('avatar'))
+        if (avatarFile) {
+          const { data } = supabase.storage.from('avatars').getPublicUrl(`${uid}/${avatarFile.name}`)
+          setAvatarUrl(`${data.publicUrl}?t=${avatarFile.updated_at}`)
+        } else {
+          setAvatarUrl(user?.user_metadata?.avatar_url ?? '')
+        }
+      }
 
       const { data: convRows } = await supabase
         .from('conversations')
@@ -294,14 +312,35 @@ export default function ChatWindow() {
         conversations={conversations}
         activeId={activeId}
         userEmail={userEmail}
+        avatarUrl={avatarUrl}
         onSelect={handleSelectConv}
         onNewChat={handleNewChat}
         onDelete={handleDeleteConv}
         onSignOut={handleSignOut}
+        onOpenSettings={() => setShowSettings(true)}
         disabled={isLoading}
       />
 
+      {showSettings && (
+        <SettingsModal
+          userEmail={userEmail}
+          avatarUrl={avatarUrl}
+          userId={userId}
+          conversations={conversations}
+          onClose={() => setShowSettings(false)}
+          onSignOut={handleSignOut}
+          onAvatarChange={(url) => setAvatarUrl(url)}
+        />
+      )}
+
       <div className="flex flex-1 flex-col overflow-hidden bg-gray-50">
+        {/* Header */}
+        <div className="flex items-center border-b border-gray-200 bg-white px-6 py-3.5 shadow-sm">
+          <h1 className="truncate text-sm font-semibold text-gray-700">
+            {activeConv?.title ?? 'New conversation'}
+          </h1>
+        </div>
+
         <div className="flex-1 overflow-y-auto px-4 py-6">
           <div className="mx-auto max-w-2xl space-y-5">
 
@@ -338,14 +377,14 @@ export default function ChatWindow() {
 
             {/* Messages */}
             {messages.map((msg) => (
-              <MessageBubble key={msg.id} message={msg} />
+              <MessageBubble key={msg.id} message={msg} avatarUrl={avatarUrl} userEmail={userEmail} />
             ))}
 
             <div ref={bottomRef} />
           </div>
         </div>
 
-        <div className="border-t border-gray-200 bg-white px-4 py-4">
+        <div className="px-4 py-4">
           <div className="mx-auto max-w-2xl">
             <ChatInput
               value={input}

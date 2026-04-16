@@ -7,10 +7,12 @@ interface Props {
   conversations: Conversation[]
   activeId: string
   userEmail: string
+  avatarUrl: string
   onSelect: (id: string) => void
   onNewChat: () => void
   onDelete: (id: string) => void
   onSignOut: () => void
+  onOpenSettings: () => void
   disabled?: boolean
 }
 
@@ -18,10 +20,12 @@ export default function Sidebar({
   conversations,
   activeId,
   userEmail,
+  avatarUrl,
   onSelect,
   onNewChat,
   onDelete,
   onSignOut,
+  onOpenSettings,
   disabled = false,
 }: Props) {
   const [confirmId, setConfirmId] = useState<string | null>(null)
@@ -112,23 +116,23 @@ export default function Sidebar({
           </ul>
         </nav>
 
-        {/* User profile + sign out */}
+        {/* User profile — click to open settings */}
         <div className="border-t border-white/10 px-3 py-3">
-          <div className="flex items-center gap-2 rounded-lg px-2 py-2">
-            <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-xs font-semibold text-white">
-              {userEmail ? userEmail[0].toUpperCase() : '?'}
+          <button
+            onClick={onOpenSettings}
+            className="flex w-full items-center gap-2 rounded-lg px-2 py-2 transition-colors hover:bg-white/10"
+          >
+            <div className="h-7 w-7 shrink-0 overflow-hidden rounded-full">
+              {avatarUrl ? (
+                <img src={avatarUrl} alt="avatar" className="h-full w-full object-cover" />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center bg-indigo-500 text-xs font-semibold text-white">
+                  {userEmail ? userEmail[0].toUpperCase() : '?'}
+                </div>
+              )}
             </div>
-            <p className="flex-1 truncate text-xs text-gray-400">{userEmail}</p>
-            <button
-              onClick={onSignOut}
-              title="Sign out"
-              className="rounded p-1 text-gray-500 hover:bg-white/10 hover:text-gray-300 transition-colors"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-              </svg>
-            </button>
-          </div>
+            <p className="flex-1 truncate text-left text-xs text-gray-400">{userEmail}</p>
+          </button>
         </div>
       </aside>
 
