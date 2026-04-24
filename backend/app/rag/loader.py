@@ -2,7 +2,7 @@ import json
 from langchain_core.documents import Document
 from pathlib import Path
 
-DATA_PATH = Path(__file__).parent.parent.parent.parent / "output" / "unsw_8543_courses.json"
+DATA_PATH = Path(__file__).parent.parent.parent / "output" / "unsw_8543_courses.json"
 
 
 def load_course_documents() -> list[Document]:
