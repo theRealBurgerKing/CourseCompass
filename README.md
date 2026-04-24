@@ -125,6 +125,63 @@ npm run dev
 
 ---
 
+## 线上部署
+
+前端部署于 **Vercel**，后端部署于 **Railway**（Docker 容器），数据库与认证托管于 Supabase。
+
+```
+用户浏览器
+    │
+    ▼
+[Vercel] Next.js 前端
+https://frontend-pink-eight-23.vercel.app
+    │ /api/* 请求
+    ▼
+[Railway] FastAPI 后端
+https://coursecompass-production-76d5.up.railway.app
+    │              │
+    ▼              ▼
+[OpenAI API]   [Supabase]
+```
+
+### 前端（Vercel）
+
+```bash
+cd frontend
+npx vercel --prod
+```
+
+Vercel 环境变量：
+
+| Key | 说明 |
+|-----|------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase 项目 URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase 匿名公钥 |
+| `NEXT_PUBLIC_API_URL` | Railway 后端域名 |
+
+### 后端（Railway + Docker）
+
+Railway 连接 GitHub 仓库，Root Directory 设为 `backend`，自动检测并使用 `Dockerfile` 构建。
+
+Railway 环境变量：
+
+| Key | 说明 |
+|-----|------|
+| `OPENAI_API_KEY` | OpenAI API 密钥 |
+| `SUPABASE_URL` | Supabase 项目 URL |
+| `SUPABASE_JWT_SECRET` | Supabase JWT 密钥（用于验证用户 token） |
+| `ALLOWED_ORIGINS` | 允许跨域的前端域名，多个用逗号分隔 |
+
+### Supabase OAuth 回调配置
+
+在 Supabase Dashboard → **Authentication → URL Configuration** 中添加：
+
+```
+https://frontend-pink-eight-23.vercel.app/auth/callback
+```
+
+---
+
 ## RAG 检索流程
 
 ```

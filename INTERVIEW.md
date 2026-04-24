@@ -342,6 +342,52 @@ SSE 优势：
 
 ---
 
+### 部署相关
+
+**Q9.1：前后端分别部署在哪里？为什么这样选型？**
+
+- **前端 → Vercel**：Next.js 官方推荐平台，零配置检测框架、自动 CDN 加速、Edge Functions 支持 middleware 鉴权，免费额度足够个人项目。
+- **后端 → Railway**：支持直接使用 Dockerfile 部署 Python 服务，环境变量管理简单，自动生成 HTTPS 域名，免费额度够用于演示。
+- **Supabase**：数据库、认证、存储全托管，无需自建。
+
+这种组合的优势：三个服务各自独立部署和扩展，前端代码变更不影响后端，符合前后端分离的最佳实践。
+
+---
+
+**Q9.2：FAISS 索引文件为什么提交到 Git？**
+
+FAISS 索引（`index.faiss` + `index.pkl`）大小仅 592KB，有两种选择：
+
+1. **在 Docker 构建时重新生成**：每次部署都要调用 OpenAI embedding API 对 8543 门课程编码，费用约 $0.02，且构建时间增加数分钟。
+2. **提交到 Git，打入镜像**：无需构建时 API 调用，部署速度快，索引内容与代码版本保持一致。
+
+选择方案 2，因为索引体积小，且课程数据不频繁更新，只有重新爬取数据后才需要重建并重新提交。
+
+---
+
+**Q9.3：如何处理 CORS？**
+
+后端 `main.py` 通过环境变量 `ALLOWED_ORIGINS` 动态配置允许的域名：
+
+```python
+_raw = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000")
+allow_origins = [o.strip() for o in _raw.split(",")]
+```
+
+这样本地开发默认允许 `localhost:3000`，生产环境在 Railway 中配置 Vercel 域名，无需修改代码。多个域名用逗号分隔即可支持 Preview 部署等多环境场景。
+
+注意：`ALLOWED_ORIGINS` 的值不能带末尾 `/`，浏览器发送的 `Origin` 头不含路径，必须严格匹配。
+
+---
+
+**Q9.4：Docker 化后端时有哪些关键决策？**
+
+1. **基础镜像**：选 `python:3.11-slim` 而非 `python:3.11`，体积减少约 60%，不含编译工具链（FAISS 使用 CPU 版，pip 可直接安装 wheel）。
+2. **数据文件路径**：Railway 的 Root Directory 设为 `backend/`，Docker 构建上下文仅包含 `backend/` 目录。课程数据原先在仓库根目录的 `output/`，需要复制一份到 `backend/output/` 并修正 `loader.py` 中的相对路径（减少一层 `.parent`）。
+3. **启动命令**：`uvicorn app.main:app --host 0.0.0.0 --port 8000`，`0.0.0.0` 必须写，否则容器内只监听 `127.0.0.1`，外部无法访问。
+
+---
+
 ### 前端相关
 
 **Q10：为什么用 Next.js 中间件做鉴权而不是在页面组件中检查？**
