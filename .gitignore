@@ -8,9 +8,6 @@ __pycache__/
 dist/
 build/
 
-# FAISS index (generated, can be rebuilt)
-backend/faiss_index/
-
 # Node
 frontend/node_modules/
 frontend/.next/
