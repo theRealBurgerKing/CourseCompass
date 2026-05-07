@@ -3,7 +3,8 @@
 基于 RAG 架构为 UNSW 研究生构建的 AI 选课顾问，支持自然语言问答、多轮对话与课程精准检索。
 
 Live Demo：https://frontend-pink-eight-23.vercel.app/
-<img width="1685" height="1163" alt="image" src="https://github.com/user-attachments/assets/810bd186-40e2-40a0-8f8e-e48ebda3073d" />
+
+<img width="1348" height="930" alt="image" src="https://github.com/user-attachments/assets/810bd186-40e2-40a0-8f8e-e48ebda3073d" />
 
 ---
 
