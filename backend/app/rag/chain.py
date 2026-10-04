@@ -2,25 +2,20 @@
 
 Flow:
   1. Convert history list → LangChain messages
-  2. If history exists, condense question into a standalone question
-  3. FAISS retrieves top-5 relevant courses
-  4. LLM streams the answer token by token
+  2. Parse the query (every turn): English retrieval query, course codes, term filter, intent
+  3. Hybrid retrieval (BM25 + FAISS, RRF) with term filter; requested course codes are pinned
+  4. LLM streams the answer token by token, using the original course text as context
   5. Yields SSE-style dicts
 """
-import re
+import asyncio
+import os
 from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, BaseMessage
 from langchain_core.documents import Document
+from .loader import course_texts
+from .query_parser import COURSE_CODE_RE, ParsedQuery, parse_query
 from .retriever import hybrid_search
 from typing import AsyncGenerator, List
-
-_CONTEXTUALIZE_Q_SYSTEM = (
-    "给定一段对话历史和用户的最新问题（该问题可能引用了对话历史中的内容），"
-    "请将其改写为一个无需对话历史即可独立理解的问题。"
-    "不要回答该问题——如有必要请重新表述，否则原样返回。"
-)
 
 _QA_SYSTEM_PREFIX = """你是 CourseCompass，新南威尔士大学（UNSW）的 AI 选课顾问。\
 帮助学生根据其兴趣、背景和学习目标选择合适的课程。
@@ -40,28 +35,49 @@ _QA_SYSTEM_PREFIX = """你是 CourseCompass，新南威尔士大学（UNSW）的
 # LLM singleton
 # ---------------------------------------------------------------------------
 
+DEFAULT_CHAT_MODEL = "gpt-5.6-sol"
+
+
+def _chat_model() -> str:
+    return os.getenv("OPENAI_MODEL") or DEFAULT_CHAT_MODEL
+
+
 _llm: ChatOpenAI | None = None
-
-
-_condense_llm: ChatOpenAI | None = None
 
 
 def _get_llm() -> ChatOpenAI:
     global _llm
     if _llm is None:
-        _llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0.3, streaming=True)
+        _llm = ChatOpenAI(model=_chat_model(), temperature=0.3, streaming=True)
     return _llm
 
 
-def _get_condense_llm() -> ChatOpenAI:
-    """Separate LLM for question condensation — temperature=0 for deterministic output."""
-    global _condense_llm
-    if _condense_llm is None:
-        _condense_llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
-    return _condense_llm
+# How many courses to hand the LLM per intent (pinned course codes are always included on top).
+_K_BY_INTENT = {"lookup": 3, "compare": 5, "recommend": 8, "other": 6}
 
 
-_COURSE_CODE_RE = re.compile(r'\b[A-Z]{4}\d{4}\b')
+def _to_messages(history_items: list) -> List[BaseMessage]:
+    """HistoryItem list → LangChain messages (keep last 20 = 10 turns)."""
+    return [
+        HumanMessage(content=i.content) if i.role == "user" else AIMessage(content=i.content)
+        for i in history_items[-20:]
+    ]
+
+
+def retrieve_for_query(message: str, history_items: list) -> tuple[ParsedQuery, List[Document]]:
+    """Parse the query and retrieve the courses to answer it (blocking; run in a thread from async code)."""
+    parsed = parse_query(message, _to_messages(history_items))
+    # BM25 only understands the English keywords + codes; FAISS also sees the user's own wording,
+    # which matches the Chinese search aids added to the index.
+    docs = hybrid_search(
+        bm25_query=f"{parsed.english_query} {' '.join(parsed.course_codes)}",
+        semantic_query=f"{parsed.english_query}\n{parsed.standalone_question}",
+        k=_K_BY_INTENT[parsed.intent],
+        terms=parsed.terms,
+        pinned_codes=parsed.course_codes,
+        explicit_codes=[c.upper() for c in COURSE_CODE_RE.findall(message)],
+    )
+    return parsed, docs
 
 
 # ---------------------------------------------------------------------------
@@ -79,37 +95,13 @@ async def stream_query(
     {"type": "error",   "content": "<msg>"}
     """
     llm = _get_llm()
-
-    # Convert history dicts → LangChain messages (keep last 20 = 10 turns)
-    history: List[BaseMessage] = []
-    for item in history_items[-20:]:
-        if item.role == "user":
-            history.append(HumanMessage(content=item.content))
-        else:
-            history.append(AIMessage(content=item.content))
+    history = _to_messages(history_items)
 
     try:
-        # Step 1 — condense when history exists
-        standalone_question = message
-        if history:
-            condense_prompt = ChatPromptTemplate.from_messages([
-                ("system", _CONTEXTUALIZE_Q_SYSTEM),
-                MessagesPlaceholder("chat_history"),
-                ("human", "{input}"),
-            ])
-            standalone_question = (condense_prompt | _get_condense_llm() | StrOutputParser()).invoke(
-                {"input": message, "chat_history": history}
-            )
-            # Re-inject any course codes from the original message that were dropped during condensation
-            original_codes = _COURSE_CODE_RE.findall(message.upper())
-            condensed_codes = set(_COURSE_CODE_RE.findall(standalone_question.upper()))
-            missing_codes = [c for c in original_codes if c not in condensed_codes]
-            if missing_codes:
-                standalone_question += " " + " ".join(missing_codes)
-
-        # Step 2 — hybrid retrieve (BM25 + FAISS, fused via RRF)
-        docs: List[Document] = hybrid_search(standalone_question, k=4)
-        context = "\n\n---\n\n".join(d.page_content for d in docs)
+        # Steps 1-2 — parse the query and retrieve (blocking calls, keep them off the event loop)
+        parsed, docs = await asyncio.to_thread(retrieve_for_query, message, history_items)
+        texts = course_texts()
+        context = "\n\n---\n\n".join(texts[d.metadata["course_code"]] for d in docs)
 
         # Step 3 — stream answer
         messages: List[BaseMessage] = [
@@ -118,7 +110,7 @@ async def stream_query(
             HumanMessage(content=message),
         ]
         async for chunk in llm.astream(messages):
-            token: str = chunk.content
+            token: str = chunk.text
             if token:
                 yield {"type": "token", "content": token}
 

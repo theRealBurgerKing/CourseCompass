@@ -2,7 +2,7 @@
 import os
 import jwt
 from jwt import PyJWKClient
-from jwt.exceptions import ExpiredSignatureError, InvalidTokenError
+from jwt.exceptions import ExpiredSignatureError, InvalidTokenError, PyJWKClientError
 from fastapi import Header, HTTPException
 
 
@@ -43,5 +43,5 @@ async def require_auth(authorization: str | None = Header(default=None)) -> dict
         return payload
     except ExpiredSignatureError:
         raise HTTPException(status_code=401, detail="Token expired")
-    except InvalidTokenError as exc:
+    except (InvalidTokenError, PyJWKClientError) as exc:
         raise HTTPException(status_code=401, detail=f"Invalid token: {exc}")
