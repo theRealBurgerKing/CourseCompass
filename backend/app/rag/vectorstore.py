@@ -1,3 +1,4 @@
+import os
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from pathlib import Path
@@ -47,4 +48,5 @@ def _load_or_build() -> FAISS:
 
 
 def _get_embeddings() -> OpenAIEmbeddings:
-    return OpenAIEmbeddings(model="text-embedding-3-small")
+    # Must match the model the FAISS index was built with; rebuild the index after changing it.
+    return OpenAIEmbeddings(model=os.getenv("OPENAI_EMBEDDING_MODEL") or "text-embedding-3-small")

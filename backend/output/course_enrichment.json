@@ -1,0 +1,2106 @@
+{
+ "COMP9020": {
+  "summary_zh": "学习设计正确、高效程序所需的数学方法，包括算法分析、逻辑证明与程序验证。",
+  "keywords_zh": [
+   "计算机科学基础",
+   "离散数学",
+   "程序设计数学方法",
+   "算法分析",
+   "程序正确性",
+   "逻辑证明",
+   "程序验证",
+   "高效程序设计"
+  ],
+  "keywords_en": [
+   "Foundations of Computer Science",
+   "Mathematical Methods",
+   "Algorithm Analysis",
+   "Program Correctness",
+   "Logic",
+   "Proof Techniques",
+   "Program Verification",
+   "Efficient Programs"
+  ],
+  "suitable_for_zh": "适合希望掌握算法分析、程序正确性证明与验证基础的学生"
+ },
+ "COMP9021": {
+  "summary_zh": "学习通用编程技术与 Python，深入掌握语言特性，并通过含数学概念的多领域问题训练编程与问题求解能力。",
+  "keywords_zh": [
+   "Python 编程",
+   "编程基础",
+   "通用编程技术",
+   "程序设计",
+   "问题求解",
+   "算法思维",
+   "数学编程",
+   "Python 语言特性"
+  ],
+  "keywords_en": [
+   "Python programming",
+   "programming fundamentals",
+   "generic programming techniques",
+   "problem solving",
+   "program design",
+   "computational thinking",
+   "mathematical programming",
+   "Python language features"
+  ],
+  "suitable_for_zh": "适合希望从零学习 Python，并为后续专业课程夯实编程能力的学生。"
+ },
+ "COMP9024": {
+  "summary_zh": "学习数据在计算机中的高效存储方式，以及在有限时间和空间内解决问题的分步算法，涵盖软硬件设计中的应用。",
+  "keywords_zh": [
+   "数据结构",
+   "算法",
+   "数据存储",
+   "算法设计",
+   "时间复杂度",
+   "空间复杂度",
+   "软件设计",
+   "硬件设计",
+   "系统架构"
+  ],
+  "keywords_en": [
+   "data structures",
+   "algorithms",
+   "data storage",
+   "algorithm design",
+   "time complexity",
+   "space complexity",
+   "software design",
+   "hardware design",
+   "system architecture"
+  ],
+  "suitable_for_zh": "适合面向软件开发、硬件开发或系统架构方向的学生"
+ },
+ "COMP9311": {
+  "summary_zh": "学习大型数据资源的管理，重点了解关系数据库管理系统（RDBMS）及其在现代计算机应用中的作用。",
+  "keywords_zh": [
+   "数据库系统",
+   "数据库管理",
+   "关系型数据库",
+   "关系数据库管理系统",
+   "RDBMS",
+   "大型数据资源",
+   "数据管理",
+   "现代计算机应用"
+  ],
+  "keywords_en": [
+   "Database Systems",
+   "Database Management",
+   "Relational Database",
+   "Relational Database Management Systems",
+   "RDBMS",
+   "Large Data Resources",
+   "Data Management",
+   "Computer Applications"
+  ],
+  "suitable_for_zh": "适合希望学习关系数据库与大型数据资源管理的学生"
+ },
+ "COMP9331": {
+  "summary_zh": "计算机网络入门课程，学习现代数据通信中的常见网络范式与协议，并通过讲座、课堂活动、实验和作业结合理论与应用。",
+  "keywords_zh": [
+   "计算机网络",
+   "网络通信",
+   "数据通信",
+   "网络协议",
+   "通信协议",
+   "网络应用",
+   "网络范式",
+   "计算机网络实验"
+  ],
+  "keywords_en": [
+   "computer networks",
+   "network applications",
+   "data communication",
+   "network protocols",
+   "communication protocols",
+   "network paradigms",
+   "network labs",
+   "networking"
+  ],
+  "suitable_for_zh": "适合计算机科学或电气工程背景、希望入门计算机网络的学生"
+ },
+ "COMP9820": {
+  "summary_zh": "学习现代软件项目管理流程，以及协作开发、部署与发布工具，培养团队管理、利益相关者管理和软件交付能力。",
+  "keywords_zh": [
+   "软件项目管理",
+   "软件开发管理",
+   "团队协作开发",
+   "项目利益相关者管理",
+   "软件部署",
+   "软件发布",
+   "软件产品交付",
+   "行业顶点项目",
+   "团队领导"
+  ],
+  "keywords_en": [
+   "Software Project Management",
+   "Software Development Management",
+   "Collaborative Software Development",
+   "Stakeholder Management",
+   "Software Deployment",
+   "Release Management",
+   "Software Delivery",
+   "Capstone Projects",
+   "Team Leadership"
+  ],
+  "suitable_for_zh": "适合希望管理软件开发团队、领导项目或开展行业顶点项目的学生"
+ },
+ "COMP4121": {
+  "summary_zh": "本课进阶学习随机化算法与数据结构，并涵盖马尔可夫链、PageRank、隐马尔可夫模型、推荐系统及数据科学算法。",
+  "keywords_zh": [
+   "高级算法",
+   "随机化算法",
+   "随机哈希",
+   "跳表",
+   "马尔可夫链",
+   "PageRank算法",
+   "隐马尔可夫模型",
+   "维特比算法",
+   "推荐系统",
+   "数据科学算法"
+  ],
+  "keywords_en": [
+   "Advanced Algorithms",
+   "Randomized Algorithms",
+   "Randomized Hashing",
+   "Skip Lists",
+   "Markov Chains",
+   "PageRank",
+   "Hidden Markov Models",
+   "Viterbi Algorithm",
+   "Recommender Systems",
+   "Data Science Algorithms"
+  ],
+  "suitable_for_zh": "适合希望深入算法、推荐系统及数据科学算法的学生。"
+ },
+ "COMP4128": {
+  "summary_zh": "学习竞赛编程中的复杂问题求解，探索如何在较短时间内完成编程挑战。",
+  "keywords_zh": [
+   "竞赛编程",
+   "竞技编程",
+   "程序设计竞赛",
+   "编程挑战",
+   "复杂问题求解",
+   "快速解题",
+   "Competitive Programming"
+  ],
+  "keywords_en": [
+   "competitive programming",
+   "programming challenges",
+   "complex problem solving",
+   "rapid problem solving",
+   "programming contests",
+   "competitive programmers"
+  ],
+  "suitable_for_zh": "适合希望学习竞赛编程与快速解决复杂问题的学生。"
+ },
+ "COMP4141": {
+  "summary_zh": "学习计算理论核心内容，包括可计算性与不可判定性、复杂度与 NP 完全性、形式语言与自动机，以及 Hoare 逻辑和程序正确性。",
+  "keywords_zh": [
+   "计算理论",
+   "可计算性",
+   "图灵机",
+   "不可判定性",
+   "计算复杂度",
+   "NP完全性",
+   "形式语言与自动机",
+   "上下文无关语言",
+   "程序正确性",
+   "Hoare逻辑"
+  ],
+  "keywords_en": [
+   "Theory of Computation",
+   "Computability",
+   "Turing Machines",
+   "Undecidability",
+   "Computational Complexity",
+   "NP-Completeness",
+   "Formal Languages and Automata",
+   "Context-Free Languages",
+   "Program Correctness",
+   "Hoare Logic"
+  ],
+  "suitable_for_zh": "适合关注理论计算机、算法复杂度、形式语言及程序验证的学生。"
+ },
+ "COMP4161": {
+  "summary_zh": "学习机械化证明助手、形式化规约与证明技术，并使用工业级定理证明器开展建模、形式证明和软件验证。",
+  "keywords_zh": [
+   "软件验证",
+   "形式化验证",
+   "证明助手",
+   "定理证明器",
+   "自动推理",
+   "形式化证明",
+   "形式化规约",
+   "建模与验证"
+  ],
+  "keywords_en": [
+   "software verification",
+   "formal verification",
+   "proof assistants",
+   "theorem proving",
+   "automated deduction",
+   "formal proofs",
+   "formal specification",
+   "verification environments"
+  ],
+  "suitable_for_zh": "适合希望学习定理证明、自动推理与工业级形式化验证的学生"
+ },
+ "COMP4418": {
+  "summary_zh": "学习知识表示与推理，并探讨课程排程、策略性投票、数独与扫雷等问题的程序化求解。",
+  "keywords_zh": [
+   "知识表示",
+   "知识推理",
+   "自动推理",
+   "课程排程",
+   "策略性投票",
+   "数独求解",
+   "扫雷求解",
+   "程序化问题求解"
+  ],
+  "keywords_en": [
+   "Knowledge Representation",
+   "Knowledge Representation and Reasoning",
+   "KRR",
+   "Automated Reasoning",
+   "Timetabling",
+   "Tactical Voting",
+   "Sudoku Solving",
+   "Minesweeper Solving"
+  ],
+  "suitable_for_zh": "适合希望学习知识表示、自动推理与程序化问题求解的学生"
+ },
+ "COMP4511": {
+  "summary_zh": "以项目实践方式学习用户界面的迭代设计与开发，使用 React 将低保真原型逐步完善为电子原型和应用测试版。",
+  "keywords_zh": [
+   "用户界面设计",
+   "UI 设计",
+   "界面开发",
+   "交互原型",
+   "低保真原型",
+   "高保真原型",
+   "迭代设计",
+   "React",
+   "应用开发",
+   "项目实践"
+  ],
+  "keywords_en": [
+   "User Interface Design",
+   "UI Development",
+   "React",
+   "Low-fidelity Prototype",
+   "High-fidelity Prototype",
+   "Electronic Prototyping",
+   "Iterative Design",
+   "App Development",
+   "Beta Version",
+   "Project-based Learning"
+  ],
+  "suitable_for_zh": "适合希望通过 React 和原型迭代实践学习 UI 设计与应用开发的学生。"
+ },
+ "COMP6080": {
+  "summary_zh": "学习使用 HTML、CSS、原生 JavaScript 及声明式框架构建现代 Web 前端应用，并涵盖 UI/UX、无障碍、异步编程与前端测试。",
+  "keywords_zh": [
+   "Web 前端开发",
+   "网页编程",
+   "HTML",
+   "CSS",
+   "JavaScript",
+   "声明式框架",
+   "UI/UX 设计",
+   "无障碍访问",
+   "异步编程",
+   "前端测试"
+  ],
+  "keywords_en": [
+   "Web Front-End Development",
+   "HTML",
+   "CSS",
+   "Vanilla JavaScript",
+   "Declarative Frameworks",
+   "UI/UX Principles",
+   "Accessibility",
+   "Asynchronous Programming",
+   "Front-end Testing"
+  ],
+  "suitable_for_zh": "适合希望学习现代网页应用开发与前端工程基础的学生。"
+ },
+ "COMP6131": {
+  "summary_zh": "系统学习自动化源代码分析与验证，并实践构建工具来扫描、理解和检测程序错误及软件漏洞。",
+  "keywords_zh": [
+   "软件安全",
+   "源代码分析",
+   "静态分析",
+   "程序验证",
+   "漏洞检测",
+   "代码审计",
+   "编译器",
+   "代码质量",
+   "C++",
+   "Python"
+  ],
+  "keywords_en": [
+   "software security",
+   "source code analysis",
+   "static analysis",
+   "program verification",
+   "vulnerability detection",
+   "code analysis tools",
+   "modern compilers",
+   "open-source frameworks",
+   "C++",
+   "Python"
+  ],
+  "suitable_for_zh": "适合希望学习静态分析、漏洞检测及代码分析工具开发的学生"
+ },
+ "COMP6441": {
+  "summary_zh": "网络安全入门课，学习安全工程的设计、监控与维护原则，并通过案例分析系统失效、攻击者思维及当代实践。",
+  "keywords_zh": [
+   "网络安全",
+   "信息安全",
+   "安全工程",
+   "系统安全",
+   "攻击者思维",
+   "威胁分析",
+   "安全设计",
+   "安全监控",
+   "安全案例分析",
+   "系统失效"
+  ],
+  "keywords_en": [
+   "Cybersecurity",
+   "Security Engineering",
+   "Information Security",
+   "Systems Security",
+   "Attacker Mindset",
+   "Security Design",
+   "Security Monitoring",
+   "Case Studies",
+   "System Failures"
+  ],
+  "suitable_for_zh": "适合希望学习网络安全原理、案例分析与安全系统设计的学生"
+ },
+ "COMP6443": {
+  "summary_zh": "学习 Web 应用安全与测试，理解在线攻击利用的软件漏洞，并培养安全意识。",
+  "keywords_zh": [
+   "Web 应用安全",
+   "网站安全",
+   "应用安全测试",
+   "Web 安全测试",
+   "软件漏洞",
+   "在线攻击",
+   "网络安全",
+   "信息安全",
+   "安全编程"
+  ],
+  "keywords_en": [
+   "web application security",
+   "web security",
+   "application security testing",
+   "security testing",
+   "software vulnerabilities",
+   "online attacks",
+   "cybersecurity",
+   "information security",
+   "secure programming"
+  ],
+  "suitable_for_zh": "适合关注 Web 开发、安全测试与网络安全方向的学生"
+ },
+ "COMP6445": {
+  "summary_zh": "学习数字取证理论与职业实践，使用标准工具提取、雕复和分析数据，并涵盖专家证人、法庭报告、云取证及反取证技术。",
+  "keywords_zh": [
+   "数字取证",
+   "计算机取证",
+   "电子取证",
+   "数据提取与分析",
+   "文件雕复",
+   "云取证",
+   "反取证",
+   "专家证人",
+   "法庭报告写作",
+   "痕迹分析"
+  ],
+  "keywords_en": [
+   "Digital Forensics",
+   "Computer Forensics",
+   "Data Carving",
+   "Forensic Tools",
+   "Cloud Forensics",
+   "Anti-Forensics",
+   "Trace Analysis",
+   "Expert Witness",
+   "Forensic Report Writing"
+  ],
+  "suitable_for_zh": "适合希望学习数字证据分析、取证工程与法庭实践的学生。"
+ },
+ "COMP6447": {
+  "summary_zh": "学习网络攻防、系统与软件漏洞评估，理解漏洞识别与利用原理、安全模型，以及攻防方法的演变。",
+  "keywords_zh": [
+   "网络安全",
+   "信息安全",
+   "网络攻防",
+   "漏洞评估",
+   "漏洞识别",
+   "漏洞利用",
+   "系统安全",
+   "软件安全",
+   "安全模型",
+   "攻击与防御"
+  ],
+  "keywords_en": [
+   "cybersecurity",
+   "cyber attack and defence",
+   "vulnerability assessment",
+   "vulnerability identification",
+   "exploitation",
+   "system security",
+   "software security",
+   "security models"
+  ],
+  "suitable_for_zh": "适合希望学习漏洞评估、漏洞利用及系统与软件攻防的学生"
+ },
+ "COMP6448": {
+  "summary_zh": "由网络安全领域访问专家讲授高级专题，通过系列讲座与工作坊学习；具体主题和时间取决于来访专家。",
+  "keywords_zh": [
+   "网络安全",
+   "信息安全",
+   "安全工程",
+   "高级安全专题",
+   "网络安全专家课",
+   "安全讲座",
+   "安全工作坊",
+   "集中授课"
+  ],
+  "keywords_en": [
+   "cyber security",
+   "information security",
+   "security engineering",
+   "advanced security topics",
+   "security masterclass",
+   "expert lectures",
+   "security workshops",
+   "intensive mode"
+  ],
+  "suitable_for_zh": "适合希望学习高级网络安全专题并参与专家工作坊的学生"
+ },
+ "COMP6451": {
+  "summary_zh": "学习加密货币与分布式账本技术，以及如何综合计算机科学方法构建金融交易和商业信任关系所需的安全基础设施。",
+  "keywords_zh": [
+   "加密货币",
+   "数字货币",
+   "分布式账本技术",
+   "DLT",
+   "区块链",
+   "安全基础设施",
+   "金融交易",
+   "商业信任关系"
+  ],
+  "keywords_en": [
+   "cryptocurrency",
+   "digital currency",
+   "distributed ledger technology",
+   "DLT",
+   "blockchain",
+   "secure infrastructure",
+   "financial transactions",
+   "commercial trust relationships"
+  ],
+  "suitable_for_zh": "适合关注加密货币、分布式账本及安全交易系统的学生。"
+ },
+ "COMP6452": {
+  "summary_zh": "从软件架构视角学习区块链应用，包括适用性评估、架构角色、应用设计、设计模式及架构权衡分析。",
+  "keywords_zh": [
+   "区块链",
+   "区块链应用",
+   "软件架构",
+   "区块链架构",
+   "应用架构设计",
+   "区块链设计模式",
+   "架构权衡",
+   "分布式账本"
+  ],
+  "keywords_en": [
+   "blockchain",
+   "blockchain applications",
+   "software architecture",
+   "architecture design",
+   "design patterns",
+   "design analysis",
+   "architecture tradeoffs",
+   "distributed ledger"
+  ],
+  "suitable_for_zh": "适合希望学习区块链应用设计与软件架构分析的学生"
+ },
+ "COMP6453": {
+  "summary_zh": "学习密码算法与密码分析，以及加密、认证技术的基础原理和正确应用，用于保护计算机系统、网络与数据。",
+  "keywords_zh": [
+   "应用密码学",
+   "密码学",
+   "密码算法",
+   "密码分析",
+   "加密技术",
+   "认证技术",
+   "计算机安全",
+   "网络安全",
+   "数据保护"
+  ],
+  "keywords_en": [
+   "Applied Cryptography",
+   "Cryptographic Algorithms",
+   "Cryptanalysis",
+   "Encryption",
+   "Authentication",
+   "Computer Security",
+   "Network Security",
+   "Data Protection"
+  ],
+  "suitable_for_zh": "适合希望学习密码技术及其在系统、网络和数据保护中应用的学生"
+ },
+ "COMP6713": {
+  "summary_zh": "学习自然语言处理（NLP），了解利用人工智能与计算方法处理文本的基本方向。",
+  "keywords_zh": [
+   "自然语言处理",
+   "NLP",
+   "人工智能",
+   "AI",
+   "文本处理",
+   "语言处理",
+   "计算语言学",
+   "文本计算"
+  ],
+  "keywords_en": [
+   "Natural Language Processing",
+   "NLP",
+   "Artificial Intelligence",
+   "AI",
+   "Text Processing",
+   "Computational Approaches",
+   "Language Processing"
+  ],
+  "suitable_for_zh": "适合希望学习人工智能文本处理方向的学生"
+ },
+ "COMP6714": {
+  "summary_zh": "学习信息检索与网页搜索的基本流程，包括查询匹配、相关性数值评分，以及搜索结果排序。",
+  "keywords_zh": [
+   "信息检索",
+   "IR",
+   "网页搜索",
+   "网络搜索",
+   "搜索引擎",
+   "查询匹配",
+   "相关性评分",
+   "结果排序",
+   "互联网信息搜索"
+  ],
+  "keywords_en": [
+   "information retrieval",
+   "IR",
+   "web search",
+   "search engine",
+   "query matching",
+   "relevance scoring",
+   "result ranking",
+   "Internet search"
+  ],
+  "suitable_for_zh": "适合希望学习信息检索、搜索引擎与网页搜索的学生"
+ },
+ "COMP6721": {
+  "summary_zh": "学习有科学依据的程序结构与设计模式，编写更易理解、维护的代码，并掌握良好编程实践。",
+  "keywords_zh": [
+   "形式化方法",
+   "非形式化方法",
+   "程序设计模式",
+   "程序结构",
+   "良好编程实践",
+   "代码可读性",
+   "软件可维护性",
+   "软件设计"
+  ],
+  "keywords_en": [
+   "formal methods",
+   "informal methods",
+   "design patterns",
+   "program structure",
+   "good programming practices",
+   "code readability",
+   "software maintainability",
+   "software design"
+  ],
+  "suitable_for_zh": "适合希望提升程序设计、代码可读性与可维护性的学生"
+ },
+ "COMP6733": {
+  "summary_zh": "通过实验与动手实践学习物联网应用设计，涵盖系统架构、低功耗通信、传感器处理、轻量机器学习、安全与云服务。",
+  "keywords_zh": [
+   "物联网",
+   "IoT应用设计",
+   "物联网系统架构",
+   "低功耗通信",
+   "传感器数据处理",
+   "轻量机器学习",
+   "数据融合",
+   "物联网安全",
+   "生物识别认证",
+   "物联网云服务"
+  ],
+  "keywords_en": [
+   "Internet of Things (IoT)",
+   "IoT system architecture",
+   "Bluetooth Low Energy (BLE)",
+   "6LoWPAN",
+   "sensor data filtering",
+   "in-situ machine learning",
+   "data fusion",
+   "IoT security",
+   "biometric authentication",
+   "cloud services for IoT"
+  ],
+  "suitable_for_zh": "适合希望学习物联网开发、智能感知与端到端系统设计的学生。"
+ },
+ "COMP6741": {
+  "summary_zh": "学习求解 NP-hard 等难解计算问题的算法，包括近似求解、仅处理部分实例及超多项式时间或参数化思路。",
+  "keywords_zh": [
+   "难解问题算法",
+   "NP难问题",
+   "NP-hard",
+   "近似算法",
+   "精确算法",
+   "参数化算法",
+   "超多项式时间",
+   "计算复杂性",
+   "算法设计"
+  ],
+  "keywords_en": [
+   "intractable problems",
+   "NP-hard problems",
+   "approximation algorithms",
+   "exact algorithms",
+   "parameterized algorithms",
+   "super-polynomial time",
+   "computational complexity",
+   "algorithm design"
+  ],
+  "suitable_for_zh": "适合希望学习 NP-hard 问题求解策略与算法设计的学生"
+ },
+ "COMP6752": {
+  "summary_zh": "学习并比较前沿并发系统模型，从哲学、数学和计算视角理解模型背后的设计依据，为系统行为的数学建模打基础。",
+  "keywords_zh": [
+   "并发系统",
+   "并发模型",
+   "系统建模",
+   "数学模型",
+   "系统行为",
+   "计算模型",
+   "形式化建模",
+   "模型设计"
+  ],
+  "keywords_en": [
+   "concurrent systems",
+   "concurrency models",
+   "system modelling",
+   "mathematical models",
+   "system behaviour",
+   "computational models",
+   "formal modelling",
+   "model design"
+  ],
+  "suitable_for_zh": "适合希望研究并发系统及系统行为数学建模的学生"
+ },
+ "COMP6771": {
+  "summary_zh": "学习中高级 C++ 编程实践，掌握 C++ 基础，并探索、使用和构建其支持的强大抽象。",
+  "keywords_zh": [
+   "C++ 编程",
+   "高级 C++",
+   "中高级编程",
+   "编程基础",
+   "抽象机制",
+   "软件抽象",
+   "抽象设计",
+   "面向对象编程"
+  ],
+  "keywords_en": [
+   "C++",
+   "Advanced C++ Programming",
+   "Intermediate C++",
+   "Programming Fundamentals",
+   "Abstractions",
+   "Abstraction Design",
+   "Software Abstraction",
+   "Object-Oriented Programming"
+  ],
+  "suitable_for_zh": "适合希望深化 C++ 编程并学习抽象使用与构建的学生"
+ },
+ "COMP6841": {
+  "summary_zh": "网络安全导论，学习面对攻击者时安全系统的设计、监控与维护，并通过案例分析系统失效及现代网络安全实践。",
+  "keywords_zh": [
+   "网络安全",
+   "信息安全",
+   "安全工程",
+   "系统安全",
+   "攻击者思维",
+   "威胁思维",
+   "安全设计",
+   "安全监控",
+   "系统失效分析",
+   "网络攻防"
+  ],
+  "keywords_en": [
+   "Cybersecurity",
+   "Security Engineering",
+   "Information Security",
+   "System Security",
+   "Attacker Mindset",
+   "Security Design",
+   "Security Monitoring",
+   "Security Failure Analysis",
+   "Cyber Security Practice"
+  ],
+  "suitable_for_zh": "适合希望学习安全工程原理、系统失效分析与网络安全实践的学生"
+ },
+ "COMP6843": {
+  "summary_zh": "学习 Web 应用安全与测试，了解网络攻击中常被利用的软件漏洞，培养 Web 开发中的安全意识。",
+  "keywords_zh": [
+   "Web 应用安全",
+   "网站安全",
+   "网络应用安全",
+   "安全测试",
+   "软件漏洞",
+   "漏洞检测",
+   "网络攻击",
+   "Web 开发安全",
+   "信息安全"
+  ],
+  "keywords_en": [
+   "Web Application Security",
+   "Web Security",
+   "Security Testing",
+   "Software Vulnerabilities",
+   "Vulnerability Testing",
+   "Online Attacks",
+   "Secure Web Programming",
+   "Security Awareness"
+  ],
+  "suitable_for_zh": "适合关注 Web 开发、安全测试与应用安全的学生。"
+ },
+ "COMP6845": {
+  "summary_zh": "学习数字取证与事件响应，涵盖数据提取、文件雕刻、痕迹分析、报告写作、法庭实践、云取证及反取证技术。",
+  "keywords_zh": [
+   "数字取证",
+   "计算机取证",
+   "事件响应",
+   "数据恢复与文件雕刻",
+   "取证工具",
+   "电子痕迹分析",
+   "云取证",
+   "反取证技术",
+   "专家证人与法庭实践",
+   "取证报告写作"
+  ],
+  "keywords_en": [
+   "Digital Forensics",
+   "Computer Forensics",
+   "Incident Response",
+   "Data Extraction",
+   "File Carving",
+   "Forensic Tools",
+   "Cloud Forensics",
+   "Anti-Forensics",
+   "Expert Witness",
+   "Forensic Report Writing"
+  ],
+  "suitable_for_zh": "适合关注数字取证、事件响应及云端证据分析的学生"
+ },
+ "COMP6991": {
+  "summary_zh": "以 Rust 为参照，比较不同编程语言中的类型、多态、测试、元编程、并发、并行与安全，并批判性分析编程实践及工具。",
+  "keywords_zh": [
+   "Rust 编程语言",
+   "现代编程问题",
+   "编程语言比较",
+   "类型系统与多态",
+   "测试与文档",
+   "元编程",
+   "并发与并行",
+   "内存安全",
+   "编程实践与工具"
+  ],
+  "keywords_en": [
+   "Rust",
+   "programming languages",
+   "type systems",
+   "polymorphism",
+   "testing and documentation",
+   "metaprogramming",
+   "concurrency",
+   "parallelism",
+   "programming safety"
+  ],
+  "suitable_for_zh": "适合希望比较编程语言并理解现代编程概念与工具的学生"
+ },
+ "COMP9032": {
+  "summary_zh": "学习微处理器基础，包括体系结构、汇编语言编程、I/O 接口及微处理器应用，掌握与各类外部设备连接的技术。",
+  "keywords_zh": [
+   "微处理器",
+   "处理器体系结构",
+   "汇编语言",
+   "汇编编程",
+   "I/O 接口",
+   "输入输出接口",
+   "嵌入式系统",
+   "固件开发",
+   "硬件设计",
+   "外部设备连接"
+  ],
+  "keywords_en": [
+   "microprocessors",
+   "microprocessor architecture",
+   "assembly language programming",
+   "I/O interfacing",
+   "embedded systems",
+   "firmware development",
+   "hardware design",
+   "external devices"
+  ],
+  "suitable_for_zh": "适合希望学习嵌入式系统、硬件设计或固件开发的学生"
+ },
+ "COMP9044": {
+  "summary_zh": "学习大型软件的分解、设计与开发生命周期，并实践命令语言、版本控制、可靠编程、测试调试、性能分析及代码改进。",
+  "keywords_zh": [
+   "软件构造",
+   "软件工程",
+   "大型程序开发",
+   "软件开发生命周期",
+   "命令语言",
+   "版本控制",
+   "配置管理",
+   "可靠编程",
+   "测试与调试",
+   "性能分析与代码优化"
+  ],
+  "keywords_en": [
+   "software construction",
+   "software design",
+   "software development life cycle",
+   "command languages",
+   "version control",
+   "configuration management",
+   "testing and debugging",
+   "profiling",
+   "code improvement",
+   "programming-in-the-large"
+  ],
+  "suitable_for_zh": "适合希望掌握大型软件开发、测试调试与工程工具的学生"
+ },
+ "COMP9101": {
+  "summary_zh": "学习算法与程序的正确性论证、运行时间估算、测试用例设计，以及分析哪些问题难以高效求解。",
+  "keywords_zh": [
+   "算法设计",
+   "算法分析",
+   "程序正确性",
+   "正确性证明",
+   "运行时间分析",
+   "时间复杂度",
+   "测试用例设计",
+   "程序调试",
+   "计算难题",
+   "算法效率"
+  ],
+  "keywords_en": [
+   "algorithm design",
+   "algorithm analysis",
+   "program correctness",
+   "correctness proof",
+   "runtime analysis",
+   "time complexity",
+   "test case design",
+   "debugging",
+   "computational hardness",
+   "algorithm efficiency"
+  ],
+  "suitable_for_zh": "适合希望学习算法正确性、效率分析与程序测试的学生"
+ },
+ "COMP9102": {
+  "summary_zh": "学习编译器前端与编程语言实现基础，使用 Java 编写编译器，将 C 语言变体翻译为 Java 字节码并在虚拟机中运行。",
+  "keywords_zh": [
+   "编程语言",
+   "编译器",
+   "编译原理",
+   "编译器前端",
+   "Java",
+   "C语言",
+   "Java字节码",
+   "虚拟机",
+   "面向对象编程",
+   "软件工程"
+  ],
+  "keywords_en": [
+   "Programming Languages",
+   "Compilers",
+   "Compiler Front End",
+   "Java",
+   "C Language",
+   "Java Bytecode",
+   "Virtual Machine",
+   "Object-Oriented Programming",
+   "Software Engineering"
+  ],
+  "suitable_for_zh": "适合希望学习编译器实现、编程语言原理及提升 Java 工程能力的学生"
+ },
+ "COMP9153": {
+  "summary_zh": "本课程聚焦算法验证；COMP9153 替代 COMP4151，并与 COMP3153 为同等课程。",
+  "keywords_zh": [
+   "算法验证",
+   "算法式验证",
+   "验证算法",
+   "COMP9153",
+   "COMP4151替代课程",
+   "COMP3153同等课程",
+   "工程学院课程",
+   "悉尼校区课程"
+  ],
+  "keywords_en": [
+   "Algorithmic Verification",
+   "Verification Algorithms",
+   "COMP9153",
+   "COMP4151 replacement",
+   "COMP3153 equivalent course",
+   "Faculty of Engineering",
+   "Sydney campus",
+   "Term 3 course"
+  ],
+  "suitable_for_zh": "希望学习算法验证相关内容的研究生。"
+ },
+ "COMP9154": {
+  "summary_zh": "学习并发模型、进程通信与同步抽象，通过编程及证明分析程序的安全性与活性。",
+  "keywords_zh": [
+   "并发编程",
+   "并发基础",
+   "进程通信",
+   "共享变量",
+   "消息传递",
+   "互斥与同步",
+   "锁与信号量",
+   "线程与监视器",
+   "程序安全性",
+   "活性证明"
+  ],
+  "keywords_en": [
+   "concurrency",
+   "process communication",
+   "shared variables",
+   "message passing",
+   "mutual exclusion",
+   "locks and semaphores",
+   "threads and monitors",
+   "RPC and rendezvous",
+   "program safety",
+   "liveness properties"
+  ],
+  "suitable_for_zh": "适合希望学习并发编程、同步机制与程序正确性证明的学生"
+ },
+ "COMP9164": {
+  "summary_zh": "学习命令式、面向对象、函数式及并发/并行编程范式，涵盖程序语言语义、类型系统、内存管理与实现实践。",
+  "keywords_zh": [
+   "编程语言概念",
+   "编程范式",
+   "函数式编程",
+   "命令式编程",
+   "面向对象编程",
+   "并发与并行编程",
+   "程序语义",
+   "类型系统",
+   "多态与重载",
+   "自动内存管理"
+  ],
+  "keywords_en": [
+   "Programming Languages",
+   "Programming Paradigms",
+   "Functional Programming",
+   "Haskell",
+   "Operational Semantics",
+   "Axiomatic Semantics",
+   "Denotational Semantics",
+   "Type Systems",
+   "Polymorphism",
+   "Concurrency"
+  ],
+  "suitable_for_zh": "适合希望学习编程语言理论、语义、类型系统及多范式编程的学生。"
+ },
+ "COMP9201": {
+  "summary_zh": "深入理解操作系统底层原理，以及操作系统在计算机系统、系统开发和应用开发中的作用。",
+  "keywords_zh": [
+   "操作系统",
+   "OS",
+   "操作系统原理",
+   "计算机系统",
+   "系统软件",
+   "底层系统",
+   "系统开发",
+   "应用开发"
+  ],
+  "keywords_en": [
+   "Operating Systems",
+   "OS",
+   "Computer Systems",
+   "System Software",
+   "Underlying Systems",
+   "Systems Development",
+   "Application Development"
+  ],
+  "suitable_for_zh": "希望深入理解操作系统并从事系统或应用开发的学生"
+ },
+ "COMP9211": {
+  "summary_zh": "学习计算机体系结构及软硬件接口，理解其与编程语言、算法、编译器、操作系统、嵌入式系统、FPGA 和 VLSI 设计的联系。",
+  "keywords_zh": [
+   "计算机体系结构",
+   "计算机架构",
+   "软硬件接口",
+   "编译器",
+   "操作系统",
+   "嵌入式系统",
+   "现场可编程门阵列",
+   "超大规模集成电路设计"
+  ],
+  "keywords_en": [
+   "computer architecture",
+   "hardware-software interface",
+   "compiler",
+   "operating system",
+   "embedded systems",
+   "FPGA",
+   "VLSI design",
+   "programming languages"
+  ],
+  "suitable_for_zh": "适合希望理解软硬件协同及计算机系统设计的学生。"
+ },
+ "COMP9222": {
+  "summary_zh": "学习数字设计基础，了解数字电路与数字系统的基本原理。",
+  "keywords_zh": [
+   "数字电路",
+   "数字系统",
+   "数字设计",
+   "数字逻辑",
+   "逻辑电路",
+   "电路与系统"
+  ],
+  "keywords_en": [
+   "digital circuits",
+   "digital systems",
+   "digital design",
+   "digital logic",
+   "logic circuits",
+   "circuits and systems"
+  ],
+  "suitable_for_zh": "适合希望学习数字电路与数字系统基础的学生"
+ },
+ "COMP9242": {
+  "summary_zh": "深入学习现代操作系统技术、实现方法及相关研究问题，理解高级操作系统的核心设计与实现。",
+  "keywords_zh": [
+   "高级操作系统",
+   "现代操作系统",
+   "操作系统技术",
+   "系统实现",
+   "实现技术",
+   "系统软件",
+   "操作系统研究",
+   "OS"
+  ],
+  "keywords_en": [
+   "Advanced Operating Systems",
+   "Operating Systems",
+   "Modern OS Technology",
+   "OS Implementation",
+   "Implementation Techniques",
+   "Systems Software",
+   "Operating Systems Research"
+  ],
+  "suitable_for_zh": "希望深入学习操作系统实现与研究问题的学生"
+ },
+ "COMP9243": {
+  "summary_zh": "深入学习分布式系统及其操作系统问题，包括远程调用、共享内存、文件系统、并发控制、容错与分布式事务。",
+  "keywords_zh": [
+   "分布式系统",
+   "客户机服务器",
+   "远程过程调用",
+   "分布式共享内存",
+   "分布式文件系统",
+   "进程迁移",
+   "并发控制",
+   "容错与恢复",
+   "分布式事务",
+   "操作系统"
+  ],
+  "keywords_en": [
+   "distributed systems",
+   "client-server",
+   "remote procedure call",
+   "distributed shared memory",
+   "distributed file systems",
+   "process migration",
+   "concurrency control",
+   "fault tolerance",
+   "distributed transactions",
+   "operating systems"
+  ],
+  "suitable_for_zh": "适合希望学习分布式系统与操作系统机制的学生"
+ },
+ "COMP9283": {
+  "summary_zh": "深入理解操作系统底层原理，以及操作系统在计算机系统、系统开发和应用开发中的作用。",
+  "keywords_zh": [
+   "操作系统",
+   "OS",
+   "操作系统原理",
+   "操作系统底层",
+   "计算机系统",
+   "系统开发",
+   "应用开发",
+   "计算机工程"
+  ],
+  "keywords_en": [
+   "Operating Systems",
+   "OS",
+   "Operating System Fundamentals",
+   "Computer Systems",
+   "Systems Development",
+   "Application Development",
+   "Computer Engineering"
+  ],
+  "suitable_for_zh": "希望深入学习操作系统及系统与应用开发的学生"
+ },
+ "COMP9312": {
+  "summary_zh": "学习面向大规模图数据的数据库处理、数据结构与算法，以及图深度学习和图神经网络，涵盖基础方法与前沿研究。",
+  "keywords_zh": [
+   "图数据分析",
+   "图分析",
+   "图处理算法",
+   "大规模图处理",
+   "大数据处理",
+   "图数据库",
+   "图深度学习",
+   "图神经网络",
+   "GNN",
+   "稀疏图数据"
+  ],
+  "keywords_en": [
+   "graph analytics",
+   "graph processing",
+   "big graphs",
+   "big data processing",
+   "graph databases",
+   "graph algorithms",
+   "deep learning",
+   "graph neural networks",
+   "GNN"
+  ],
+  "suitable_for_zh": "适合关注图分析、大数据处理或图神经网络的学生。"
+ },
+ "COMP9313": {
+  "summary_zh": "学习大数据管理核心概念与技术，涵盖 Hadoop、MapReduce、Spark，以及流数据、图数据和相似项查找等大规模算法设计。",
+  "keywords_zh": [
+   "大数据管理",
+   "大数据分析",
+   "Hadoop",
+   "MapReduce 编程",
+   "Spark 分布式计算",
+   "数据流挖掘",
+   "图数据处理",
+   "相似项查找",
+   "分布式存储",
+   "Hive/HBase"
+  ],
+  "keywords_en": [
+   "Big Data Management",
+   "Big Data Analytics",
+   "Hadoop",
+   "MapReduce",
+   "Apache Spark",
+   "HDFS",
+   "HBase",
+   "Hive",
+   "Data Stream Mining",
+   "Graph Data Processing"
+  ],
+  "suitable_for_zh": "适合希望学习大数据框架、分布式计算与大规模数据算法的学生。"
+ },
+ "COMP9315": {
+  "summary_zh": "深入学习关系型数据库管理系统的内部结构，以及其中的数据结构、算法与大型数据存储管理的新发展。",
+  "keywords_zh": [
+   "数据库系统实现",
+   "数据库管理系统",
+   "DBMS 内部原理",
+   "关系型数据库",
+   "数据结构与算法",
+   "数据库内核",
+   "Oracle",
+   "SQL Server",
+   "大型数据存储"
+  ],
+  "keywords_en": [
+   "Database Systems Implementation",
+   "Database Management Systems",
+   "DBMS Internals",
+   "Relational Databases",
+   "Data Structures",
+   "Database Algorithms",
+   "Oracle",
+   "SQL Server",
+   "Large Data Repositories"
+  ],
+  "suitable_for_zh": "适合希望学习数据库内核、关系型数据库实现与底层算法的学生"
+ },
+ "COMP9319": {
+  "summary_zh": "学习对 XML、HTML、JSON 等 Web 数据进行紧凑存储、快速搜索与信息检索，并关注移动设备场景。",
+  "keywords_zh": [
+   "Web 数据压缩",
+   "网页数据压缩",
+   "数据压缩",
+   "Web 搜索",
+   "信息检索",
+   "快速搜索",
+   "紧凑存储",
+   "XML",
+   "HTML",
+   "JSON"
+  ],
+  "keywords_en": [
+   "Web data compression",
+   "Web search",
+   "information retrieval",
+   "compact storage",
+   "XML",
+   "HTML",
+   "JSON",
+   "mobile devices"
+  ],
+  "suitable_for_zh": "适合希望学习 Web 数据压缩、存储与搜索的学生"
+ },
+ "COMP9321": {
+  "summary_zh": "学习面向 Web 数据驱动应用的数据服务工程，包括数据接入、清洗转换、聚合分析、服务开发与可视化，并以 Python 实践。",
+  "keywords_zh": [
+   "数据服务工程",
+   "Web 数据服务",
+   "数据接入与采集",
+   "数据清洗与转换",
+   "数据聚合",
+   "数据分析服务",
+   "数据可视化",
+   "Python 编程",
+   "数据驱动应用"
+  ],
+  "keywords_en": [
+   "Data Services Engineering",
+   "Web Services",
+   "Data Ingestion",
+   "Data Curation",
+   "Data Transformation",
+   "Data Analytics",
+   "Data Visualization",
+   "Python",
+   "Data-Driven Applications"
+  ],
+  "suitable_for_zh": "适合希望学习 Web 数据服务开发与数据处理流程的学生"
+ },
+ "COMP9332": {
+  "summary_zh": "学习计算机网络中的路由与交换主题，课程在悉尼校区以线下面授方式开展。",
+  "keywords_zh": [
+   "网络路由",
+   "网络交换",
+   "路由与交换",
+   "计算机网络",
+   "交换网络",
+   "路由技术",
+   "网络通信",
+   "网络工程"
+  ],
+  "keywords_en": [
+   "network routing",
+   "network switching",
+   "routing and switching",
+   "computer networks",
+   "switching networks",
+   "network communication",
+   "network engineering"
+  ],
+  "suitable_for_zh": "适合希望学习网络路由、交换与网络工程的学生"
+ },
+ "COMP9333": {
+  "summary_zh": "学习数据中心、软件定义网络和内容分发网络的协议与架构，并研究网络安全、测量和模型；通过论文研读及项目完成分析、设计与实现。",
+  "keywords_zh": [
+   "高级计算机网络",
+   "网络协议与架构",
+   "数据中心网络",
+   "软件定义网络",
+   "内容分发网络",
+   "网络安全",
+   "网络测量",
+   "网络模型",
+   "网络算法",
+   "网络系统研究项目"
+  ],
+  "keywords_en": [
+   "Advanced Computer Networks",
+   "Data Centre Networks",
+   "Software-Defined Networking",
+   "Content Distribution Networks",
+   "Network Security",
+   "Network Measurement",
+   "Network Models",
+   "Network Protocols",
+   "Network Algorithms",
+   "Networking Systems"
+  ],
+  "suitable_for_zh": "适合希望研究网络协议、系统实现、测量、仿真或网络安全的学生"
+ },
+ "COMP9334": {
+  "summary_zh": "运用数学建模与分析方法研究计算机系统及网络的响应时间，并据此分析和设计具有良好性能的系统。",
+  "keywords_zh": [
+   "容量规划",
+   "计算机系统性能",
+   "网络性能",
+   "响应时间",
+   "性能分析",
+   "数学建模",
+   "数学分析方法",
+   "系统设计"
+  ],
+  "keywords_en": [
+   "capacity planning",
+   "computer systems performance",
+   "network performance",
+   "response time",
+   "performance analysis",
+   "mathematical modelling",
+   "analytical methods",
+   "system design"
+  ],
+  "suitable_for_zh": "适合希望学习系统与网络性能建模、分析及设计的学生。"
+ },
+ "COMP9336": {
+  "summary_zh": "学习无线与移动数据网络的基础理论和前沿技术，并通过移动设备实验开展无线数据包捕获、分析与编程。",
+  "keywords_zh": [
+   "无线网络",
+   "移动网络",
+   "移动通信",
+   "WiFi与无线局域网",
+   "蜂窝网络",
+   "蓝牙",
+   "物联网网络",
+   "无线感知",
+   "无人机辅助网络",
+   "无线数据包分析"
+  ],
+  "keywords_en": [
+   "wireless networking",
+   "mobile data networking",
+   "WiFi",
+   "wireless LAN",
+   "cellular networks",
+   "Bluetooth",
+   "Internet of Things",
+   "wireless sensing",
+   "drone-assisted mobile networks",
+   "wireless packet analysis"
+  ],
+  "suitable_for_zh": "适合希望学习无线通信、移动网络、物联网及无线实验的学生"
+ },
+ "COMP9337": {
+  "summary_zh": "探索固定与无线网络的安全漏洞，学习网络安全基础与进阶议题，重点涵盖互联网架构和协议。",
+  "keywords_zh": [
+   "网络安全",
+   "信息安全",
+   "固定网络安全",
+   "有线网络安全",
+   "无线网络安全",
+   "网络漏洞",
+   "互联网架构",
+   "网络协议",
+   "协议安全"
+  ],
+  "keywords_en": [
+   "network security",
+   "information security",
+   "fixed network security",
+   "wired network security",
+   "wireless network security",
+   "security vulnerabilities",
+   "Internet architecture",
+   "network protocols",
+   "protocol security"
+  ],
+  "suitable_for_zh": "适合关注固定及无线网络安全与互联网协议的学生"
+ },
+ "COMP9414": {
+  "summary_zh": "人工智能基础课程，涵盖智能体、搜索优化、逻辑推理、视觉、语言处理、机器学习、神经网络与强化学习，并使用 Python 实践。",
+  "keywords_zh": [
+   "人工智能",
+   "机器学习",
+   "神经网络",
+   "强化学习",
+   "智能体",
+   "搜索与优化",
+   "知识表示与逻辑推理",
+   "不确定性推理",
+   "计算机视觉",
+   "自然语言处理"
+  ],
+  "keywords_en": [
+   "Artificial Intelligence",
+   "Machine Learning",
+   "Neural Networks",
+   "Reinforcement Learning",
+   "Autonomous Agents",
+   "Optimisation",
+   "Knowledge Representation",
+   "Computer Vision",
+   "Natural Language Processing"
+  ],
+  "suitable_for_zh": "适合希望系统学习人工智能基础及 Python 实践应用的学生"
+ },
+ "COMP9415": {
+  "summary_zh": "学习计算机图形学基础与实践，使用 Unreal Engine 和 Unity 开发 2D、3D 及虚拟现实图形对象与环境。",
+  "keywords_zh": [
+   "计算机图形学",
+   "游戏引擎",
+   "二维与三维图形",
+   "虚拟现实",
+   "光照与反射",
+   "纹理与材质",
+   "着色器",
+   "碰撞检测",
+   "层次建模",
+   "渲染"
+  ],
+  "keywords_en": [
+   "Computer Graphics",
+   "Game Engines",
+   "Unreal Engine",
+   "Unity",
+   "2D and 3D Graphics",
+   "Virtual Reality",
+   "Shaders",
+   "Texture Mapping",
+   "Collision Detection",
+   "Rendering"
+  ],
+  "suitable_for_zh": "适合希望学习图形学及游戏引擎开发的学生"
+ },
+ "COMP9417": {
+  "summary_zh": "学习从数据中建模与挖掘洞见，涵盖回归、分类、近邻、决策树、核方法、神经网络、无监督与集成学习，并重视理论基础和实证评估。",
+  "keywords_zh": [
+   "机器学习",
+   "ML",
+   "数据挖掘",
+   "回归与分类",
+   "最近邻算法",
+   "决策树学习",
+   "核方法",
+   "神经网络",
+   "无监督学习",
+   "集成学习"
+  ],
+  "keywords_en": [
+   "Machine Learning",
+   "Data Mining",
+   "Regression and Classification",
+   "Nearest Neighbour",
+   "Tree Learning",
+   "Kernel Machines",
+   "Neural Networks",
+   "Unsupervised Learning",
+   "Ensemble Learning",
+   "Learning Theory"
+  ],
+  "suitable_for_zh": "适合希望系统学习机器学习理论、算法、编程实践及模型评估的学生"
+ },
+ "COMP9418": {
+  "summary_zh": "深入学习统计机器学习与结构化概率模型，涵盖概率图模型表示、精确与近似推断，以及模型参数和结构学习。",
+  "keywords_zh": [
+   "高级机器学习",
+   "统计机器学习",
+   "概率图模型",
+   "结构化概率模型",
+   "有向图模型",
+   "无向图模型",
+   "精确推断",
+   "近似推断",
+   "参数学习",
+   "结构学习"
+  ],
+  "keywords_en": [
+   "advanced machine learning",
+   "statistical machine learning",
+   "probabilistic graphical models",
+   "structured probabilistic models",
+   "directed graphical models",
+   "undirected graphical models",
+   "exact inference",
+   "approximate inference",
+   "parameter learning",
+   "structure learning"
+  ],
+  "suitable_for_zh": "适合希望学习概率图模型、统计推断与模型学习的学生"
+ },
+ "COMP9434": {
+  "summary_zh": "学习智能体设计与机器人软件架构，通过规划、学习或工程控制选择动作，并在机器人上实现真实智能体架构的部分功能。",
+  "keywords_zh": [
+   "机器人软件架构",
+   "智能体设计",
+   "智能代理",
+   "经典规划",
+   "强化学习",
+   "工程控制",
+   "动作选择",
+   "机器人系统实现",
+   "智能体架构"
+  ],
+  "keywords_en": [
+   "robotic software architecture",
+   "intelligent agent design",
+   "agent architecture",
+   "classical planning",
+   "reinforcement learning",
+   "engineered control",
+   "action selection",
+   "robot systems"
+  ],
+  "suitable_for_zh": "适合希望学习智能体架构与机器人系统工程实现的学生"
+ },
+ "COMP9444": {
+  "summary_zh": "介绍并深入探索神经网络与深度学习的核心原理及实践，理解其如何从数据中学习并解决复杂问题。",
+  "keywords_zh": [
+   "神经网络",
+   "深度学习",
+   "人工智能",
+   "AI",
+   "机器学习",
+   "数据学习",
+   "复杂问题求解",
+   "神经网络实践"
+  ],
+  "keywords_en": [
+   "Neural Networks",
+   "Deep Learning",
+   "Artificial Intelligence",
+   "AI",
+   "Machine Learning",
+   "Data-driven Learning",
+   "Deep Learning Principles",
+   "Deep Learning Practice"
+  ],
+  "suitable_for_zh": "适合希望学习神经网络、深度学习原理与实践的学生"
+ },
+ "COMP9447": {
+  "summary_zh": "聚焦网络安全新兴领域的应用型工作坊，主题可能包括云安全、商用产品密码分析、大型机安全审计与渗透测试。",
+  "keywords_zh": [
+   "网络安全",
+   "信息安全",
+   "安全工程",
+   "云安全",
+   "密码分析",
+   "密码破解",
+   "安全审计",
+   "渗透测试",
+   "大型机安全",
+   "实战工作坊"
+  ],
+  "keywords_en": [
+   "Cyber Security",
+   "Security Engineering",
+   "Cloud Security",
+   "Cryptanalysis",
+   "Commercial Products",
+   "Mainframe Security",
+   "Security Audit",
+   "Penetration Testing",
+   "Applied Workshop"
+  ],
+  "suitable_for_zh": "适合希望学习网络安全前沿主题与实务方法的学生"
+ },
+ "COMP9511": {
+  "summary_zh": "本课程学习人机交互（HCI），关注人与计算机系统之间的交互。",
+  "keywords_zh": [
+   "人机交互",
+   "人机界面",
+   "用户与计算机交互",
+   "交互系统",
+   "HCI",
+   "人与计算机互动"
+  ],
+  "keywords_en": [
+   "Human-Computer Interaction",
+   "Human Computer Interaction",
+   "HCI",
+   "Human-Computer Interface",
+   "User-Computer Interaction",
+   "Interactive Systems"
+  ],
+  "suitable_for_zh": "适合希望学习人机交互与交互系统的学生。"
+ },
+ "COMP9491": {
+  "summary_zh": "学习计算机视觉、语音与语言处理、深度学习及知识表示与推理，并通过小组项目整合多类 AI 技术解决实际或行业问题。",
+  "keywords_zh": [
+   "应用人工智能",
+   "人工智能",
+   "深度学习",
+   "神经网络",
+   "计算机视觉",
+   "语音处理",
+   "自然语言处理",
+   "知识表示与推理",
+   "符号人工智能",
+   "AI项目开发"
+  ],
+  "keywords_en": [
+   "Applied Artificial Intelligence",
+   "Artificial Intelligence",
+   "Deep Learning",
+   "Computer Vision",
+   "Speech Processing",
+   "Language Processing",
+   "Knowledge Representation and Reasoning",
+   "Symbolic AI",
+   "AI Project Development"
+  ],
+  "suitable_for_zh": "适合希望整合多类AI技术并开展实际或行业项目的学生"
+ },
+ "COMP9517": {
+  "summary_zh": "学习计算机从图像和视频中提取高层信息的基本概念，并运用数学、统计及机器学习方法开发真实视觉应用。",
+  "keywords_zh": [
+   "计算机视觉",
+   "机器视觉",
+   "图像识别",
+   "视频分析",
+   "机器学习",
+   "目标识别",
+   "人脸识别",
+   "医学影像",
+   "自动驾驶",
+   "三维建模"
+  ],
+  "keywords_en": [
+   "computer vision",
+   "machine vision",
+   "image recognition",
+   "video analysis",
+   "machine learning",
+   "object recognition",
+   "face recognition",
+   "medical imaging",
+   "autonomous driving",
+   "3D model building"
+  ],
+  "suitable_for_zh": "适合希望学习视觉理论并开发真实图像或视频应用的学生"
+ },
+ "COMP9727": {
+  "summary_zh": "学习推荐系统的基本类型与核心算法，以及支持个性化推荐的机器学习、自然语言处理技术。",
+  "keywords_zh": [
+   "推荐系统",
+   "个性化推荐",
+   "信息过滤",
+   "推荐算法",
+   "机器学习",
+   "神经网络",
+   "自然语言处理",
+   "电商推荐",
+   "社交媒体推荐",
+   "信息过载"
+  ],
+  "keywords_en": [
+   "recommender systems",
+   "personalized recommendation",
+   "information filtering",
+   "recommendation algorithms",
+   "machine learning",
+   "neural networks",
+   "natural language processing",
+   "e-commerce",
+   "social media"
+  ],
+  "suitable_for_zh": "适合希望学习个性化推荐、推荐算法与信息过滤的学生"
+ },
+ "COMP9814": {
+  "summary_zh": "UNSW 工程学院的扩展人工智能课程，授课地点为悉尼；现有信息未提供具体教学主题与内容。",
+  "keywords_zh": [
+   "人工智能",
+   "AI",
+   "扩展人工智能",
+   "计算机科学",
+   "工程学院课程",
+   "悉尼面授",
+   "集中授课"
+  ],
+  "keywords_en": [
+   "Artificial Intelligence",
+   "AI",
+   "Extended Artificial Intelligence",
+   "Computer Science",
+   "Engineering",
+   "In-person Delivery",
+   "Intensive Delivery"
+  ],
+  "suitable_for_zh": "希望学习人工智能相关研究生课程的学生"
+ },
+ "COMP9920": {
+  "summary_zh": "探讨计算机科学与工程中的伦理问题，理解伦理主张和道德判断，并学习构建与评估伦理论证。",
+  "keywords_zh": [
+   "计算机伦理",
+   "工程伦理",
+   "科技伦理",
+   "道德判断",
+   "伦理主张",
+   "伦理问题",
+   "伦理论证",
+   "论证构建",
+   "论证评估"
+  ],
+  "keywords_en": [
+   "computer ethics",
+   "engineering ethics",
+   "technology ethics",
+   "ethical issues",
+   "moral judgements",
+   "ethical claims",
+   "ethical arguments",
+   "argument evaluation"
+  ],
+  "suitable_for_zh": "适合希望理解计算机伦理并提升伦理论证能力的学生"
+ },
+ "GSOE9210": {
+  "summary_zh": "探讨在后果重大、利害攸关的工程情境中，如何选择合适的行动方案与构建决策思路。",
+  "keywords_zh": [
+   "工程决策",
+   "决策结构",
+   "决策方法",
+   "行动方案选择",
+   "高风险决策",
+   "重大后果决策",
+   "决策分析"
+  ],
+  "keywords_en": [
+   "engineering decision-making",
+   "decision structures",
+   "decision analysis",
+   "course of action",
+   "high-stakes decisions",
+   "consequence assessment"
+  ],
+  "suitable_for_zh": "适合希望学习工程决策与行动方案选择的学生。"
+ },
+ "GSOE9220": {
+  "summary_zh": "通过组队实践识别商业机会、验证商业模式，并在导师和创业者分享支持下学习创建与发展初创企业。",
+  "keywords_zh": [
+   "创业",
+   "初创企业",
+   "创业项目",
+   "商业机会识别",
+   "商业模式验证",
+   "创新思维",
+   "团队组建",
+   "导师辅导",
+   "实践式学习"
+  ],
+  "keywords_en": [
+   "startup",
+   "entrepreneurship",
+   "business model validation",
+   "business opportunities",
+   "innovation",
+   "team building",
+   "mentor engagement",
+   "learn-by-doing",
+   "enquiry-based learning"
+  ],
+  "suitable_for_zh": "适合希望实践创业、验证商业创意并组建创业团队的学生"
+ },
+ "MATH5836": {
+  "summary_zh": "学习数据挖掘与机器学习的核心理论及应用，涵盖回归、神经网络、聚类、降维、集成学习和深度学习入门，并使用 Python、R 实践。",
+  "keywords_zh": [
+   "机器学习",
+   "数据挖掘",
+   "线性回归与逻辑回归",
+   "神经网络",
+   "贝叶斯神经网络",
+   "聚类与降维",
+   "集成学习",
+   "深度学习入门",
+   "Python 与 R"
+  ],
+  "keywords_en": [
+   "machine learning",
+   "data mining",
+   "linear and logistic regression",
+   "neural networks",
+   "Bayesian neural networks",
+   "clustering",
+   "dimensionality reduction",
+   "ensemble learning",
+   "deep learning",
+   "Python and R"
+  ],
+  "suitable_for_zh": "适合希望学习机器学习理论、数据分析方法与编程应用的学生"
+ },
+ "MATH5845": {
+  "summary_zh": "学习离散时间序列的平稳与非平稳模型、趋势和季节调整、ARMA建模与预测，并用R分析金融及公共卫生案例。",
+  "keywords_zh": [
+   "时间序列",
+   "时间序列分析",
+   "时间序列预测",
+   "平稳与非平稳模型",
+   "趋势与季节性分析",
+   "自回归移动平均模型",
+   "随机波动率",
+   "长期依赖",
+   "外生变量与干预分析",
+   "R语言"
+  ],
+  "keywords_en": [
+   "Time Series Analysis",
+   "Time Series Forecasting",
+   "Stationary and Non-stationary Models",
+   "Trend and Seasonal Analysis",
+   "ARMA Processes",
+   "Exogenous and Intervention Variables",
+   "Stochastic Volatility",
+   "Long-term Dependence",
+   "Time Series Regression",
+   "R"
+  ],
+  "suitable_for_zh": "适合希望用统计模型和R开展金融或公共卫生时间序列分析的学生。"
+ },
+ "MATH5855": {
+  "summary_zh": "学习应用统计中的多元分析方法，包括主成分、典型相关、聚类、因子与判别分析，并突出计算和数据分析实践。",
+  "keywords_zh": [
+   "多元分析",
+   "应用统计",
+   "主成分分析",
+   "典型相关分析",
+   "聚类分析",
+   "因子分析",
+   "判别分析",
+   "计算统计",
+   "数据分析"
+  ],
+  "keywords_en": [
+   "Multivariate Analysis",
+   "Applied Statistics",
+   "Principal Component Analysis",
+   "Canonical Correlation Analysis",
+   "Cluster Analysis",
+   "Factor Analysis",
+   "Discriminant Analysis",
+   "Computing",
+   "Data Analysis"
+  ],
+  "suitable_for_zh": "适合希望学习多元统计方法与计算数据分析的学生。"
+ },
+ "MATH5905": {
+  "summary_zh": "学习基于最大似然与贝叶斯方法的统计推断，涵盖估计、置信集、假设检验、决策理论、Bootstrap及渐近近似。",
+  "keywords_zh": [
+   "统计推断",
+   "最大似然估计",
+   "贝叶斯方法",
+   "假设检验",
+   "置信区间与置信集",
+   "决策理论",
+   "自助法 Bootstrap",
+   "渐近近似",
+   "鞍点近似",
+   "经验似然"
+  ],
+  "keywords_en": [
+   "statistical inference",
+   "maximum likelihood estimation",
+   "Bayesian methods",
+   "hypothesis testing",
+   "confidence sets",
+   "decision theory",
+   "bootstrap",
+   "asymptotic approximations",
+   "saddlepoint approximation",
+   "empirical likelihood"
+  ],
+  "suitable_for_zh": "适合希望系统学习严格统计推断理论与计算方法的学生。"
+ },
+ "MATH5960": {
+  "summary_zh": "学习贝叶斯推断基础、先验与后验分布、假设检验及模型选择，并用蒙特卡洛、MCMC和 Stan 进行后验计算。",
+  "keywords_zh": [
+   "贝叶斯推断",
+   "贝叶斯统计",
+   "先验与后验分布",
+   "贝叶斯假设检验",
+   "模型选择与模型平均",
+   "层次模型与混合模型",
+   "蒙特卡洛方法",
+   "马尔可夫链蒙特卡洛",
+   "吉布斯采样",
+   "Stan 后验模拟"
+  ],
+  "keywords_en": [
+   "Bayesian inference",
+   "prior and posterior distributions",
+   "Bayesian hypothesis testing",
+   "model choice and model averaging",
+   "hierarchical and mixture models",
+   "Monte Carlo integration",
+   "importance and rejection sampling",
+   "Markov chain Monte Carlo",
+   "Gibbs sampler and Metropolis-Hastings",
+   "Stan posterior simulation"
+  ],
+  "suitable_for_zh": "适合希望学习贝叶斯统计建模与计算方法的学生。"
+ },
+ "COMP9900": {
+  "summary_zh": "通过真实团队项目将计算机科学理论付诸实践，训练编程调试、软件优化、项目管理、报告撰写与演示能力。",
+  "keywords_zh": [
+   "信息技术项目",
+   "计算机科学项目",
+   "软件开发实践",
+   "编程与调试",
+   "软件优化",
+   "团队协作",
+   "项目管理",
+   "算法与数据结构",
+   "项目报告",
+   "成果演示"
+  ],
+  "keywords_en": [
+   "IT Project",
+   "Computer Science Project",
+   "Software Development",
+   "Programming and Debugging",
+   "Software Optimization",
+   "Team Collaboration",
+   "Project Management",
+   "Algorithms and Data Structures",
+   "Project Reporting",
+   "Presentation Skills"
+  ],
+  "suitable_for_zh": "适合希望通过团队项目提升软件实践与项目管理能力的学生"
+ },
+ "GSOE9010": {
+  "summary_zh": "培养工程研究项目所需的研究与沟通能力，涵盖选题、项目管理、文献检索与评价、研究方法、学术写作和汇报。",
+  "keywords_zh": [
+   "工程研究技能",
+   "研究项目管理",
+   "研究选题",
+   "文献检索",
+   "文献批判性评价",
+   "工程研究方法",
+   "学术写作",
+   "研究汇报",
+   "学术诚信"
+  ],
+  "keywords_en": [
+   "research skills",
+   "research project management",
+   "research topic formulation",
+   "literature search",
+   "critical literature evaluation",
+   "engineering research methods",
+   "academic writing",
+   "research presentation",
+   "academic integrity"
+  ],
+  "suitable_for_zh": "适合希望提升工程研究项目、学术写作与汇报能力的研究生"
+ },
+ "GSOE9011": {
+  "summary_zh": "培养工程、计算机与食品科学研究生的研究技能，支持产品开发、技术选择、流程管理及新知识发现，并强化终身学习能力。",
+  "keywords_zh": [
+   "研究技能",
+   "科研能力",
+   "工程研究",
+   "研究生科研",
+   "产品开发",
+   "技术选择",
+   "流程管理",
+   "终身学习",
+   "在线课程"
+  ],
+  "keywords_en": [
+   "research skills",
+   "postgraduate research",
+   "engineering research",
+   "product development",
+   "technology selection",
+   "process management",
+   "lifelong learning",
+   "online delivery"
+  ],
+  "suitable_for_zh": "希望提升科研与终身学习能力的工程、计算机及食品科学研究生"
+ },
+ "COMP9991": {
+  "summary_zh": "面向高成就学生的硕士研究项目，开展理论或应用研究，通过算法改进、方法组合或技术迁移推动现有水平，并以实验比较方案。",
+  "keywords_zh": [
+   "研究项目",
+   "硕士研究",
+   "科研实践",
+   "算法改进",
+   "算法组合",
+   "技术应用",
+   "实验研究",
+   "理论研究",
+   "前沿研究",
+   "方案比较"
+  ],
+  "keywords_en": [
+   "research project",
+   "Masters research",
+   "state of the art",
+   "algorithm improvement",
+   "algorithm combination",
+   "applied research",
+   "theoretical research",
+   "experimental evaluation",
+   "comparative experiments"
+  ],
+  "suitable_for_zh": "希望开展真实科研、算法创新与实验验证的高成就硕士生"
+ },
+ "COMP9992": {
+  "summary_zh": "面向 MIT（8543）学生的后续研究项目，在导师指导下完成工作量相当于一门标准课程的项目。",
+  "keywords_zh": [
+   "研究项目",
+   "科研项目",
+   "研究课题",
+   "导师指导",
+   "信息技术硕士",
+   "MIT 8543",
+   "项目实践",
+   "COMP9991 后续课程"
+  ],
+  "keywords_en": [
+   "Research Project",
+   "Supervised Project",
+   "MIT 8543",
+   "COMP9991",
+   "Project Work",
+   "Independent Research",
+   "Faculty of Engineering",
+   "Information Technology"
+  ],
+  "suitable_for_zh": "COMP9991 成绩至少75分、拟继续研究项目的 MIT 学生"
+ },
+ "COMP9993": {
+  "summary_zh": "面向 MIT 项目末学期学生的扩展研究项目，在导师指导下完成相当于两门标准课程工作量的项目。",
+  "keywords_zh": [
+   "研究项目",
+   "科研课题",
+   "计算机研究",
+   "独立研究",
+   "导师指导项目",
+   "硕士研究项目",
+   "毕业项目",
+   "扩展项目"
+  ],
+  "keywords_en": [
+   "Research Project",
+   "Independent Research",
+   "Supervised Project",
+   "MIT Research",
+   "Computing Research",
+   "Master's Project",
+   "Extended Project",
+   "Capstone Project"
+  ],
+  "suitable_for_zh": "适合符合成绩条件、希望在MIT末学期完成扩展研究项目的学生"
+ }
+}
