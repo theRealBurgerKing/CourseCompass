@@ -209,4 +209,30 @@ https://frontend-pink-eight-23.vercel.app/auth/callback
 只拼进用于检索的文本；给 LLM 的 context 仍是课程原始数据，避免把生成内容当成事实。
 修改课程数据或增强内容后需重建索引：`python -m scripts.enrich_courses && python -m scripts.build_index`。
 
-**离线评测**：`python -m eval.run_eval` 在 33 个人工标注的问题上计算召回率（`eval/retrieval_cases.json`）。
+## 离线评测
+
+评测集 `backend/eval/cases.json`（53 条，手工标注）：每条含 `must`（核心课程）、`acceptable`（也算相关）、`constraints`（学期、课程代码）、`key_points`（回答必须覆盖的事实）。
+运行时会先校验标注与课程数据是否一致（课程是否存在、学期是否匹配）。
+
+```bash
+cd backend
+python -m eval.test_metrics                 # 指标与评测集的单元测试
+python -m eval.run_eval --retrieval-only    # 检索端，不调用评判模型，几乎免费
+python -m eval.run_eval --full              # 加上生成与 LLM 评判（需要 JUDGE_API_KEY）
+# 可选：--out FILE 保存结果，--compare PREV.json 对比上次，--category/--limit 只跑一部分，--no-cache 不用缓存
+```
+
+| 端 | 指标 | 含义 |
+|---|---|---|
+| 检索 | **Recall** | must 课程中被召回的比例 |
+| 检索 | **Precision** | 返回课程中属于 must 或 acceptable 的比例；同时给出该 k 下的理论上限 `precision_ceiling` |
+| 检索 | **MRR** | 第一个 must 课程排名的倒数（用户直接写出课程代码的用例固定排第一，不计入） |
+| 检索 | **Constraint Compliance** | `term_ok`：返回课程是否都满足学期；`code_ok`：用户写出的课程代码是否都返回；`answer_term_ok`：回答里推荐的课程是否都满足学期 |
+| 生成 | `oos_code_rate`（诊断） | 回答里的课程代码有多少在给 LLM 的上下文文本中完全没出现过 |
+| 生成 | **Faithfulness** | 回答中的**事实断言**有多少被给 LLM 的上下文支持。建议、难度评价等观点类断言不计分，另报 `opinion_rate` |
+| 生成 | **Context Recall** | `key_points` 中有多少能仅凭检索到的上下文推出 |
+
+生成端的评判模型与应用模型分开配置（`JUDGE_API_KEY` / `JUDGE_BASE_URL` / `JUDGE_MODEL`，默认 DeepSeek `deepseek-flash`，调用时关闭思考模式），评判 key 不会回退到 `OPENAI_API_KEY`。
+解析结果、生成的回答和评判结果缓存在 `backend/eval/.cache/`，改动后重跑只为变化的部分付费。
+`eval/baseline_retrieval.json` 是改造前系统（commit `221b409`）在同一套检索指标下的结果，`eval/current_full.json` 是当前系统的完整评测（含回答与评判明细），可用 `--compare` 对比。
+

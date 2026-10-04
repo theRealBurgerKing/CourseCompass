@@ -1,0 +1,2536 @@
+{
+ "meta": {
+  "date": "2026-10-04 23:46",
+  "mode": "full",
+  "n_cases": 53,
+  "n_errors": 0,
+  "chat_model": "gpt-5.6-sol",
+  "parser_model": null,
+  "embedding_model": "text-embedding-3-small",
+  "judge_model": "deepseek-flash"
+ },
+ "summary": {
+  "ALL": {
+   "recall": 0.9858490566037735,
+   "precision": 0.4322327044025157,
+   "precision_ceiling": 0.4723270440251571,
+   "mrr": 0.972972972972973,
+   "term_ok": 1.0,
+   "code_ok": 1.0,
+   "avg_docs": 6.471698113207547,
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.005952380952380952,
+   "faithfulness": 0.9984027153838474,
+   "opinion_rate": 0.2073425586726857,
+   "context_recall": 0.9905660377358491
+  },
+  "topic": {
+   "recall": 1.0,
+   "precision": 0.46153846153846156,
+   "precision_ceiling": 0.5240384615384616,
+   "mrr": 0.9807692307692307,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 0.9985754985754985,
+   "opinion_rate": 0.22690174792345996,
+   "context_recall": 1.0
+  },
+  "code_lookup": {
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.10256410256410257,
+   "context_recall": 1.0
+  },
+  "compare": {
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.3135567880395467,
+   "context_recall": 1.0
+  },
+  "detail": {
+   "recall": 1.0,
+   "precision": 0.3142857142857142,
+   "precision_ceiling": 0.3142857142857142,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.2857142857142856,
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.1352980352980353,
+   "context_recall": 1.0
+  },
+  "term_filter": {
+   "recall": 0.90625,
+   "precision": 0.515625,
+   "precision_ceiling": 0.578125,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 7.125,
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 0.9940476190476191,
+   "opinion_rate": 0.18168891312871652,
+   "context_recall": 0.9375
+  },
+  "multi_turn": {
+   "recall": 1.0,
+   "precision": 0.3958333333333333,
+   "precision_ceiling": 0.3958333333333333,
+   "mrr": 0.8333333333333334,
+   "term_ok": 1.0,
+   "code_ok": 1.0,
+   "avg_docs": 5.25,
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0625,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.20340909090909093,
+   "context_recall": 1.0
+  }
+ },
+ "rows": [
+  {
+   "id": "topic-ml",
+   "category": "topic",
+   "q": "推荐几门机器学习相关的课程",
+   "parsed": {
+    "english_query": "machine learning",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9417",
+    "MATH5836",
+    "COMP9418",
+    "COMP9727",
+    "COMP9414",
+    "COMP9444",
+    "COMP9517",
+    "COMP9491"
+   ],
+   "recall": 1.0,
+   "precision": 1.0,
+   "precision_ceiling": 1.0,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "以下几门都与机器学习密切相关，可按学习阶段和兴趣选择：\n\n### 基础与核心课程\n- **COMP9417 Machine Learning**\n  - **工程学院**；T1、T2、T3 开设\n  - 系统学习回归、分类、决策树、核方法、神经网络、无监督学习、集成学习与学习理论。\n  - 理论、算法和编程实践较均衡，适合作为机器学习主干课程，**优先推荐**。\n\n- **MATH5836 Data and Machine Learning**\n  - **理学院**；T3 开设\n  - 从统计与数据分析角度介绍回归、聚类、降维、集成学习、贝叶斯神经网络和深度学习，并使用 Python 和 R。\n  - 更适合希望强化**统计建模和数据科学工具**的学生。\n\n- **COMP9414 Artificial Intelligence**\n  - **工程学院**；T1、T2、T3 开设\n  - 覆盖搜索、优化、逻辑、知识表示、不确定性推理、机器学习、神经网络和强化学习。\n  - 广度大于深度，适合想先建立完整 AI 知识框架的学生。\n\n### 进阶课程\n- **COMP9418 Advanced Machine Learning**\n  - **工程学院**；T2 开设\n  - 聚焦概率图模型、精确与近似推断，以及模型参数和结构学习。\n  - 理论性较强，适合已经具备机器学习基础、希望深入概率建模的学生。\n\n- **COMP9444 Neural Networks and Deep Learning**\n  - **工程学院**；T2、T3 开设\n  - 深入学习神经网络和深度学习的原理与实践。\n  - 适合希望向生成式 AI、视觉或其他深度学习方向发展的学生。\n\n### 应用方向课程\n- **COMP9517 Computer Vision**\n  - **工程学院**；T1、T2、T3 开设\n  - 将数学、统计及机器学习方法应用于图像和视频分析，并包含真实应用开发。\n  - 适合关注自动驾驶、医学影像、识别或视觉 AI 的学生。\n\n- **COMP9727 Recommender Systems**\n  - **工程学院**；通常在 T2，但**不定期开设**\n  - 涵盖推荐算法，以及支持推荐系统的机器学习和自然语言处理技术。\n  - 适合电商、社交媒体和个性化系统方向；课程建议具备神经网络、机器学习和基础统计知识。\n\n- **COMP9491 Applied Artificial Intelligence**\n  - **工程学院**；当前上下文未提供明确开课学期\n  - 以小组项目为核心，综合计算机视觉、语言处理、深度学习和知识表示等技术解决实际或行业问题。\n  - 适合已有 AI 基础、希望积累综合项目经验的学生。\n\n### 推荐选课路径\n1. **入门路线**：`COMP9414 → COMP9417`\n2. **深度学习路线**：`COMP9417 → COMP9444 → COMP9517`\n3. **理论路线**：`COMP9417 或 MATH5836 → COMP9418`\n4. **应用路线**：`COMP9417 → COMP9727 / COMP9517 → COMP9491`\n\n如果只能先选一门，通常推荐 **COMP9417**；如果更偏统计与数据科学，可考虑 **MATH5836**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.36585365853658536,
+   "n_facts": 26,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9417 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9417 ... Offering Terms: Term 1, Term 2, Term 3"
+    },
+    {
+     "point": "COMP9418 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP9418 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-dl",
+   "category": "topic",
+   "q": "我想学深度学习",
+   "parsed": {
+    "english_query": "deep learning neural networks",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9444",
+    "MATH5836",
+    "COMP9417",
+    "COMP9312",
+    "COMP9414",
+    "COMP9491",
+    "COMP9727",
+    "COMP9418"
+   ],
+   "recall": 1.0,
+   "precision": 0.625,
+   "precision_ceiling": 0.75,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你的目标是系统学习深度学习，**首选 COMP9444 Neural Networks and Deep Learning**。\n\n### 推荐课程\n\n- **COMP9444 Neural Networks and Deep Learning**\n  - 深入学习神经网络与深度学习的原理和实践，是最直接匹配你目标的课程。\n  - **开课学期：Term 2、Term 3**\n  - **院系：工程学院**\n  - **学分：6 UOC**\n\n### 按基础选择学习路径\n\n1. **机器学习基础较弱**\n   - 先修 **COMP9417 Machine Learning**：涵盖回归、分类、核方法、神经网络、集成学习和学习理论。\n   - 再修 **COMP9444**。\n   - COMP9417 在 **Term 1、Term 2、Term 3** 均开设，属于工程学院。\n\n2. **希望先全面了解人工智能**\n   - 可先修 **COMP9414 Artificial Intelligence**，内容包括搜索、逻辑、机器学习、神经网络、视觉、自然语言处理和强化学习。\n   - 之后修 **COMP9444**。\n   - COMP9414 在 **Term 1、Term 2、Term 3** 开设，属于工程学院。\n\n3. **偏统计与数据分析**\n   - 可考虑 **MATH5836 Data and Machine Learning**，覆盖回归、聚类、降维、神经网络、贝叶斯神经网络及深度学习入门，并使用 Python 和 R。\n   - 该课仅在 **Term 3** 开设，属于理学院。\n   - 相比之下，MATH5836 的范围更广，而 **COMP9444 对深度学习更专注**。\n\n### 后续进阶方向\n\n- 图神经网络：**COMP9312 Data Analytics for Graphs**，Term 2、Term 3。\n- AI 综合项目：**COMP9491 Applied Artificial Intelligence**，以团队项目整合深度学习、视觉、语言处理和符号 AI；当前上下文未提供具体开课学期。\n- 推荐系统：**COMP9727 Recommender Systems**，Term 2，但不保证每年开设；课程说明建议具备神经网络、机器学习和基础统计知识。\n\n**简要建议：**如果你已有 Python、线性代数、概率统计和基础机器学习经验，可直接优先选 **COMP9444**；否则建议走 **COMP9417 → COMP9444**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2222222222222222,
+   "n_facts": 21,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9444 在 Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9444 ... Offering Terms: Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-nlp",
+   "category": "topic",
+   "q": "有没有讲自然语言处理的课",
+   "parsed": {
+    "english_query": "natural language processing NLP computational linguistics",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6713",
+    "COMP9414",
+    "COMP9491",
+    "COMP9727",
+    "COMP9312",
+    "COMP9021",
+    "COMP4141",
+    "COMP9164"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.625,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "有，以下课程涉及自然语言处理（NLP），均属于**工程学院（Faculty of Engineering）**，每门 **6 UOC**：\n\n### 最直接相关\n- **COMP6713 Natural Language Processing**\n  - **开课学期：Term 1**\n  - 专门讲用计算方法处理文本，是最聚焦自然语言处理的课程。\n  - 如果你希望系统学习文本处理与 NLP，优先考虑这门课。\n\n### 也涉及 NLP 的课程\n- **COMP9414 Artificial Intelligence**\n  - **开课学期：Term 1、Term 2、Term 3**\n  - AI 基础课，涵盖语言处理、机器学习、神经网络、逻辑和强化学习等，并使用 Python。\n  - 适合想先建立广泛 AI 基础的学生。\n\n- **COMP9491 Applied Artificial Intelligence**\n  - **开课学期：上下文未注明**\n  - 涉及语音与语言处理、深度学习、计算机视觉及知识表示。\n  - 以小组项目为主要考核，强调综合多种 AI 技术解决实际或行业问题，更偏高级应用。\n\n- **COMP9727 Recommender Systems**\n  - **通常标注 Term 2，但开设不规律，不保证每年或每学期开课**\n  - 会讲用于推荐系统的机器学习和 NLP 技术。\n  - 建议具备神经网络、机器学习和基础统计知识。\n\n如果你主要想学 NLP，首选 **COMP6713**；如果 AI 基础较弱，可先修 **COMP9414**。如果 Python 编程基础不足，可以先考虑全年三个学期均开设的 **COMP9021 Principles of Programming**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.17073170731707318,
+   "n_facts": 34,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6713 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6713 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "topic-cv",
+   "category": "topic",
+   "q": "计算机视觉相关的课程",
+   "parsed": {
+    "english_query": "computer vision image processing visual recognition",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9517",
+    "COMP9491",
+    "COMP9414",
+    "COMP9312",
+    "COMP9417",
+    "COMP9020",
+    "COMP6713",
+    "COMP9313"
+   ],
+   "recall": 1.0,
+   "precision": 0.375,
+   "precision_ceiling": 0.625,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你对**计算机视觉**感兴趣，可以重点考虑以下课程：\n\n### 核心课程\n\n- **COMP9517 Computer Vision**\n  - 最直接相关的计算机视觉课程，涵盖图像与视频中的高层信息提取、数学与统计模型、机器学习方法，以及真实视觉应用开发。\n  - 应用包括目标识别、医学影像、自动驾驶、人脸识别、监控和三维建模等。\n  - **开课学期：Term 1、Term 2、Term 3**\n  - **所属：工程学院**\n  - 推荐给希望系统学习计算机视觉并完成实际应用项目的学生。\n\n### 建议的基础课程\n\n- **COMP9417 Machine Learning**\n  - 学习回归、分类、核方法、神经网络、无监督学习和集成学习等，是进一步学习计算机视觉的重要机器学习基础。\n  - **开课学期：Term 1、Term 2、Term 3**\n  - **所属：工程学院**\n\n- **COMP9414 Artificial Intelligence**\n  - AI 入门课程，内容包括机器学习、神经网络、视觉、强化学习、逻辑与知识表示等。\n  - 比 **COMP9517** 覆盖面更广，但计算机视觉深度较低，适合先建立整体 AI 基础。\n  - **开课学期：Term 1、Term 2、Term 3**\n  - **所属：工程学院**\n\n- **COMP9020 Foundations of Computer Science**\n  - 强化离散数学、逻辑、算法分析与程序正确性，有助于理解视觉算法背后的数学和计算基础。\n  - **开课学期：Term 1、Term 2、Term 3**\n  - **所属：工程学院**\n\n### 进阶应用课程\n\n- **COMP9491 Applied Artificial Intelligence**\n  - 涉及计算机视觉、深度学习、语言处理及知识表示，重点是小组项目，需要综合多种 AI 技术解决实际或行业问题。\n  - 适合已经具备 AI 或机器学习基础、希望开发综合视觉应用的学生。\n  - **开课学期：当前上下文未提供**\n  - **所属：工程学院**\n\n### 推荐学习顺序\n\n如果基础较少，可考虑：\n\n**COMP9020 → COMP9414 → COMP9417 → COMP9517 → COMP9491**\n\n如果已经具备数学、Python 和机器学习基础，可以优先选择 **COMP9517**；如果希望先补充视觉所需的机器学习理论，则先修读 **COMP9417** 更合适。以上课程均为 **6 UOC**，校区为 Sydney。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2222222222222222,
+   "n_facts": 28,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9517 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9517 ... Offering Terms: Term 1, Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-security",
+   "category": "topic",
+   "q": "想学网络安全，有哪些课",
+   "parsed": {
+    "english_query": "cybersecurity network security information security",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6441",
+    "COMP6841",
+    "COMP9337",
+    "COMP6447",
+    "COMP6448",
+    "COMP9333",
+    "COMP6453",
+    "COMP6443"
+   ],
+   "recall": 1.0,
+   "precision": 0.875,
+   "precision_ceiling": 1.0,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你想学网络安全，UNSW 工程学院有以下相关课程可选，均为 **6 UOC、Sydney 校区**：\n\n### 入门与安全工程\n- **COMP6441 Security Engineering and Cyber Security**（Term 2）  \n  网络安全入门课，涵盖安全工程、攻击者思维、系统失效案例及安全系统的设计、监控与维护。适合作为起点。\n- **COMP6841 Extended Security Engineering and Cyber Security**（Term 2）  \n  同样聚焦安全工程与网络安全基础，属于 Extended 版本。课程简介与 **COMP6441** 高度相似，可根据培养计划和课程要求选择。\n\n### 攻防与漏洞分析\n- **COMP6447 System and Software Security Assessment**（Term 3）  \n  学习漏洞识别、安全评估、漏洞利用原理及防御方法，偏系统和软件攻防。\n- **COMP6443 Web Application Security and Testing**（Term 1）  \n  聚焦 Web 应用漏洞与安全测试，适合对 Web 开发、渗透测试和应用安全感兴趣的学生。\n\n### 网络安全\n- **COMP9337 Securing Fixed and Wireless Networks**（Term 1）  \n  研究有线与无线网络的安全漏洞，重点涉及互联网架构、协议及高级网络安全问题。\n- **COMP9333 Advanced Computer Networks**（开课学期未注明）  \n  包括网络安全、数据中心网络、软件定义网络和内容分发网络，并要求阅读研究论文和完成研究项目。更适合希望深入网络研究或已有网络基础的学生。\n\n### 密码学\n- **COMP6453 Applied Cryptography**（Term 1）  \n  学习加密算法、密码分析、加密与认证技术，以及如何在系统、网络和数据保护中正确应用密码学。\n\n### 高级专题\n- **COMP6448 Security Engineering Masterclass**（不定期开设）  \n  由访问专家讲授高级网络安全专题，可能采用集中授课或常规面授形式；具体时间和主题取决于讲师，且**选课需要任课教师同意**。\n\n### 建议学习路线\n- **零基础/想全面入门**：**COMP6441** 或 **COMP6841**\n- **偏 Web 安全**：**COMP6441 → COMP6443**\n- **偏系统攻防**：**COMP6441 → COMP6447**\n- **偏网络安全**：**COMP9337 → COMP9333**\n- **偏密码学与安全理论**：**COMP6453**\n- **希望接触高级前沿专题**：完成一定基础后考虑 **COMP6448**\n\n如果只选一门作为起点，优先考虑 Term 2 的 **COMP6441**；如果目标是实用渗透测试，可再搭配 Term 1 的 **COMP6443** 和 Term 3 的 **COMP6447**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.21052631578947367,
+   "n_facts": 30,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6441 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6441 ... Offering Terms: Term 2"
+    },
+    {
+     "point": "COMP6443 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6443 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "topic-db",
+   "category": "topic",
+   "q": "数据库相关的课程",
+   "parsed": {
+    "english_query": "database databases database systems data management SQL relational databases",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9311",
+    "COMP9315",
+    "COMP9313",
+    "COMP9312",
+    "COMP9243",
+    "COMP9321",
+    "COMP4121",
+    "COMP9024"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.625,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "UNSW 数据库及相关课程可按方向分为：\n\n### 数据库核心课程\n- **COMP9311 Database Systems（数据库系统）**\n  - 内容：关系数据库管理系统（RDBMS）的基本原理与管理。\n  - 适合：希望学习数据库基础、关系模型及数据库应用的学生。\n  - 开课：**Term 1、Term 2、Term 3**\n  - 学分：6 UOC\n\n- **COMP9315 Database Systems Implementation（数据库系统实现）**\n  - 内容：深入 DBMS 内部结构，包括数据库中的数据结构与算法，并涉及大型数据仓库管理的新发展。\n  - 适合：希望理解 Oracle、SQL Server 等数据库系统底层实现的学生。\n  - 开课：**Term 1**\n  - 学分：6 UOC\n\n### 大数据与图数据库相关课程\n- **COMP9313 Big Data Management（大数据管理）**\n  - 内容：Hadoop、MapReduce、YARN、HDFS、HBase、Hive、Spark，以及面向大规模数据集的算法设计。\n  - 适合：对分布式数据处理和大数据工程感兴趣的学生。\n  - 开课：**Term 2、Term 3**\n  - 学分：6 UOC\n\n- **COMP9312 Data Analytics for Graphs（图数据分析）**\n  - 内容：大型图数据的数据结构与算法、图处理、深度学习和图神经网络。\n  - 适合：对图数据库、知识图谱、社交网络分析或图神经网络感兴趣的学生。\n  - 开课：**Term 2、Term 3**\n  - 学分：6 UOC\n\n### 数据服务与分布式系统方向\n- **COMP9321 Data Services Engineering（数据服务工程）**\n  - 内容：使用 Python 构建面向 Web 的数据服务，包括数据获取、清洗、转换、聚合、分析和可视化。\n  - 适合：希望把数据库与后端服务、数据工程结合起来的学生。\n  - 开课：**Term 1、Term 3**\n  - 学分：6 UOC\n\n- **COMP9243 Distributed Systems（分布式系统）**\n  - 内容：分布式文件系统、并发控制、容错、恢复机制及分布式事务等。\n  - 适合：希望理解分布式数据库底层系统机制的学生。\n  - 注意：**不定期开设，不保证每年或每学期开课**。\n  - 学分：6 UOC\n\n以上课程均属于 **UNSW 工程学部（Faculty of Engineering）**。如果从零开始，建议先选 **COMP9311**；之后可根据方向选择 **COMP9315**（数据库内核）、**COMP9313**（大数据）、**COMP9312**（图数据）或 **COMP9321**（数据服务工程）。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.21052631578947367,
+   "n_facts": 30,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9311 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9311 ... Offering Terms: Term 1, Term 2, Term 3"
+    },
+    {
+     "point": "COMP9315 在 Term 1 开设",
+     "supported": true,
+     "evidence": "COMP9315 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "topic-bigdata",
+   "category": "topic",
+   "q": "想学大数据处理",
+   "parsed": {
+    "english_query": "big data processing distributed data processing large-scale data analytics",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9313",
+    "COMP9312",
+    "COMP9321",
+    "COMP9311",
+    "COMP9315",
+    "MATH5836",
+    "COMP9243",
+    "COMP6713"
+   ],
+   "recall": 1.0,
+   "precision": 0.75,
+   "precision_ceiling": 0.875,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你的目标是学习**大数据处理**，首选：\n\n### **COMP9313 Big Data Management**\n- **内容**：Hadoop、MapReduce、YARN、HDFS、HBase、Hive、Spark，以及面向大规模数据集的算法设计，包括流数据挖掘、图数据处理和相似项搜索。\n- **适合**：希望掌握工业界常见的大数据框架，以及分布式数据处理实践的学生。\n- **开课**：Term 2、Term 3\n- **学分**：6 UOC\n- **院系**：工程学院\n\n可根据基础和方向搭配：\n\n- **数据库基础不足**：先修或搭配 **COMP9311 Database Systems**，学习关系数据库管理系统；Term 1、2、3 均开课。\n- **偏图数据与图神经网络**：选择 **COMP9312 Data Analytics for Graphs**，涵盖大图处理、图算法和图神经网络；Term 2、3 开课。\n- **偏数据服务开发**：选择 **COMP9321 Data Services Engineering**，使用 Python 构建数据采集、清洗、分析和可视化服务；Term 1、3 开课。\n- **想深入系统底层**：可关注 **COMP9243 Distributed Systems**，但该课开设不规律，不能保证每年或每学期开课。\n\n**推荐路线：**  \n**COMP9311 → COMP9313 → COMP9312**。如果你已经熟悉 SQL、数据库和 Python，可以直接优先考虑 **COMP9313**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2916666666666667,
+   "n_facts": 17,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9313 在 Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9313 ... Offering Terms: Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-blockchain",
+   "category": "topic",
+   "q": "区块链相关课程",
+   "parsed": {
+    "english_query": "blockchain distributed ledger smart contracts cryptocurrency",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6452",
+    "COMP6451",
+    "COMP9243",
+    "COMP9313",
+    "COMP4121",
+    "COMP9333",
+    "COMP9315",
+    "COMP9154"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "UNSW 的区块链相关课程主要有：\n\n### 直接相关课程\n\n- **COMP6451 Cryptocurrency and Distributed Ledger Technologies**\n  - **6 UOC，工程学院，Sydney 校区**\n  - 内容涵盖加密货币、分布式账本技术、安全基础设施、金融交易及商业信任关系。\n  - 更适合希望系统理解**区块链底层原理、加密货币和分布式账本机制**的学生。\n  - 当前上下文未注明具体开课学期，选课前需查询当年课程安排。\n\n- **COMP6452 Software Architecture for Blockchain Applications**\n  - **6 UOC，工程学院，Term 2，Sydney 校区**\n  - 重点是判断区块链是否适合特定应用、区块链在软件架构中的作用、应用设计、架构权衡以及设计模式。\n  - 更适合关注**区块链应用开发与软件架构设计**的学生。\n  - 该课为**不定期开设**，不保证每年或每学期运行。\n\n### 可作为技术基础的课程\n\n- **COMP9243 Distributed Systems**\n  - 涵盖客户端—服务器、RPC、分布式文件系统、一致性、并发控制、容错和分布式事务。\n  - 对理解区块链的分布式系统基础很有帮助。\n  - 不定期开设，具体学期未注明。\n\n- **COMP9154 Foundations of Concurrency**\n  - 学习线程、锁、信号量、消息传递、RPC，以及程序安全性和活性证明。\n  - 适合补充区块链系统所需的并发基础；具体开课学期未注明。\n\n### 选择建议\n\n- 想学**加密货币与区块链底层机制**：优先选 **COMP6451**。\n- 想做**区块链应用开发或架构设计**：优先选 **COMP6452**。\n- 想深入理解**分布式一致性、容错与事务**：搭配 **COMP9243**。\n- 并发基础较弱：可先学习 **COMP9154**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.32,
+   "n_facts": 17,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6452 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6452 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-os",
+   "category": "topic",
+   "q": "操作系统方向有什么课",
+   "parsed": {
+    "english_query": "operating systems systems programming kernel concurrency virtualization distributed operating systems",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9243",
+    "COMP9283",
+    "COMP9201",
+    "COMP9242",
+    "COMP6752",
+    "COMP9211",
+    "COMP9164",
+    "COMP9154"
+   ],
+   "recall": 1.0,
+   "precision": 0.625,
+   "precision_ceiling": 0.625,
+   "mrr": 0.5,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "UNSW 操作系统方向可重点关注以下课程，均属于**工程学院**、每门 **6 UOC**：\n\n### 核心操作系统课程\n- **COMP9201 Operating Systems**  \n  系统学习操作系统原理与实现，适合作为该方向的基础课。  \n  **开课：Term 2**；面授，每周约 5 小时。  \n  与 **COMP9283、COMP3231、COMP3891** 为等价课程，不能重复修读。\n\n- **COMP9283 Extended Operating Systems**  \n  同样深入讲解底层操作系统，课程内容与 **COMP9201** 基本对应。  \n  **开课：Term 2**；面授，每周约 5 小时。  \n  与 **COMP9201、COMP3231、COMP3891** 等价，通常二选一即可。\n\n- **COMP9242 Advanced Operating Systems**  \n  关注现代操作系统技术、实现方法与研究问题，深度和研究导向更强。  \n  **开课：Term 3**；提供面授或多模式教学，每周约 5 小时。  \n  适合已经具备操作系统基础、希望深入系统研究或底层开发的学生。\n\n### 分布式与并发方向\n- **COMP9243 Distributed Systems**  \n  涵盖客户端—服务器、RPC、分布式共享内存、分布式文件系统、进程迁移、并发控制、容错和分布式事务等。  \n  该课**不定期开设，不保证每年或每学期开课**，具体学期未注明。\n\n- **COMP9154 Foundations of Concurrency**  \n  学习线程、锁、信号量、monitor、RPC、消息传递，以及安全性和活性证明，兼顾编程与理论。  \n  当前上下文中**未注明开课学期**；多模式教学，每周约 4 小时。\n\n- **COMP6752 Modelling Concurrent Systems**  \n  偏理论和研究，比较不同并发系统模型，并从数学、计算和哲学角度分析其设计。  \n  适合计划从事形式化方法或系统建模研究的学生；当前**未注明开课学期**。\n\n### 相关基础课程\n- **COMP9211 Computer Architecture**  \n  学习硬件与软件之间的接口，是理解操作系统底层机制的重要补充。  \n  **开课：Term 2**；面授或多模式教学，每周约 6 小时。\n\n- **COMP9164 Concepts of Programming Languages**  \n  涵盖并发与并行编程、内存管理、类型系统和程序语言语义，作业使用 Haskell。  \n  **开课：Term 3**；面授或多模式教学，每周约 5 小时。\n\n### 推荐选课路径\n如果你希望系统学习，可以考虑：\n\n1. **Term 2：COMP9201 或 COMP9283**（二选一）  \n2. **Term 3：COMP9242**  \n3. 再根据兴趣选择：  \n   - 分布式系统：**COMP9243**  \n   - 并发编程与验证：**COMP9154**  \n   - 理论建模/科研：**COMP6752**  \n   - 补充硬件基础：**COMP9211**\n\n其中最直接的操作系统主线是：**COMP9201/COMP9283 → COMP9242 → COMP9243**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.1702127659574468,
+   "n_facts": 39,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9201 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP9201 ... Offering Terms: Term 2"
+    },
+    {
+     "point": "COMP9242 在 Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9242 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-crypto",
+   "category": "topic",
+   "q": "想学密码学",
+   "parsed": {
+    "english_query": "cryptography cryptographic systems information security",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6453",
+    "COMP6841",
+    "COMP6441",
+    "COMP9337",
+    "COMP9447",
+    "COMP6447",
+    "COMP6448",
+    "COMP6131"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.625,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你想系统学习密码学，首选：\n\n### **COMP6453 Applied Cryptography**\n- **开课学期**：Term 1\n- **学分**：6 UOC\n- **所属院系**：工程学院（Faculty of Engineering）\n- **校区与授课**：Sydney，线下面授，每周或隔周约 5 小时\n- **主要内容**：\n  - 密码算法与密码分析\n  - 加密与认证技术的理论基础\n  - 如何在计算机系统、网络和数据保护中正确应用密码学\n\n**适合你，如果你希望：**\n- 理解密码算法的原理，而不只是调用现成工具；\n- 学习加密、认证与密码分析；\n- 将密码学用于网络安全或系统安全。\n\n如果你更偏向网络协议中的安全应用，可搭配 **COMP9337 Securing Fixed and Wireless Networks**（Term 1）；若希望接触商业产品密码分析等实践专题，可关注 **COMP9447 Security Engineering Workshop**（Term 3），但其具体主题会随当年专家安排变化。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2857142857142857,
+   "n_facts": 15,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6453 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6453 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "topic-rust",
+   "category": "topic",
+   "q": "我想学 Rust",
+   "parsed": {
+    "english_query": "Rust programming language systems programming",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6991",
+    "COMP9164",
+    "COMP9021",
+    "COMP6771",
+    "COMP9102",
+    "COMP9032",
+    "COMP9211",
+    "COMP4128"
+   ],
+   "recall": 1.0,
+   "precision": 0.375,
+   "precision_ceiling": 0.375,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你想学 Rust，最直接相关的是：\n\n### **COMP6991 – Solving Modern Programming Problems with Rust**\n- **学分：**6 UOC  \n- **院系：**工程学院  \n- **校区：**Sydney  \n- **开课学期：**通常为 **Term 2**，但课程**不定期开设，并非每年都保证开课**\n- **主要内容：**\n  - 以 Rust 为核心参考语言\n  - 类型系统、多态、测试与文档\n  - 元编程、并发与并行\n  - 内存与程序安全\n  - 比较 Rust 与其他编程语言的优势和局限\n\n需要注意，**COMP6991 不只是 Rust 语法入门课**，它更强调通过 Rust 理解现代编程语言设计和工程实践。\n\n如果你完全没有编程基础，可以考虑先修 **COMP9021 – Principles of Programming**。该课使用 Python，从编程与问题求解基础开始，**Term 1、Term 2、Term 3 均开设**；具备基础后再学习 **COMP6991** 会更顺畅。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.1,
+   "n_facts": 18,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6991 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6991 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-cpp",
+   "category": "topic",
+   "q": "有 C++ 的课吗",
+   "parsed": {
+    "english_query": "C++ programming",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6771",
+    "COMP9164",
+    "COMP9102",
+    "COMP4128",
+    "COMP9021",
+    "COMP6131",
+    "COMP6991",
+    "COMP9154"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "有，相关课程包括：\n\n- **COMP6771 – Advanced C++ Programming**\n  - 专门学习中高级 **C++**，涵盖语言基础、抽象的使用与设计\n  - **工程学院，Term 2，6 UOC**\n  - 适合已有一定编程经验、希望系统提升现代 C++ 能力的学生\n\n- **COMP6131 – Software Security Analysis**\n  - 会使用 **C++ 和 Python** 构建源代码分析工具，但重点是静态分析、程序验证与软件安全，并非纯 C++ 课程\n  - **工程学院，Term 2，6 UOC**\n\n如果你的主要目标是学习 C++，首选 **COMP6771**。如果还没有编程基础，可先考虑全年三个学期均开设的 **COMP9021** 学习 Python 与编程基础，再进阶到 C++。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2222222222222222,
+   "n_facts": 14,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6771 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6771 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-frontend",
+   "category": "topic",
+   "q": "想做网页前端开发",
+   "parsed": {
+    "english_query": "web frontend development HTML CSS JavaScript user interface",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6080",
+    "COMP4511",
+    "COMP9319",
+    "COMP6843",
+    "COMP9321",
+    "COMP9511",
+    "COMP6443",
+    "COMP9032"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你的目标是做**网页前端开发**，首选：\n\n### 1. **COMP6080 — Web Front-End Programming**\n- **最直接相关**\n- 内容包括：HTML、CSS、原生 JavaScript、声明式 JavaScript 框架、UI/UX、无障碍设计、异步网络编程和前端测试\n- 强调按行业标准构建现代 Web 应用\n- **开课学期：Term 1、Term 3**\n- **所属：工程学部（Faculty of Engineering）**\n- 注意：课程可能不定期开设，不能保证每年或每个标注学期都运行\n\n### 2. **COMP4511 — User Interface Design and Construction**\n适合在掌握基础前端后进一步学习：\n- 使用 **React** 开发应用\n- 强调界面设计、低保真到高保真原型，以及迭代式项目开发\n- 更偏向 **UI/UX 与前端项目实践**\n- **开课学期：Term 3**\n- **所属：工程学部**\n- 课程说明表明它建立在 **COMP3511/COMP9511** 的基础技能之上，因此更适合作为后续课程\n\n### 3. **COMP9511 — Human Computer Interaction**\n如果你也关注用户体验、交互设计，可以先修或搭配：\n- 主题为人机交互，是 **COMP4511** 的相关基础课程\n- **开课学期：Term 1**\n- **所属：工程学部**\n- 等同课程：**COMP3511**\n\n### 推荐路线\n**COMP6080 → COMP9511 → COMP4511**\n\n其中，若只想选一门，优先选 **COMP6080**；如果希望成为兼顾 React、UI/UX 和产品界面设计的前端开发者，再考虑 **COMP9511** 和 **COMP4511**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.30434782608695654,
+   "n_facts": 16,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6080 在 Term 1, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP6080 ... Offering Terms: Term 1, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-recsys",
+   "category": "topic",
+   "q": "推荐系统怎么学",
+   "parsed": {
+    "english_query": "recommender systems recommendation systems collaborative filtering content-based filtering ranking",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9727",
+    "COMP6714",
+    "COMP4121",
+    "COMP9201",
+    "COMP9311",
+    "COMP9243",
+    "COMP9319",
+    "COMP9315"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你想系统学习推荐系统，可以按“基础 → 核心课程 → 工程与搜索扩展”的路线安排：\n\n### 1. 先补基础\n- **机器学习、神经网络与基础统计**：这是 **COMP9727 Recommender Systems** 明确建议具备的知识。\n- **算法基础**：之后可学习 **COMP4121 Advanced Algorithms**。它涵盖随机算法、PageRank、隐马尔可夫模型，以及推荐系统和数据科学中的部分算法。该课属于工程学院，但当前上下文未注明固定开课学期，选课前需确认。\n\n### 2. 核心推荐课程\n- **COMP9727 Recommender Systems**\n  - 工程学院，6 UOC，通常在 **Term 2**\n  - 内容包括推荐系统基本类型、主要推荐算法，以及支持推荐系统的机器学习和自然语言处理技术。\n  - 这是最直接对应推荐系统方向的课程。\n  - 注意：该课**不定期开设，不保证每年或每学期都有**，建议提前查看当年课表。\n\n### 3. 补充检索与排序能力\n- **COMP6714 Information Retrieval and Web Search**\n  - 工程学院，6 UOC，**Term 3**\n  - 学习查询匹配、相关性评分和结果排序。\n  - 推荐系统与搜索系统都涉及候选内容检索和排序，因此这门课与 **COMP9727** 很互补。\n\n- **COMP9319 Web Data Compression and Search**\n  - 工程学院，6 UOC，**Term 2**\n  - 更偏向大规模 Web 数据的紧凑存储、搜索和快速检索，适合希望理解数据规模与搜索效率问题的学生。\n\n### 4. 加强数据与系统实现\n- **COMP9311 Database Systems**\n  - 工程学院，6 UOC，**Term 1、Term 2、Term 3**\n  - 学习关系数据库和数据管理基础。\n  - 如果数据库背景较弱，建议优先修读，因为推荐系统通常需要管理用户、物品和交互数据。\n\n- **COMP9315 Database Systems Implementation**\n  - 工程学院，6 UOC，**Term 1**\n  - 深入数据库内部结构、数据结构与算法，适合想做推荐平台后端或高性能数据系统的学生。\n\n- **COMP9243 Distributed Systems**\n  - 工程学院，6 UOC\n  - 涵盖并发控制、容错、分布式事务和分布式文件系统。\n  - 适合进一步学习大规模推荐服务，但该课也属于**不定期开设**课程，当前上下文没有固定学期。\n\n### 推荐修读顺序\n\n**偏推荐算法：**\n\n> **COMP9311 → COMP4121 / COMP6714 → COMP9727**\n\n**偏推荐系统工程：**\n\n> **COMP9311 → COMP9315 → COMP9727 → COMP9243**\n\n如果只能选一门，首选 **COMP9727**；如果 **COMP9727** 当年未开，可以先修 **COMP6714**，学习检索、评分和排序，再等待推荐系统课程开设。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.25,
+   "n_facts": 30,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9727 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9727 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-stats",
+   "category": "topic",
+   "q": "统计学相关的课",
+   "parsed": {
+    "english_query": "statistics statistical methods probability data analysis",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "MATH5905",
+    "MATH5855",
+    "MATH5845",
+    "MATH5836",
+    "MATH5960",
+    "COMP9418",
+    "COMP9020",
+    "COMP4121"
+   ],
+   "recall": 1.0,
+   "precision": 0.625,
+   "precision_ceiling": 0.75,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "以下课程与统计学直接相关，均为 **6 UOC**、在 Sydney 校区开设：\n\n### 统计理论与推断\n- **MATH5905 Statistical Inference**  \n  **开课：Term 1、2、3｜Faculty of Science**  \n  涵盖最大似然、贝叶斯方法、估计、置信集、假设检验、Bootstrap、鞍点近似和经验似然。数学要求较高，适合希望深入统计理论或继续研究的学生。\n\n- **MATH5960 Bayesian Inference and Computation**  \n  **开课：Term 3｜Faculty of Science**  \n  学习先验与后验、贝叶斯决策、模型选择、层次模型、混合模型、MCMC、Gibbs、Metropolis–Hastings 和 Stan。适合对贝叶斯建模及计算感兴趣、已有似然建模和 R/Python 基础的学生。\n\n### 应用统计与数据分析\n- **MATH5855 Multivariate Analysis**  \n  **开课：Term 3｜Faculty of Science**  \n  包括主成分分析、典型相关、聚类、因子分析和判别分析，计算与数据分析占比较高。适合希望掌握经典多元统计方法的学生。\n\n- **MATH5845 Time Series**  \n  **开课：Term 2｜Faculty of Science**  \n  涵盖平稳与非平稳序列、趋势和季节调整、ARMA、干预变量、随机波动、长期依赖及时间序列回归，并使用 R；案例主要来自金融和公共卫生。需要较扎实的概率统计与基础实分析知识。\n\n### 统计学习与机器学习\n- **MATH5836 Data and Machine Learning**  \n  **开课：Term 3｜Faculty of Science**  \n  包括线性与逻辑回归、神经网络、贝叶斯神经网络、聚类、降维、集成学习和深度学习入门，使用 Python 与 R。适合偏数据科学和应用机器学习的学生。\n\n- **COMP9418 Advanced Machine Learning**  \n  **开课：Term 2｜Faculty of Engineering**  \n  重点是概率图模型、精确与近似推断，以及参数和结构学习。比 **MATH5836** 更聚焦结构化概率模型，理论深度通常也更强。\n\n### 简单选择建议\n- 想打牢统计理论：**MATH5905**\n- 想学贝叶斯与 MCMC：**MATH5960**\n- 想做经典多元数据分析：**MATH5855**\n- 想做金融或公共卫生预测：**MATH5845**\n- 想学习通用数据科学与机器学习：**MATH5836**\n- 想深入概率图模型：**COMP9418**\n\n若数学基础尚不充分，**MATH5855** 或 **MATH5836** 通常比数学严谨度较高的 **MATH5905** 更适合作为切入点。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.17777777777777778,
+   "n_facts": 37,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "MATH5845 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: MATH5845 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-algo",
+   "category": "topic",
+   "q": "算法课程推荐",
+   "parsed": {
+    "english_query": "algorithms algorithm design analysis",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9101",
+    "COMP6741",
+    "COMP4121",
+    "COMP9024",
+    "COMP9020",
+    "COMP9313",
+    "COMP9312",
+    "COMP9334"
+   ],
+   "recall": 1.0,
+   "precision": 0.625,
+   "precision_ceiling": 0.75,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "可以按你的基础与目标选择以下算法课程；它们均属于 **UNSW 工程学院（Faculty of Engineering）**，每门 **6 UOC**：\n\n### 入门与基础\n\n- **COMP9020 Foundations of Computer Science**  \n  学习离散数学、逻辑、程序正确性证明和算法分析所需的数学基础。适合数学基础不足，或想为后续算法课程打基础的学生。  \n  **开课：Term 1、Term 2、Term 3**\n\n- **COMP9024 Data Structures and Algorithms**  \n  聚焦数据结构、算法及其时空效率，更偏软件开发必备基础。适合尚未系统学习数据结构与算法的学生。  \n  **开课：Summer Term、Term 1、Term 2、Term 3**\n\n### 核心算法\n\n- **COMP9101 Algorithm Design and Analysis**  \n  涵盖算法设计、正确性论证、运行时间分析、测试，以及计算问题是否能被高效解决。适合已有编程和数据结构基础、希望系统提升算法能力的学生。  \n  **开课：Term 1、Term 2、Term 3**\n\n### 进阶算法\n\n- **COMP4121 Advanced Algorithms**  \n  是 **COMP9101** 等入门算法课程的延续，涉及随机算法、随机哈希、跳表、Karger 最小割、Markov 链、PageRank、隐马尔可夫模型、Viterbi 算法、推荐系统和数据科学算法。  \n  适合已学过 **COMP9101** 或具备同等算法基础，并对数据科学、推荐系统或随机算法感兴趣的学生。  \n  **开课学期：当前上下文未注明**\n\n- **COMP6741 Algorithms for Intractable Problems**  \n  专注 NP-hard 问题，讨论近似求解、只处理部分实例、参数化方法以及超多项式时间算法。适合对理论算法、组合优化和计算复杂性有兴趣的高阶学生。  \n  **开课学期：当前上下文未注明**\n\n### 应用方向\n\n- **COMP9312 Data Analytics for Graphs**  \n  学习图处理的数据结构与算法，并结合大数据和图神经网络。适合对图分析、图机器学习或大规模图数据感兴趣的学生。  \n  **开课：Term 2、Term 3**\n\n- **COMP9313 Big Data Management**  \n  包含 Hadoop、MapReduce、Spark，以及大规模数据集上的流数据、图处理和相似项查找算法。适合希望将算法用于分布式大数据系统的学生。  \n  **开课：Term 2、Term 3**\n\n### 推荐学习路线\n\n- **基础较弱：** COMP9020 → COMP9024 → COMP9101  \n- **算法理论方向：** COMP9101 → COMP4121 → COMP6741  \n- **数据科学方向：** COMP9101 → COMP4121  \n- **图分析方向：** COMP9024 / COMP9101 → COMP9312  \n- **大数据工程方向：** COMP9024 → COMP9313  \n\n如果只能选一门：  \n- 没学过数据结构：选 **COMP9024**  \n- 已有数据结构基础，想系统学算法：选 **COMP9101**  \n- 已学过核心算法并想进阶：选 **COMP4121**  \n- 想研究 NP-hard 问题：选 **COMP6741**",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.47058823529411764,
+   "n_facts": 18,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9101 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9101 ... Offering Terms: Term 1, Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-project",
+   "category": "topic",
+   "q": "毕业研究项目有哪些",
+   "parsed": {
+    "english_query": "graduation research project capstone thesis courses",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9993",
+    "COMP9991",
+    "COMP9992",
+    "GSOE9010",
+    "COMP9820",
+    "GSOE9011",
+    "COMP9333",
+    "COMP9900"
+   ],
+   "recall": 1.0,
+   "precision": 0.75,
+   "precision_ceiling": 0.75,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "UNSW 工程学院面向 MIT（8543）学生的毕业研究项目主要有以下路径：\n\n### 研究型项目路径\n\n- **COMP9991 – Research Project A（6 UOC）**\n  - 通常在**倒数第二学期**修读，是研究项目的第一阶段。\n  - 面向成绩优秀、希望开展真实科研的学生，项目可涉及算法改进、新方法组合、理论研究或实验验证。\n  - **开课：Term 1、Term 2、Term 3**\n  - **院系：Faculty of Engineering**\n\n完成 **COMP9991** 后，根据成绩在最后一学期选择：\n\n- **COMP9992 – Research Project B（6 UOC）**\n  - 要求 **COMP9991 成绩至少 75 分**。\n  - 工作量约等于一门标准课程。\n  - 即使成绩达到 85 分、具备修读 **COMP9993** 的资格，也可以选择 **COMP9992**。\n  - **开课：Term 1、Term 2、Term 3**\n  - **院系：Faculty of Engineering**\n\n- **COMP9993 – Research Project C（12 UOC）**\n  - 要求 **COMP9991 成绩至少 85 分**。\n  - 工作量约等于两门标准课程，项目范围通常会相应扩大。\n  - 适合希望投入更多时间进行深入研究的学生。\n  - **开课：Term 1、Term 2、Term 3**\n  - **院系：Faculty of Engineering**\n\n因此，典型组合是：\n\n- **COMP9991 + COMP9992：共 12 UOC**\n- **COMP9991 + COMP9993：共 18 UOC**\n\n### 常规毕业项目\n\n- **COMP9900 – Information Technology Project（6 UOC）**\n  - 更偏向软件开发、团队协作、项目管理、报告和展示，而非深入科研。\n  - 必须在**最后一个学期**修读，并已完成 MIT 项目中的 **78 UOC**。\n  - **开课：Term 1、Term 2、Term 3**\n  - **院系：Faculty of Engineering**\n\n简而言之：想走科研、以后考虑博士或研究岗位，可优先考虑 **COMP9991 → COMP9992/COMP9993**；想完成偏行业实践的团队毕业项目，则 **COMP9900** 更合适。研究项目说明中还提到 **COMP9990** 作为替代选项，但当前提供的课程上下文没有其完整课程信息。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 0.9629629629629629,
+   "opinion_rate": 0.06896551724137931,
+   "n_facts": 27,
+   "bad_claims": [
+    {
+     "text": "COMP9991 通常在倒数第二学期修读，是研究项目的第一阶段",
+     "kind": "fact",
+     "verdict": "unsupported",
+     "evidence": ""
+    }
+   ],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9991 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9991 ... Offering Terms: Term 1, Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-hci",
+   "category": "topic",
+   "q": "人机交互和用户界面设计的课",
+   "parsed": {
+    "english_query": "human-computer interaction HCI user interface UI design interaction design",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9511",
+    "COMP4511",
+    "COMP9032",
+    "COMP9211",
+    "COMP6080",
+    "COMP9517",
+    "COMP9727",
+    "COMP9434"
+   ],
+   "recall": 1.0,
+   "precision": 0.375,
+   "precision_ceiling": 0.375,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你对**人机交互（HCI）和用户界面设计（UI）**感兴趣，重点可以考虑以下三门课：\n\n### 1. COMP9511 — Human Computer Interaction\n- **方向**：人机交互基础\n- **学分**：6 UOC\n- **开课学期**：Term 1\n- **院系**：工程学院\n- **特点**：适合作为 HCI 与用户体验设计的入门课程，为后续界面设计和开发打基础。\n- **授课形式**：线下或多模式教学，每周/隔周通常约 6 小时。\n- **等效课程**：COMP3511\n\n### 2. COMP4511 — User Interface Design and Construction\n- **方向**：用户界面设计与实现\n- **学分**：6 UOC\n- **开课学期**：Term 3\n- **院系**：工程学院\n- **特点**：实践和项目导向，强调迭代设计。你需要至少三次构建界面：\n  1. 低保真原型  \n  2. 高保真电子原型  \n  3. App Beta 版本\n- **技术栈**：使用 React 开发应用。\n- **适合人群**：已经通过 **COMP9511/COMP3511** 掌握基础技能，并希望把 UI/UX 设计转化为实际产品的学生。\n\n### 3. COMP6080 — Web Front-End Programming\n- **方向**：现代 Web 前端开发\n- **学分**：6 UOC\n- **开课学期**：Term 1、Term 3，但**并不保证每年或每学期实际开设**\n- **院系**：工程学院\n- **内容**：HTML、CSS、JavaScript、声明式框架、UI/UX 原则、无障碍设计、异步网络编程和前端测试。\n- **适合人群**：更关注网页界面的工程实现和行业标准，而不是以 HCI 理论或设计流程为核心的学生。\n\n### 如何选择\n\n| 目标 | 推荐课程 |\n|---|---|\n| 学习 HCI 和用户体验基础 | **COMP9511** |\n| 学习原型设计、迭代并用 React 完成 App | **COMP4511** |\n| 强化 Web 前端编程和工程能力 | **COMP6080** |\n\n比较理想的学习顺序是先在 Term 1 学 **COMP9511**，再在 Term 3 学 **COMP4511**。如果还希望提升前端实现能力，可搭配 **COMP6080**；不过选课前应确认该学期是否实际开设。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.19230769230769232,
+   "n_facts": 21,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9511 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9511 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "topic-iot",
+   "category": "topic",
+   "q": "物联网相关课程",
+   "parsed": {
+    "english_query": "Internet of Things IoT embedded systems sensor networks connected devices",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6733",
+    "COMP9336",
+    "COMP9337",
+    "COMP9032",
+    "COMP9333",
+    "COMP9319",
+    "COMP9444",
+    "COMP9331"
+   ],
+   "recall": 1.0,
+   "precision": 0.375,
+   "precision_ceiling": 0.375,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "以下课程与物联网（IoT）较相关，均属于 **UNSW 工程学部（Faculty of Engineering）**，在悉尼校区授课：\n\n### 首选：物联网系统实践\n\n- **COMP6733 Internet of Things Experimental Design Studio**（6 UOC，**Term 2**）\n  - 最直接的物联网课程，以实验和项目实践为主。\n  - 涵盖 IoT 系统架构、低功耗通信（BLE、6LoWPAN）、传感器数据处理、轻量级机器学习、活动识别、生物认证、IoT 安全及云服务。\n  - 要求熟悉 Java/Python 等高级语言，以及 C 等低级语言。\n  - 适合希望开发端到端 IoT 应用、智能设备或可穿戴系统的学生。\n\n### 无线通信与物联网网络\n\n- **COMP9336 Mobile Data Networking**（6 UOC，开课学期未注明）\n  - 学习 Wi-Fi、蜂窝网络、Bluetooth 和 IoT 网络，以及无线编码、调制和信号传播。\n  - 包含移动设备实验、无线数据包捕获分析与编程。\n  - 更适合关注 IoT 通信协议、无线网络和移动联网的学生。\n\n- **COMP9331 Computer Networks and Applications**（6 UOC，**Term 1、Term 2、Term 3**）\n  - 计算机网络入门课程，介绍现代数据通信协议及其应用。\n  - 适合作为学习 **COMP9336** 或其他联网系统课程前的网络基础。\n  - 等效课程为 **COMP3331**；**ENGG9331** 仅用于学分认定，不能选课。\n\n### 嵌入式硬件方向\n\n- **COMP9032 Microprocessors and Interfacing**（6 UOC，**Term 3**）\n  - 涵盖微处理器架构、汇编语言、I/O 接口及设备连接。\n  - 适合希望从事 IoT 设备端开发、嵌入式系统或固件开发的学生。\n\n### 物联网安全方向\n\n- **COMP9337 Securing Fixed and Wireless Networks**（6 UOC，**Term 1**）\n  - 研究固定和无线网络的安全漏洞、互联网架构及协议安全。\n  - 适合关注 IoT 设备通信安全与无线网络防护的学生。\n  - 等效课程为 **COMP4337**。\n\n### 推荐组合\n\n- **IoT 应用开发**：COMP6733 + COMP9032  \n- **IoT 无线通信**：COMP9331 → COMP9336  \n- **IoT 安全**：COMP9331 → COMP9337  \n- **完整软硬件与网络路线**：COMP9032 + COMP9331 + COMP6733 + COMP9336  \n\n如果只选一门，优先推荐 **COMP6733**；如果还没有网络基础，可以先读 **COMP9331**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2222222222222222,
+   "n_facts": 42,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6733 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6733 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "topic-forensics",
+   "category": "topic",
+   "q": "数字取证",
+   "parsed": {
+    "english_query": "digital forensics computer forensics",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP6445",
+    "COMP6845",
+    "COMP6451",
+    "COMP9222",
+    "COMP6453",
+    "COMP9517",
+    "COMP9020",
+    "COMP9920"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.375,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你对**数字取证**感兴趣，相关课程有两门：\n\n### COMP6445 Digital Forensics\n- **学分：**6 UOC  \n- **开课学期：**Term 3  \n- **院系：**工程学院  \n- **授课方式：**线下，每周约 5 小时  \n- **内容：**数字取证理论与职业实践、法律程序与专家证人、取证报告写作、数据提取与文件雕刻、底层痕迹分析、云取证及反取证技术。\n\n### COMP6845 Extended Digital Forensics and Incident Response\n- **学分：**6 UOC  \n- **开课学期：**Term 3  \n- **院系：**工程学院  \n- **授课方式：**线下，每周约 6 小时  \n- **内容：**除数字取证外，也强调对数字痕迹的发现、解释与响应，涵盖标准取证工具、底层技术、云取证和反取证技术。\n\n### 选择建议\n- 希望学习标准数字取证知识与实务：选择 **COMP6445**。\n- 希望课程名称明确涵盖**事件响应**，并能接受更高的课堂接触时间：考虑 **COMP6845**。\n\n两门课的课程简介高度相似，且都没有列出等价课程；最终选择前建议进一步核对它们面向的学位层级及具体考核安排。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.12,
+   "n_facts": 22,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6445 在 Term 3 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6445 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-startup",
+   "category": "topic",
+   "q": "有创业相关的课吗",
+   "parsed": {
+    "english_query": "entrepreneurship startups innovation venture creation",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "GSOE9220",
+    "COMP6733",
+    "COMP9491",
+    "COMP6441",
+    "COMP9900",
+    "COMP6448",
+    "COMP9414",
+    "COMP6451"
+   ],
+   "recall": 1.0,
+   "precision": 0.125,
+   "precision_ceiling": 0.125,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "有，**GSOE9220 Launching a Startup（创业启动）**最直接相关。\n\n- **学分：**6 UOC  \n- **院系：**工程学院（Faculty of Engineering）  \n- **校区：**Sydney  \n- **教学特点：**强调“做中学”，学生组队寻找商业机会、验证商业模式，并获得导师深度指导及创业者嘉宾分享。\n- **主要能力：**创新思维、商业模式评估、团队建设，以及创业项目的启动和成长。\n- **授课形式：**讲座在线进行，部分考核需到校完成。\n- **开课学期：**当前资料未注明，选课前需查看最新课程安排。\n\n如果你想把技术项目发展成创业产品，**GSOE9220**会是当前课程列表中最匹配的选择。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.15384615384615385,
+   "n_facts": 11,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "GSOE9220 的课程名称是 Launching a Startup",
+     "supported": true,
+     "evidence": "Course Code: GSOE9220\nCourse Name: Launching a Startup"
+    }
+   ]
+  },
+  {
+   "id": "topic-robotics",
+   "category": "topic",
+   "q": "机器人软件",
+   "parsed": {
+    "english_query": "robotics software robot programming robot operating system ROS",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9434",
+    "COMP9201",
+    "COMP9417",
+    "COMP9044",
+    "COMP9242",
+    "COMP9283",
+    "COMP6733",
+    "COMP9820"
+   ],
+   "recall": 1.0,
+   "precision": 0.125,
+   "precision_ceiling": 0.125,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你想学习**机器人软件**，最直接相关的是：\n\n### 首选：COMP9434 Robotic Software Architecture\n- **中文方向**：机器人软件架构\n- **开课学期**：Term 3\n- **学分**：6 UOC\n- **所属院系**：工程学院（Faculty of Engineering）\n- **主要内容**：\n  - 智能体设计与软件架构\n  - 规划、强化学习和工程控制\n  - 在真实机器人上重新实现部分智能体架构\n  - 兼顾理论与实践，强调构建可运行的系统\n- **适合人群**：希望从事机器人软件、智能体系统、机器人规划与控制的学生。\n- **等价课程**：COMP3431\n\n### 可搭配课程\n- **COMP9417 Machine Learning**：覆盖神经网络、监督与无监督学习等，为机器人感知和决策打基础；Term 1、2、3 均开设。\n- **COMP6733 Internet of Things Experimental Design Studio**：适合关注传感器、嵌入式设备、低功耗通信及边缘机器学习的机器人方向；Term 2 开设，建议具备 Python/Java 和 C 基础。\n- **COMP9201 Operating Systems**：帮助理解底层系统、并发与资源管理，对机器人系统软件开发有帮助；Term 2 开设。\n- **COMP9044 Software Construction: Techniques and Tools**：强化大型软件开发、版本控制、测试与调试能力；Term 1、2 开设。\n\n推荐路线：**COMP9044 / COMP9201 → COMP9417 → COMP9434**。其中，若只能选择一门与机器人软件最相关的课程，优先选择 **COMP9434**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2608695652173913,
+   "n_facts": 17,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9434 在 Term 3 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9434 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-distributed",
+   "category": "topic",
+   "q": "分布式系统",
+   "parsed": {
+    "english_query": "distributed systems distributed computing",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9243",
+    "COMP6451",
+    "COMP9313",
+    "COMP9201",
+    "COMP9283",
+    "COMP6452",
+    "COMP9311",
+    "COMP9727"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你想学习**分布式系统**，最直接相关的是：\n\n### 首选：COMP9243 Distributed Systems\n- **学分**：6 UOC\n- **院系**：工程学院\n- **校区**：Sydney\n- **内容**：\n  - 客户端—服务器模型与远程过程调用（RPC）\n  - 分布式共享内存与一致性\n  - 分布式文件系统\n  - 负载共享与进程迁移\n  - 并发控制\n  - 容错、恢复与分布式事务\n  - 命名机制及行业案例\n- **授课方式**：线下，约每周4小时\n- **开课情况**：开设不规律，不能保证每年或每学期都有，需要查询当年的课表。\n\n### 可搭配课程\n- **COMP9201 Operating Systems**：Term 2，适合先建立操作系统、并发和底层系统基础。\n- **COMP9313 Big Data Management**：Term 2、Term 3，侧重 Hadoop、MapReduce、HDFS、HBase、Hive 和 Spark 等分布式数据处理技术。\n- **COMP9311 Database Systems**：Term 1、2、3，适合补充关系数据库基础，并帮助理解分布式事务相关概念。\n- **COMP6451 Cryptocurrency and Distributed Ledger Technologies**：侧重加密货币及分布式账本，不等同于通用分布式系统课程。\n\n如果你的目标是成为分布式系统或基础设施工程师，建议顺序为：  \n**COMP9201 → COMP9243 → COMP9313**。其中 **COMP9243** 是最核心的选择，但应优先确认实际开课时间。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.21739130434782608,
+   "n_facts": 18,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9243 的课程名称是 Distributed Systems",
+     "supported": true,
+     "evidence": "Course Code: COMP9243\nCourse Name: Distributed Systems"
+    }
+   ]
+  },
+  {
+   "id": "topic-graphics",
+   "category": "topic",
+   "q": "计算机图形学",
+   "parsed": {
+    "english_query": "computer graphics",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9415",
+    "COMP9517",
+    "COMP9211",
+    "COMP9020",
+    "COMP9511",
+    "COMP6453",
+    "COMP4418",
+    "COMP9312"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你对**计算机图形学**感兴趣，相关课程是：\n\n### COMP9415 Computer Graphics\n- **学分：**6 UOC  \n- **所属院系：**工程学院（Faculty of Engineering）\n- **开课学期：**Term 3\n- **校区：**Sydney\n- **授课形式：**多模式教学，每周或每两周授课，约 5 小时接触时间\n- **等价课程：**COMP3421\n\n**主要内容：**\n- 使用 **Unreal Engine** 和 **Unity** 开发 2D、3D及虚拟现实场景\n- 光照、反射、纹理贴图与材质\n- 2D/3D 变换、摄像机与静态网格\n- 物理行为、碰撞检测和层次化建模\n- Shader 与渲染技术\n\n**适合人群：**希望学习游戏开发、实时渲染、虚拟现实或交互式三维环境的学生。该课程偏重图形内容的生成与渲染；如果你更关心从图片或视频中识别物体、提取信息，则应考虑 **COMP9517 Computer Vision**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2,
+   "n_facts": 12,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9415 在 Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9415 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-pl",
+   "category": "topic",
+   "q": "编程语言和编译器",
+   "parsed": {
+    "english_query": "programming languages compilers compiler design",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9102",
+    "COMP9211",
+    "COMP9044",
+    "COMP9164",
+    "COMP6991",
+    "COMP6771",
+    "COMP9021",
+    "COMP4141"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你对**编程语言与编译器**方向感兴趣，可以重点考虑以下课程：\n\n### 首选：COMP9102 Programming Languages and Compilers\n- **开课学期**：Term 1\n- **学分**：6 UOC\n- **院系**：工程学院\n- **核心内容**：编译器前端、基础编译技术、面向对象语言原理。\n- **实践项目**：使用 Java 编写编译器，将一种 C 语言变体翻译为 Java 字节码。\n- **适合人群**：希望实际理解并实现编译器、提升 Java 和大型软件开发能力的学生。\n- **等效课程**：COMP3131\n\n### 理论拓展：COMP9164 Concepts of Programming Languages\n- **开课学期**：Term 3\n- **学分**：6 UOC\n- **院系**：工程学院\n- **核心内容**：命令式、面向对象、函数式、并发与并行编程，以及操作语义、公理语义和指称语义。\n- **作业语言**：Haskell，无需预先学过 Haskell。\n- **适合人群**：希望从理论角度理解不同编程语言范式、类型系统和语义的人。\n\n### 基础理论：COMP4141 Theory of Computation\n- **开课学期**：Term 1\n- **学分**：6 UOC\n- **院系**：工程学院\n- **相关内容**：形式语言、有限自动机、上下文无关文法、可计算性、复杂性和程序正确性。\n- **适合人群**：希望打牢词法分析、语法分析及语言理论基础的学生。\n\n### 建议选课路径\n- **偏编译器工程实践**：COMP9102  \n- **偏语言设计与语义理论**：COMP9164  \n- **希望建立完整理论基础**：COMP4141 → COMP9102 → COMP9164  \n\n其中，**COMP9102 是与你所说的“编程语言和编译器”最直接对应的课程**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2692307692307692,
+   "n_facts": 19,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9102 在 Term 1 开设",
+     "supported": true,
+     "evidence": "COMP9102 ... Offering Terms: Term 1"
+    },
+    {
+     "point": "COMP9164 在 Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9164 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "topic-ethics",
+   "category": "topic",
+   "q": "计算机伦理",
+   "parsed": {
+    "english_query": "computer ethics computing ethics professional ethics information technology ethics",
+    "course_codes": [],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9920",
+    "COMP9900",
+    "COMP6845",
+    "COMP6453",
+    "COMP6445",
+    "COMP9517",
+    "COMP4141",
+    "GSOE9011"
+   ],
+   "recall": 1.0,
+   "precision": 0.125,
+   "precision_ceiling": 0.125,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "如果你对**计算机伦理**感兴趣，相关课程是：\n\n### COMP9920 — Ethics of Computer Science and Engineering\n- **中文名称**：计算机科学与工程伦理\n- **学分**：6 UOC\n- **开课学期**：Term 1、Term 3\n- **所属院系**：工程学院（Faculty of Engineering）\n- **校区与授课方式**：悉尼校区，线下授课，每周或每两周约 4 小时\n\n**主要内容：**\n- 计算机科学与工程中的伦理问题\n- 伦理主张和道德判断的本质\n- 不同伦理观念如何影响对技术问题的理解\n- 伦理论证的构建、分析与评价\n\n**适合人群：**\n希望理解人工智能、软件系统、数据使用等技术活动所涉及的道德责任，或想提升伦理推理与论证能力的学生。该课侧重伦理分析和批判性思考，而不是编程实践。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2,
+   "n_facts": 12,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9920 在 Term 1, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9920 ... Offering Terms: Term 1, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "code-9417",
+   "category": "code_lookup",
+   "q": "COMP9417 难不难？",
+   "parsed": {
+    "english_query": "COMP9417",
+    "course_codes": [
+     "COMP9417"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9417",
+    "COMP9211",
+    "COMP9032"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "**COMP9417 Machine Learning（机器学习）整体属于中等偏难课程**，难度主要取决于你的数学与编程基础。\n\n**较有挑战的部分：**\n- **数学理论较多**：不仅学习算法，还需要理解线性模型、核方法、神经网络及学习理论等背后的原理和推导。\n- **算法覆盖面广**：包括回归与分类、最近邻、决策树、无监督学习、集成学习等。\n- **重视严谨评估**：需要在数据集上科学地评估模型表现，而不只是调用现成工具。\n- **有编程项目**：要把课堂中的理论和算法应用到实际任务中。\n\n如果你具备**线性代数、概率统计、微积分和 Python 编程**基础，通常会比较可控；如果数学或编程基础薄弱，学习压力可能较大，建议提前复习。\n\n**课程信息：**COMP9417 为工程学院 6 UOC 课程，在悉尼校区面授，每周约 **5 小时接触课时**，**Term 1、Term 2、Term 3 均开设**。它也适合作为深度学习、计算机视觉、机器人等进阶方向的基础。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.3076923076923077,
+   "n_facts": 9,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9417 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Term 1, Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "code-9444-when",
+   "category": "code_lookup",
+   "q": "COMP9444 什么时候开课？",
+   "parsed": {
+    "english_query": "COMP9444",
+    "course_codes": [
+     "COMP9444"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9444",
+    "COMP9044",
+    "COMP9032"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "COMP9444（Neural Networks and Deep Learning，神经网络与深度学习）在 **Term 2 和 Term 3** 开课。\n\n- 学分：6 UOC\n- 院系：工程学院（Faculty of Engineering）\n- 校区：Sydney\n- 授课模式：线下或多模式授课，每周或每两周约 4 小时接触时间。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 7,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9444 在 Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "code-6713",
+   "category": "code_lookup",
+   "q": "COMP6713 是几个学分，哪个学期开？",
+   "parsed": {
+    "english_query": "COMP6713",
+    "course_codes": [
+     "COMP6713"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP6713",
+    "COMP6771",
+    "COMP6080"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "COMP6713（Natural Language Processing，自然语言处理）为 **6 个学分（UOC）**，在 **第 1 学期（Term 1）** 开设，隶属于 **工程学院（Faculty of Engineering）**。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 4,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6713 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Term 1"
+    },
+    {
+     "point": "COMP6713 为 6 个学分",
+     "supported": true,
+     "evidence": "Units of Credit: 6 Units of Credit"
+    }
+   ]
+  },
+  {
+   "id": "cmp-9417-9418",
+   "category": "compare",
+   "q": "COMP9417 和 COMP9418 有什么区别？",
+   "parsed": {
+    "english_query": "COMP9417 COMP9418",
+    "course_codes": [
+     "COMP9417",
+     "COMP9418"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP9417",
+    "COMP9418",
+    "COMP9211",
+    "COMP9032",
+    "COMP9222"
+   ],
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "下面是 **COMP9417** 与 **COMP9418** 的主要区别：\n\n| 维度 | COMP9417 Machine Learning | COMP9418 Advanced Machine Learning |\n|---|---|---|\n| 定位 | 机器学习基础与核心方法 | 高级统计机器学习 |\n| 主要内容 | 线性回归与分类、最近邻、决策树、核方法、神经网络、无监督学习、集成学习、学习理论 | 概率图模型、有向与无向表示、精确与近似推断、模型参数与结构学习 |\n| 学习重点 | 广泛掌握主流机器学习算法，理解其理论基础、正确应用方式及实验评估 | 深入理解结构化概率模型中的学习与推断，理论深度更高 |\n| 实践形式 | 教程中的实例及项目编程任务 | 理论与实践并重，但课程描述更强调统计建模和推断 |\n| 开课学期 | **T1、T2、T3** | **仅 T2** |\n| 面授时间 | 每周或每两周约 **5 小时** | 每周或每两周约 **6 小时** |\n| 学分与院系 | 6 UOC，工程学院 | 6 UOC，工程学院 |\n\n### 如何选择\n\n- 如果你希望建立完整的机器学习基础，或尚未系统学过机器学习，优先选择 **COMP9417**。它覆盖面更广，也能为深度学习、计算机视觉、机器人、生物信息学等后续方向打基础。\n- 如果你已经掌握常见机器学习算法，并对**概率图模型、统计推断、结构化概率模型**感兴趣，**COMP9418** 更适合。\n- 从课程定位看，通常可以先学 **COMP9417**，再学 **COMP9418**；不过已提供的课程信息没有列出 **COMP9418** 的正式先修要求，选课前应再核对 UNSW Handbook。\n\n简而言之：**COMP9417 重“广度和基础算法”，COMP9418 重“概率模型与推断的深度”。**",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.3,
+   "n_facts": 21,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9417 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9417 ... Offering Terms: Term 1, Term 2, Term 3"
+    },
+    {
+     "point": "COMP9418 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP9418 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "cmp-9311-9315",
+   "category": "compare",
+   "q": "COMP9311 和 COMP9315 哪个更偏底层实现？",
+   "parsed": {
+    "english_query": "COMP9311 COMP9315 low-level implementation database systems",
+    "course_codes": [
+     "COMP9311",
+     "COMP9315"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP9311",
+    "COMP9315",
+    "COMP9333",
+    "COMP9201",
+    "COMP9243"
+   ],
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "**COMP9315（Database Systems Implementation）更偏底层实现。**\n\n- **COMP9311（Database Systems）**：侧重关系数据库管理系统（RDBMS）的基础知识与使用，适合建立数据库整体概念。\n- **COMP9315（Database Systems Implementation）**：深入 DBMS（如 Oracle、SQL Server）的内部结构、数据结构和算法，更关注数据库系统“如何实现”。\n\n如果你想学习存储组织、数据库内部机制及相关算法，优先选 **COMP9315**；若想先打好数据库基础，则选 **COMP9311**。\n\n两门课均为工程学院课程、6 UOC：\n- **COMP9311**：Term 1、2、3 均开设\n- **COMP9315**：仅 Term 1 开设",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.45454545454545453,
+   "n_facts": 6,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9311 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9311 ... Offering Terms: Term 1, Term 2, Term 3"
+    },
+    {
+     "point": "COMP9315 在 Term 1 开设",
+     "supported": true,
+     "evidence": "COMP9315 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "cmp-6441-6841",
+   "category": "compare",
+   "q": "COMP6441 和 COMP6841 有什么不同？",
+   "parsed": {
+    "english_query": "COMP6441 COMP6841 course differences",
+    "course_codes": [
+     "COMP6441",
+     "COMP6841"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP6441",
+    "COMP6841",
+    "COMP6771",
+    "COMP9222",
+    "COMP9153"
+   ],
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "根据现有课程信息，**COMP6441** 和 **COMP6841** 非常相似，主要区别如下：\n\n| 对比项 | COMP6441 | COMP6841 |\n|---|---|---|\n| 课程名称 | Security Engineering and Cyber Security | **Extended** Security Engineering and Cyber Security |\n| 学分 | 6 UOC | 6 UOC |\n| 开课学期 | Term 2 | Term 2 |\n| 所属院系 | 工程学院 | 工程学院 |\n| 授课地点 | Sydney | Sydney |\n| 授课方式 | 线下面授 | 线下面授 |\n| 每周接触时间 | **6 小时** | **5 小时** |\n| 等价课程 | 无 | 无 |\n\n两门课提供的课程简介完全相同，都属于网络安全入门课程，涵盖：\n\n- 安全工程的基本原则；\n- 面对攻击者时如何设计、监控和维护安全系统；\n- 安全失败案例分析；\n- 当前网络安全实践；\n- 从攻击者角度思考问题；\n- 分析、批判性思维与系统设计。\n\n**如何选择：**\n\n- 如果你希望选择标准版本，可考虑 **COMP6441**。\n- **COMP6841** 名称中带有“Extended”，但现有上下文没有说明它具体增加了哪些内容、考核或难度，因此不能仅凭名称断定它一定更深入。\n- 两门课目前都没有列为彼此的等价课程，选课前建议进一步核实课程手册中的限制条件、适用项目和考核安排。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.10344827586206896,
+   "n_facts": 26,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6441 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP6441 ... Offering Terms: Term 2"
+    },
+    {
+     "point": "COMP6841 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP6841 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "cmp-9201-9242",
+   "category": "compare",
+   "q": "COMP9201 和 COMP9242 怎么选？",
+   "parsed": {
+    "english_query": "COMP9201 COMP9242",
+    "course_codes": [
+     "COMP9201",
+     "COMP9242"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP9201",
+    "COMP9242",
+    "COMP9283",
+    "COMP9222",
+    "COMP9211"
+   ],
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "### COMP9201 与 COMP9242 对比\n\n| 维度 | COMP9201 Operating Systems | COMP9242 Advanced Operating Systems |\n|---|---|---|\n| 定位 | 操作系统基础与核心原理 | 高级操作系统技术、实现方法与研究问题 |\n| 适合人群 | 尚未系统学习操作系统，或希望建立扎实基础的学生 | 已具备操作系统基础，希望深入实现或研究方向的学生 |\n| 开课时间 | **Term 2** | **Term 3** |\n| 学分 | 6 UOC | 6 UOC |\n| 授课方式 | 线下，每周或隔周约 5 小时 | 线下或多模式，每周或隔周约 5 小时 |\n| 所属院系 | UNSW 工程学院 | UNSW 工程学院 |\n| 等价课程 | **COMP3231、COMP3891、COMP9283** | 无 |\n\n### 怎么选\n\n- **没有完整学过操作系统**：优先选 **COMP9201**。它会深入讲解应用开发背后的操作系统基础，适合作为系统方向的核心入门课。\n- **已有扎实的操作系统知识**，并希望研究现代操作系统技术、底层实现或科研问题：选 **COMP9242**。\n- **想循序渐进**：可以考虑先在 **Term 2 修 COMP9201**，再在 **Term 3 修 COMP9242**。不过当前信息没有列出 **COMP9242** 的正式先修要求，选课前应核对课程手册。\n- 如果你已经修过 **COMP3231、COMP3891 或 COMP9283**，它们与 **COMP9201** 等价，通常不应再选 COMP9201；这时更值得考虑 **COMP9242**。\n\n简而言之：**打基础选 COMP9201，已有基础并想深入系统实现或研究选 COMP9242。**",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.36363636363636365,
+   "n_facts": 14,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9201 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP9201 ... Offering Terms: Term 2"
+    },
+    {
+     "point": "COMP9242 在 Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9242 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "cmp-9101-9024",
+   "category": "compare",
+   "q": "COMP9101 和 COMP9024 有什么区别？",
+   "parsed": {
+    "english_query": "COMP9101 COMP9024",
+    "course_codes": [
+     "COMP9101",
+     "COMP9024"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP9101",
+    "COMP9024",
+    "COMP9032",
+    "COMP9222",
+    "COMP9211"
+   ],
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "COMP9101 和 COMP9024 都属于 UNSW 工程学院、均为 6 UOC，但学习重点明显不同：\n\n| 对比维度 | COMP9024 | COMP9101 |\n|---|---|---|\n| 课程名称 | Data Structures and Algorithms | Algorithm Design and Analysis |\n| 核心内容 | 数据如何组织和存储，以及如何运用算法有效解决问题 | 算法正确性证明、运行时间分析、测试设计，以及问题是否能被高效求解 |\n| 课程定位 | 更偏基础与实践，建立数据结构和算法能力 | 更偏理论与分析，深入研究算法设计及复杂性 |\n| 适合方向 | 软件开发、硬件开发、系统架构 | 高阶算法、理论计算机科学，以及需要严谨算法分析的方向 |\n| 开课学期 | Summer、T1、T2、T3 | T1、T2、T3 |\n| 授课安排 | 面授，约每周 4 小时接触时间 | 面授，约每周 7 小时接触时间 |\n| 等价课程 | ENGG9024，但仅用于 RPL，不能直接选修 | COMP9801 |\n| 所属院系 | Faculty of Engineering | Faculty of Engineering |\n\n### 简单理解\n\n- **COMP9024**：重点是“有哪些常见的数据结构和算法，以及如何有效使用它们”。更适合希望系统建立数据结构与算法基础、增强编程和软件设计能力的学生。\n- **COMP9101**：重点是“为什么算法正确、效率如何、哪些问题难以高效求解”。理论深度和分析要求通常更突出。\n\n### 选择建议\n\n- 如果你对数据结构与算法基础还不够扎实，优先考虑 **COMP9024**。\n- 如果你已经具备较好的算法基础，希望学习正确性证明、复杂度分析和困难问题，**COMP9101** 更符合目标。\n- 若排课灵活性重要，**COMP9024** 多了 Summer Term；若考虑每周投入，课程信息显示 **COMP9101** 的接触时间约为 7 小时，高于 **COMP9024** 的 4 小时。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.34615384615384615,
+   "n_facts": 17,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9101 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9101 ... Offering Terms: Term 1, Term 2, Term 3"
+    },
+    {
+     "point": "COMP9024 在 Summer Term, Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9024 ... Offering Terms: Summer Term, Term 1, Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "detail-9992",
+   "category": "detail",
+   "q": "COMP9992 有什么先修要求？",
+   "parsed": {
+    "english_query": "COMP9992",
+    "course_codes": [
+     "COMP9992"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9992",
+    "COMP9993",
+    "COMP9211"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "**COMP9992（Research Project B）**的先修/选课要求是：\n\n- 已在 **MIT（8543）项目的倒数第二学期**完成 **COMP9991**\n- **COMP9991 成绩至少达到 75 分**\n- 通常在最后一个学期修读 **COMP9992**\n\n补充说明：如果 **COMP9991** 低于 75 分，则不能选 **COMP9992**，可改选 **COMP9990**。该课为 **6 UOC**，由工程学院开设，**Term 1、Term 2 和 Term 3** 均开课。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 8,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9992 要求在 COMP9991 中取得至少 75 分",
+     "supported": true,
+     "evidence": "Enrolment Constraints: Achieve a mark of at least 75 in COMP9991"
+    }
+   ]
+  },
+  {
+   "id": "detail-9900",
+   "category": "detail",
+   "q": "COMP9900 有什么选课限制？",
+   "parsed": {
+    "english_query": "COMP9900",
+    "course_codes": [
+     "COMP9900"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9900",
+    "COMP9991",
+    "COMP9334"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "COMP9900（Information Technology Project）的选课限制如下：\n\n- **必须在学位的最后一个学期修读**\n- 在信息技术硕士（Master of Information Technology）项目中，必须已完成 **78 UOC**\n\n该课程为 **6 UOC**，由 **工程学院（Faculty of Engineering）**开设，在 **Term 1、Term 2 和 Term 3** 均有开课。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 6,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9900 必须在最后一个学期修读",
+     "supported": true,
+     "evidence": "Enrolment Constraints: Students must take this course in their final term of study."
+    },
+    {
+     "point": "COMP9900 要求已完成 78 UOC",
+     "supported": true,
+     "evidence": "Students must have completed 78 UOC towards the Master of Information Technology program."
+    }
+   ]
+  },
+  {
+   "id": "detail-6448",
+   "category": "detail",
+   "q": "COMP6448 能直接选吗？",
+   "parsed": {
+    "english_query": "COMP6448",
+    "course_codes": [
+     "COMP6448"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP6448",
+    "COMP9032",
+    "COMP9211"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "**COMP6448（Security Engineering Masterclass）不能直接自由选课**，注册需要获得授课教师的同意（lecturer consent）。\n\n此外，它是**不定期开设的专题课程**，具体开课时间、授课主题和形式取决于来访的网络安全专家，可能采用集中授课或每周/隔周的线下模式。建议选课前联系授课教师或所属的工程学院，确认当期是否开设并申请许可。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.16666666666666666,
+   "n_facts": 5,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6448 选课需要讲师同意",
+     "supported": true,
+     "evidence": "Enrolment Constraints: Enrolment requires lecturer consent."
+    }
+   ]
+  },
+  {
+   "id": "detail-9201-equiv",
+   "category": "detail",
+   "q": "COMP9201 的等价课程有哪些？",
+   "parsed": {
+    "english_query": "COMP9201 equivalent courses",
+    "course_codes": [
+     "COMP9201"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9201",
+    "COMP9283",
+    "COMP9153"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "COMP9201（Operating Systems，操作系统）的等价课程包括：\n\n- **COMP3231**\n- **COMP3891**\n- **COMP9283**（Extended Operating Systems）\n\nCOMP9201 为工程学院课程，6 学分，在 **Term 2** 开设。通常不能通过同时修读等价课程重复获得学分，选课前建议核对具体课程规则。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2,
+   "n_facts": 8,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9201 的等价课程包括 COMP3231、COMP3891 和 COMP9283",
+     "supported": true,
+     "evidence": "COMP9201 ... Equivalent Courses: COMP3231, COMP3891, COMP9283"
+    }
+   ]
+  },
+  {
+   "id": "detail-9727",
+   "category": "detail",
+   "q": "COMP9727 需要什么基础？",
+   "parsed": {
+    "english_query": "COMP9727 prerequisites assumed knowledge",
+    "course_codes": [
+     "COMP9727"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9727",
+    "COMP9201",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "**COMP9727 Recommender Systems（推荐系统）**建议具备以下基础：\n\n- **神经网络基础**：了解常见网络结构、训练过程和损失函数等。\n- **机器学习基础**：熟悉监督学习、模型训练与评估等基本概念。\n- **基础统计学**：掌握概率、分布、均值与方差等知识。\n- **编程能力**：课程会涉及机器学习和自然语言处理技术，具备较扎实的编程能力会更有帮助。若 Python 基础不足，可先修读 **COMP9021 Principles of Programming**。\n\n其中，神经网络、机器学习和基础统计在课程信息中属于“**建议掌握**”，并未列为强制先修要求。\n\n补充信息：**COMP9727** 为工程学院 6 UOC 课程，通常在 **Term 2** 于 Sydney 校区面授；但该课程**不定期开设，不保证每年或每学期开放**，选课前应确认当年的实际安排。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.2727272727272727,
+   "n_facts": 8,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9727 建议具备神经网络、机器学习和基础统计知识",
+     "supported": true,
+     "evidence": "Enrolment Constraints: Knowledge of neural network, machine learning and basic statistics are desirable"
+    }
+   ]
+  },
+  {
+   "id": "detail-9331",
+   "category": "detail",
+   "q": "COMP9331 和 COMP3331、ENGG9331 是什么关系？",
+   "parsed": {
+    "english_query": "COMP9331 COMP3331 ENGG9331 relationship equivalence",
+    "course_codes": [
+     "COMP9331",
+     "COMP3331",
+     "ENGG9331"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP9331",
+    "COMP9311",
+    "COMP9032",
+    "COMP9153",
+    "COMP9992"
+   ],
+   "recall": 1.0,
+   "precision": 0.2,
+   "precision_ceiling": 0.2,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "三者关系如下：\n\n- **COMP9331（Computer Networks and Applications）**：正式可选课程，6 UOC，工程学院开设，悉尼校区，**Term 1、Term 2、Term 3** 均开课。\n- **COMP3331**：被列为 **COMP9331 的等价课程（Equivalent Course）**。通常代表课程内容或学分认定等价，一般不能通过同时修读两门来重复获得学分；具体仍应以你的项目规则和学校选课系统为准。\n- **ENGG9331**：同样被列为 **COMP9331 的等价课程**，但它**仅用于既往学习认可（RPL）的行政处理，不开放给学生选课**。\n\n因此，如果你要正常修读这门计算机网络课程，应选择 **COMP9331**；不能直接选 **ENGG9331**。如果你已经修过 **COMP3331**，建议先确认是否已获得等价学分，再决定是否选 **COMP9331**。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.3076923076923077,
+   "n_facts": 9,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9331 的等价课程包括 COMP3331 和 ENGG9331",
+     "supported": true,
+     "evidence": "Equivalent Courses: COMP3331, ENGG9331"
+    },
+    {
+     "point": "ENGG9331 仅用于 RPL 管理，不可选课",
+     "supported": true,
+     "evidence": "The equivalent course, ENGG9331, is exclusively used for Recognition of Prior Learning (RPL) administration and is not available for student enrolment."
+    }
+   ]
+  },
+  {
+   "id": "detail-5905",
+   "category": "detail",
+   "q": "MATH5905 需要哪些前置知识？",
+   "parsed": {
+    "english_query": "MATH5905",
+    "course_codes": [
+     "MATH5905"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "MATH5905",
+    "MATH5960",
+    "COMP4141"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "**MATH5905 Statistical Inference（统计推断）**要求具备以下前置知识：\n\n- **微积分**\n- **线性代数**\n- **概率论**：达到 **MATH5846** 或同等水平\n- **基础统计学**：达到 **MATH5856** 或同等水平\n\n此外，**MATH5905** 数学严谨性较强，建议具备较成熟的数学能力，例如已完成至少 **4 门本科三年级或以上的数学/统计课程**。如果背景不足，建议选课前联系数学与统计学院的课程负责人咨询。\n\n该课程属于 **Faculty of Science（理学院）**，在 **Term 1、Term 2 和 Term 3** 均开设。",
+   "answer_term_ok": null,
+   "oos_code_rate": null,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 9,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "MATH5905 的假定知识包括微积分、线性代数、概率和入门统计",
+     "supported": true,
+     "evidence": "Assumed knowledge: • Calculus • Linear Algebra • Probability (at the level of MATH5846 or equivalent) • Introductory statistics (at the level of MATH5856 or equivalent)"
+    }
+   ]
+  },
+  {
+   "id": "term-ai-t2",
+   "category": "term_filter",
+   "q": "Term 2 开的人工智能相关课程有哪些",
+   "parsed": {
+    "english_query": "artificial intelligence AI",
+    "course_codes": [],
+    "terms": [
+     "Term 2"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9414",
+    "COMP9444",
+    "COMP9417",
+    "COMP9418",
+    "COMP9517",
+    "COMP6733",
+    "COMP9313",
+    "COMP9312"
+   ],
+   "recall": 1.0,
+   "precision": 0.625,
+   "precision_ceiling": 0.75,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "UNSW **Term 2** 开设的人工智能及相关课程包括：\n\n### AI / 机器学习核心课程\n- **COMP9414 Artificial Intelligence**：AI 基础，涵盖智能体、搜索与优化、逻辑推理、机器学习、神经网络、强化学习、视觉和语言处理。\n- **COMP9417 Machine Learning**：系统学习回归、分类、决策树、核方法、神经网络、无监督学习、集成学习及学习理论。\n- **COMP9444 Neural Networks and Deep Learning**：聚焦神经网络与深度学习的原理和实践。\n- **COMP9418 Advanced Machine Learning**：高级统计机器学习，重点是概率图模型、精确与近似推断，以及参数和结构学习；**仅在 Term 2 开设**。\n- **COMP9517 Computer Vision**：计算机视觉基础，并包含真实应用开发，涉及数学、统计及机器学习方法。\n\n### AI 应用与数据基础设施方向\n- **COMP9312 Data Analytics for Graphs**：图数据处理、大数据算法和图神经网络，适合对图学习感兴趣的学生。\n- **COMP6733 Internet of Things Experimental Design Studio**：物联网系统设计，涉及轻量级机器学习、传感器数据融合、活动识别和语音感知；要求熟悉 Java/Python 以及 C 等低级语言。\n- **COMP9313 Big Data Management**：学习 Hadoop、MapReduce、Spark 和大规模数据算法，可为大规模机器学习与 AI 数据处理提供基础。\n\n以上课程均为 **6 UOC**，属于 **Faculty of Engineering（工程学院）**，在悉尼校区开设。若希望建立通用 AI 基础，优先考虑 **COMP9414**；专攻机器学习可选 **COMP9417**，之后再考虑 **COMP9444** 或 **COMP9418**。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.08695652173913043,
+   "n_facts": 21,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9418 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP9418 ... Offering Terms: Term 2"
+    },
+    {
+     "point": "COMP9444 在 Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "COMP9444 ... Offering Terms: Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "term-dbalgo-t1",
+   "category": "term_filter",
+   "q": "Term 1 开的数据库或算法相关课",
+   "parsed": {
+    "english_query": "database databases algorithms data structures",
+    "course_codes": [],
+    "terms": [
+     "Term 1"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9315",
+    "COMP9311",
+    "COMP9024",
+    "COMP9417",
+    "COMP9321",
+    "COMP9900",
+    "COMP9331",
+    "COMP6453"
+   ],
+   "recall": 0.75,
+   "precision": 0.5,
+   "precision_ceiling": 0.625,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [
+    "COMP9101"
+   ],
+   "answer": "Term 1 开设的数据库或算法相关课程包括：\n\n### 数据库方向\n- **COMP9311 Database Systems**\n  - 关系数据库管理系统基础\n  - **Term 1、2、3** 均开设\n  - 6 UOC，工程学院\n  - 适合希望系统学习数据库基础的学生\n\n- **COMP9315 Database Systems Implementation**\n  - 深入数据库管理系统内部结构、数据结构与算法，涉及关系型 DBMS 和大型数据存储\n  - **仅 Term 1** 开设\n  - 6 UOC，工程学院\n  - 更偏数据库底层实现\n\n- **COMP9321 Data Services Engineering**\n  - 使用 Python 构建 Web 数据服务，涵盖数据获取、清洗、聚合、分析和可视化\n  - **Term 1、3** 开设\n  - 6 UOC，工程学院\n  - 更偏数据工程与应用开发，而非传统数据库原理\n\n### 算法方向\n- **COMP9024 Data Structures and Algorithms**\n  - 学习数据结构、算法以及时间和空间效率\n  - **Summer、Term 1、2、3** 均开设\n  - 6 UOC，工程学院\n  - 适合强化编程与算法基础\n\n- **COMP9417 Machine Learning**\n  - 涵盖回归、分类、近邻、决策树、核方法、神经网络、集成学习等机器学习算法及其理论基础\n  - **Term 1、2、3** 均开设\n  - 6 UOC，工程学院\n  - 适合希望将算法应用于数据分析和机器学习的学生\n\n如果你想打基础，优先考虑 **COMP9311 + COMP9024**；如果已有基础并希望深入数据库底层，可选择 **COMP9315**；偏数据工程选 **COMP9321**，偏机器学习算法则选 **COMP9417**。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.3103448275862069,
+   "n_facts": 20,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9315 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9315 ... Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "term-security-t3",
+   "category": "term_filter",
+   "q": "Term 3 能选哪些安全方向的课",
+   "parsed": {
+    "english_query": "cybersecurity information security computer security network security",
+    "course_codes": [],
+    "terms": [
+     "Term 3"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9447",
+    "COMP6447",
+    "COMP9331",
+    "COMP9900",
+    "COMP9920",
+    "COMP6714",
+    "MATH5836",
+    "COMP9517"
+   ],
+   "recall": 0.5,
+   "precision": 0.25,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [
+    "COMP6445",
+    "COMP6845"
+   ],
+   "answer": "Term 3 可选的安全方向课程主要有：\n\n### 1. COMP6447 — System and Software Security Assessment\n- **学分：**6 UOC  \n- **院系：**工程学院  \n- **授课方式：**线下常规授课，每周约 5 小时  \n- **内容：**网络攻击与防御、漏洞识别与评估、漏洞利用原理、常见安全模型，以及攻防技术的发展。\n- **适合：**希望系统学习漏洞分析、软件安全、渗透测试和攻防基础的学生。\n\n### 2. COMP9447 — Security Engineering Workshop\n- **学分：**6 UOC  \n- **院系：**工程学院  \n- **授课方式：**可能采用线下密集、线下常规或多模式授课，具体安排依当期而定  \n- **内容：**面向新兴网络安全领域的应用型工作坊，主题可能包括云安全、商业产品密码分析、大型机安全审计和渗透测试。\n- **适合：**已有一定安全基础，希望接触行业实践或特定前沿安全专题的学生。由于主题取决于当期专家安排，选课前建议确认该学期具体内容。\n\n### 相关基础课\n**COMP9331 — Computer Networks and Applications** 也在 Term 3 开设。它不是专门的安全课程，但网络协议与通信基础对后续学习网络安全、渗透测试和攻防很有帮助。\n\n**选择建议：**\n- 想建立较完整的攻防与漏洞利用基础：优先 **COMP6447**\n- 想做专题实践、接触行业安全问题：选择 **COMP9447**\n- 网络基础较弱：可先修或搭配 **COMP9331**，但需注意整体学习负担。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.34782608695652173,
+   "n_facts": 15,
+   "bad_claims": [],
+   "context_recall": 0.5,
+   "key_points": [
+    {
+     "point": "COMP6445 在 Term 3 开设",
+     "supported": false,
+     "evidence": ""
+    },
+    {
+     "point": "COMP6447 在 Term 3 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6447 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "term-os-t2",
+   "category": "term_filter",
+   "q": "Term 2 能选哪些操作系统相关课程",
+   "parsed": {
+    "english_query": "operating systems OS systems programming",
+    "course_codes": [],
+    "terms": [
+     "Term 2"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9201",
+    "COMP9283",
+    "COMP9211",
+    "COMP6771",
+    "COMP9311",
+    "COMP9021",
+    "COMP9044",
+    "COMP6991"
+   ],
+   "recall": 1.0,
+   "precision": 0.375,
+   "precision_ceiling": 0.375,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "Term 2 可选的操作系统课程有：\n\n- **COMP9201 Operating Systems（操作系统）**\n  - 6 UOC，工程学院\n  - 悉尼校区，线下面授，每周约 5 小时\n  - 深入学习操作系统底层原理，适合希望从事系统或应用开发的学生。\n\n- **COMP9283 Extended Operating Systems（扩展操作系统）**\n  - 6 UOC，工程学院\n  - 悉尼校区，线下面授，每周约 5 小时\n  - 同样侧重操作系统底层机制与系统开发。\n\n需要注意：**COMP9201 与 COMP9283 互为等效课程**，且都等效于 **COMP3231、COMP3891**，通常不能重复修读或同时计入学分。根据现有课程介绍，两门课的概述和授课安排基本一致，选课前建议根据你的培养方案及系统中的注册权限确认应选哪个课程代码。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 0.9523809523809523,
+   "opinion_rate": 0.08695652173913043,
+   "n_facts": 21,
+   "bad_claims": [
+    {
+     "text": "COMP9201 与 COMP9283 通常不能重复修读或同时计入学分",
+     "kind": "fact",
+     "verdict": "unsupported",
+     "evidence": ""
+    }
+   ],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9201 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9201 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "term-web-t1",
+   "category": "term_filter",
+   "q": "Term 1 有哪些人机交互或网页方面的课",
+   "parsed": {
+    "english_query": "human-computer interaction HCI web development web design",
+    "course_codes": [],
+    "terms": [
+     "Term 1"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9511",
+    "COMP6080",
+    "COMP9321",
+    "COMP6843",
+    "COMP6443",
+    "COMP9517",
+    "COMP9044",
+    "COMP9920"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "Term 1 开设的人机交互或网页相关课程包括：\n\n### 人机交互与前端开发\n- **COMP9511 Human Computer Interaction**\n  - 方向：人机交互（HCI）\n  - 学分：6 UOC\n  - 开课：Term 1\n  - 院系：工程学院\n  - 授课：线下或多模式，约 6 小时接触时间\n  - 等价课程：COMP3511\n\n- **COMP6080 Web Front-End Programming**\n  - 方向：现代网页前端开发\n  - 内容：HTML、CSS、原生 JavaScript、声明式框架、UI/UX、无障碍设计、异步网络编程和前端测试\n  - 学分：6 UOC\n  - 开课：Term 1、Term 3\n  - 院系：工程学院\n  - 注意：**不定期开设，不能保证每年或每学期都运行**\n\n### Web 数据服务\n- **COMP9321 Data Services Engineering**\n  - 方向：面向 Web 的数据服务和数据驱动应用\n  - 内容：数据获取、清洗转换、聚合、分析、可视化及服务开发，以 Python 为实践基础\n  - 学分：6 UOC\n  - 开课：Term 1、Term 3\n  - 院系：工程学院\n\n### Web 安全\n- **COMP6443 Web Application Security and Testing**\n  - 方向：Web 应用安全与测试\n  - 学分：6 UOC\n  - 开课：Term 1\n  - 院系：工程学院\n  - 线下授课，约 5 小时接触时间\n\n- **COMP6843 Extended Web Application Security and Testing**\n  - 方向：扩展版 Web 应用安全与测试\n  - 学分：6 UOC\n  - 开课：Term 1\n  - 院系：工程学院\n  - 线下授课，约 6 小时接触时间\n\n如果你更偏向**界面与用户体验**，优先考虑 **COMP9511**；想获得直接的前端开发能力，选 **COMP6080**；想做后端数据服务，考虑 **COMP9321**；对网络安全感兴趣，则考虑 **COMP6443** 或 **COMP6843**。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.10810810810810811,
+   "n_facts": 33,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9511 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP9511 ... Offering Terms: Term 1"
+    },
+    {
+     "point": "COMP6080 在 Term 1, Term 3 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6080 ... Offering Terms: Term 1, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "term-ml-t3",
+   "category": "term_filter",
+   "q": "Term 3 开的机器学习相关课",
+   "parsed": {
+    "english_query": "machine learning",
+    "course_codes": [],
+    "terms": [
+     "Term 3"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9417",
+    "MATH5836",
+    "COMP9414",
+    "COMP9444",
+    "COMP9517",
+    "COMP9434",
+    "COMP9312",
+    "COMP9024"
+   ],
+   "recall": 1.0,
+   "precision": 0.625,
+   "precision_ceiling": 0.625,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "UNSW **Term 3** 开设的机器学习相关课程包括：\n\n### 核心机器学习课程\n- **COMP9417 Machine Learning**（工程学院，6 UOC）  \n  系统学习回归、分类、近邻方法、决策树、核方法、神经网络、无监督学习、集成学习及学习理论。理论与编程实践并重，适合希望建立完整机器学习基础的学生。\n\n- **MATH5836 Data and Machine Learning**（理学院，6 UOC）  \n  从统计与数据分析角度介绍线性/逻辑回归、聚类、降维、神经网络、贝叶斯神经网络、集成学习及深度学习入门，并使用 **Python 和 R**。更适合偏统计、数据科学方向的学生。\n\n### 深度学习与专业应用\n- **COMP9444 Neural Networks and Deep Learning**（工程学院，6 UOC）  \n  深入学习神经网络和深度学习的原理与实践。适合已有机器学习基础、希望专攻深度学习的学生。\n\n- **COMP9517 Computer Vision**（工程学院，6 UOC）  \n  结合数学、统计模型和机器学习处理图像与视频，涵盖计算机视觉基础及真实应用开发。\n\n- **COMP9312 Data Analytics for Graphs**（工程学院，6 UOC）  \n  学习大规模图数据处理、图分析和图神经网络，适合对 **GNN、图数据或大数据处理**感兴趣的学生。\n\n- **COMP9434 Robotic Software Architecture**（工程学院，6 UOC）  \n  涉及智能体、规划、学习、控制和强化学习，并包含机器人系统实践，偏机器人与智能体工程应用。\n\n### AI 基础及相关支撑课程\n- **COMP9414 Artificial Intelligence**（工程学院，6 UOC）  \n  覆盖智能体、搜索与优化、逻辑、知识表示、不确定性推理、机器学习、神经网络和强化学习。范围比纯机器学习课程更广，适合作为 AI 入门。\n\n- **COMP9024 Data Structures and Algorithms**（工程学院，6 UOC）  \n  并非机器学习课程，但数据结构与算法能力对机器学习工程和高效实现很重要，适合需要补编程与算法基础的学生。\n\n### 简要选择建议\n- 想系统学习传统机器学习：**COMP9417**\n- 偏统计、数据科学，并希望使用 Python/R：**MATH5836**\n- 想专攻深度学习：**COMP9444**\n- 想做图像与视频：**COMP9517**\n- 想学图神经网络：**COMP9312**\n- 想做机器人或强化学习应用：**COMP9434**\n- 想先建立广泛 AI 基础：**COMP9414**\n\n以上课程均在 **Term 3** 开设，且每门均为 **6 UOC**。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.18604651162790697,
+   "n_facts": 35,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "MATH5836 在 Term 3 开设",
+     "supported": true,
+     "evidence": "MATH5836 ... Offering Terms: Term 3"
+    }
+   ]
+  },
+  {
+   "id": "term-stats-t2",
+   "category": "term_filter",
+   "q": "Term 2 想学统计，有什么课",
+   "parsed": {
+    "english_query": "statistics statistical methods",
+    "course_codes": [],
+    "terms": [
+     "Term 2"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "MATH5905",
+    "MATH5845",
+    "COMP9418",
+    "COMP9020",
+    "COMP9312",
+    "COMP9417",
+    "COMP9727",
+    "COMP9517"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "Term 2 想学统计，可以重点考虑以下课程：\n\n### 统计学核心课程\n\n- **MATH5905 Statistical Inference（统计推断）**\n  - **院系：**理学院\n  - **开课：**Term 1、2、3\n  - **内容：**最大似然估计、贝叶斯方法、置信集、假设检验、决策理论、Bootstrap，以及渐近近似。\n  - **适合：**希望系统学习统计理论，或未来研究统计、数据科学的人。\n  - **注意：**数学要求较高，需要微积分、线性代数、概率论和入门统计；建议已有至少四门高年级数学或统计课程。\n\n- **MATH5845 Time Series（时间序列）**\n  - **院系：**理学院\n  - **开课：**仅 Term 2\n  - **内容：**平稳与非平稳模型、趋势和季节性、ARMA、预测、外生变量、随机波动、长期依赖，并使用 **R** 分析数据。\n  - **适合：**对金融、公共卫生、预测分析或时间序列数据感兴趣的人。\n  - **注意：**需要概率统计基础，也要求一定的实分析、复数和函数知识。\n\n### 偏统计机器学习的选择\n\n- **COMP9417 Machine Learning**\n  - **院系：**工程学院\n  - **开课：**Term 1、2、3\n  - 涵盖回归、分类、核方法、神经网络、无监督学习和集成学习，兼顾理论、实验评估与编程。\n  - 适合想把统计方法用于机器学习的人。\n\n- **COMP9418 Advanced Machine Learning**\n  - **院系：**工程学院\n  - **开课：**Term 2\n  - 聚焦概率图模型、精确与近似推断、参数和结构学习。\n  - 更偏高级统计机器学习，适合已有机器学习基础的学生。\n\n**简单建议：**\n- 想打牢统计理论：选 **MATH5905**\n- 想做预测、金融或时序数据：选 **MATH5845**\n- 想学通用数据建模：选 **COMP9417**\n- 想深入概率模型与推断：选 **COMP9418**\n\n如果你的数学背景还不强，通常 **COMP9417** 会比数学严谨度较高的 **MATH5905** 更容易切入。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.22727272727272727,
+   "n_facts": 17,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "MATH5845 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: MATH5845 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "term-summer",
+   "category": "term_filter",
+   "q": "Summer Term 有什么课可以选",
+   "parsed": {
+    "english_query": "courses offered Summer Term",
+    "course_codes": [],
+    "terms": [
+     "Summer Term"
+    ],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9024"
+   ],
+   "recall": 1.0,
+   "precision": 1.0,
+   "precision_ceiling": 1.0,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 1.0,
+   "missed": [],
+   "answer": "根据当前检索到的课程信息，Summer Term 可选：\n\n- **COMP9024 Data Structures and Algorithms**\n  - 学分：6 UOC\n  - 所属：工程学部（Faculty of Engineering）\n  - 校区：Sydney\n  - 授课方式：线下面授，每周或每两周安排，约 4 小时接触时间\n  - 主要内容：数据结构、算法设计，以及如何在有限时间和空间内高效解决问题\n  - 适合人群：希望提升软件开发、硬件开发或系统架构能力的学生\n\n此外，**COMP9024** 也在 Term 1、Term 2 和 Term 3 开设。当前上下文中仅提供了这一门 Summer Term 课程。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.1,
+   "n_facts": 9,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9024 在 Summer Term, Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Summer Term, Term 1, Term 2, Term 3"
+    }
+   ]
+  },
+  {
+   "id": "mt-9418-advanced",
+   "category": "multi_turn",
+   "q": "那它的进阶课是哪门？",
+   "parsed": {
+    "english_query": "COMP9417 advanced follow-up course machine learning",
+    "course_codes": [
+     "COMP9417"
+    ],
+    "terms": [],
+    "intent": "recommend"
+   },
+   "returned": [
+    "COMP9417",
+    "COMP9418",
+    "COMP9414",
+    "COMP9444",
+    "MATH5836",
+    "COMP9517",
+    "COMP9491",
+    "COMP6771"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": 0.5,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 8.0,
+   "missed": [],
+   "answer": "**COMP9417 Machine Learning** 最直接的进阶课是：\n\n- **COMP9418 Advanced Machine Learning**：深入学习统计机器学习，重点包括概率图模型、精确与近似推断，以及模型参数和结构学习。理论深度明显高于 **COMP9417**。该课属于**工程学院**，仅在 **Term 2** 开设。\n\n如果你更想往深度学习方向发展，也可以考虑：\n\n- **COMP9444 Neural Networks and Deep Learning**：专攻神经网络与深度学习，属于工程学院，在 **Term 2、Term 3** 开设。\n\n简单来说：想继续深入机器学习理论，选 **COMP9418**；想专攻神经网络和深度学习，选 **COMP9444**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.36363636363636365,
+   "n_facts": 7,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9418 在 Term 2 开设",
+     "supported": true,
+     "evidence": "COMP9418 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "mt-security-t2",
+   "category": "multi_turn",
+   "q": "其中 Term 2 能上的有哪些？",
+   "parsed": {
+    "english_query": "COMP6441 COMP6443 COMP6841 COMP6131 cybersecurity security",
+    "course_codes": [
+     "COMP6441",
+     "COMP6443",
+     "COMP6841",
+     "COMP6131"
+    ],
+    "terms": [
+     "Term 2"
+    ],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP6441",
+    "COMP6841",
+    "COMP6131",
+    "COMP6733",
+    "COMP9201"
+   ],
+   "recall": 1.0,
+   "precision": 0.6,
+   "precision_ceiling": 0.6,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "在已提供的课程信息中，以下安全方向课程均在 **Term 2** 开设，且属于 **工程学院（Faculty of Engineering）**：\n\n- **COMP6441 — Security Engineering and Cyber Security**：网络安全入门，侧重安全工程、攻击者思维、案例分析与安全系统设计。\n- **COMP6841 — Extended Security Engineering and Cyber Security**：扩展版安全工程课程，同样关注网络安全实践、系统失效和攻击者思维。\n- **COMP6131 — Software Security Analysis**：聚焦自动化源代码分析、程序验证和漏洞检测，涉及使用 **C++、Python** 构建分析工具。\n\n另外，我上一条提到的 **COMP6443** 不在当前检索到的课程上下文中，因此无法确认其开课学期；该推荐不严谨，抱歉。",
+   "answer_term_ok": 1.0,
+   "oos_code_rate": 0.25,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 12,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP6441 在 Term 2 开设",
+     "supported": true,
+     "evidence": "Course Code: COMP6441 ... Offering Terms: Term 2"
+    }
+   ]
+  },
+  {
+   "id": "mt-db-compare",
+   "category": "multi_turn",
+   "q": "它和 COMP9315 比有什么区别？",
+   "parsed": {
+    "english_query": "COMP9311 COMP9315 database systems comparison",
+    "course_codes": [
+     "COMP9311",
+     "COMP9315"
+    ],
+    "terms": [],
+    "intent": "compare"
+   },
+   "returned": [
+    "COMP9311",
+    "COMP9315",
+    "COMP9032",
+    "COMP9211",
+    "COMP9243"
+   ],
+   "recall": 1.0,
+   "precision": 0.4,
+   "precision_ceiling": 0.4,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 5.0,
+   "missed": [],
+   "answer": "**COMP9311** 和 **COMP9315** 的核心区别是：前者侧重数据库的基本概念与使用，后者侧重数据库管理系统的内部实现。\n\n| 对比项 | COMP9311 Database Systems | COMP9315 Database Systems Implementation |\n|---|---|---|\n| 课程定位 | 数据库入门课 | 数据库系统实现方向的进阶课 |\n| 学习重点 | 关系型数据库管理系统（RDBMS）及数据管理基础 | DBMS 内部结构、数据结构和算法，以及大型数据存储技术 |\n| 适合人群 | 希望建立数据库基础、了解关系数据库的学生 | 想深入理解 Oracle、SQL Server 等系统底层工作原理，或提升系统编程能力的学生 |\n| 开课学期 | **Term 1、Term 2、Term 3** | **Term 1** |\n| 学分 | 6 UOC | 6 UOC |\n| 授课安排 | 每周或每两周约 6 小时接触时间 | 每周或每两周约 4 小时接触时间 |\n| 所属院系 | UNSW 工程学院 | UNSW 工程学院 |\n\n如果你是数据库初学者，优先选择 **COMP9311**；如果你已有数据库基础，并对数据库引擎、底层数据结构和实现算法感兴趣，可以考虑 **COMP9315**。现有信息未明确列出两门课之间的先修关系，选课前建议再核对课程手册中的 enrolment requirements。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.45,
+   "n_facts": 11,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9311 在 Term 1, Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Term 1, Term 2, Term 3"
+    },
+    {
+     "point": "COMP9315 在 Term 1 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Term 1"
+    }
+   ]
+  },
+  {
+   "id": "mt-9444-term",
+   "category": "multi_turn",
+   "q": "它在哪个学期开？",
+   "parsed": {
+    "english_query": "COMP9444",
+    "course_codes": [
+     "COMP9444"
+    ],
+    "terms": [],
+    "intent": "lookup"
+   },
+   "returned": [
+    "COMP9444",
+    "COMP9044",
+    "COMP9032"
+   ],
+   "recall": 1.0,
+   "precision": 0.3333333333333333,
+   "precision_ceiling": 0.3333333333333333,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 3.0,
+   "missed": [],
+   "answer": "**COMP9444 Neural Networks and Deep Learning** 在 **Term 2 和 Term 3** 开设，校区为 **Sydney**，隶属于 **工程学院（Faculty of Engineering）**。",
+   "answer_term_ok": null,
+   "oos_code_rate": 0.0,
+   "faithfulness": 1.0,
+   "opinion_rate": 0.0,
+   "n_facts": 3,
+   "bad_claims": [],
+   "context_recall": 1.0,
+   "key_points": [
+    {
+     "point": "COMP9444 在 Term 2, Term 3 开设",
+     "supported": true,
+     "evidence": "Offering Terms: Term 2, Term 3"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1160 @@
+[
+ {
+  "id": "topic-ml",
+  "category": "topic",
+  "q": "推荐几门机器学习相关的课程",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9417",
+   "COMP9418",
+   "COMP9444",
+   "MATH5836"
+  ],
+  "acceptable": [
+   "COMP9414",
+   "COMP9727",
+   "COMP9491",
+   "COMP9517",
+   "COMP9814"
+  ],
+  "key_points": [
+   "COMP9417 在 Term 1, Term 2, Term 3 开设",
+   "COMP9418 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-dl",
+  "category": "topic",
+  "q": "我想学深度学习",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9444"
+  ],
+  "acceptable": [
+   "COMP9417",
+   "COMP9418",
+   "MATH5836",
+   "COMP9517",
+   "COMP9491"
+  ],
+  "key_points": [
+   "COMP9444 在 Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-nlp",
+  "category": "topic",
+  "q": "有没有讲自然语言处理的课",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6713"
+  ],
+  "acceptable": [
+   "COMP9414",
+   "COMP6714",
+   "COMP9491",
+   "COMP9727"
+  ],
+  "key_points": [
+   "COMP6713 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "topic-cv",
+  "category": "topic",
+  "q": "计算机视觉相关的课程",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9517"
+  ],
+  "acceptable": [
+   "COMP9444",
+   "COMP9415",
+   "COMP9414",
+   "COMP9491"
+  ],
+  "key_points": [
+   "COMP9517 在 Term 1, Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-security",
+  "category": "topic",
+  "q": "想学网络安全，有哪些课",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6441",
+   "COMP6443",
+   "COMP6447",
+   "COMP9337"
+  ],
+  "acceptable": [
+   "COMP6841",
+   "COMP6843",
+   "COMP6445",
+   "COMP6845",
+   "COMP6131",
+   "COMP6448",
+   "COMP9447",
+   "COMP6453"
+  ],
+  "key_points": [
+   "COMP6441 在 Term 2 开设",
+   "COMP6443 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "topic-db",
+  "category": "topic",
+  "q": "数据库相关的课程",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9311",
+   "COMP9315"
+  ],
+  "acceptable": [
+   "COMP9321",
+   "COMP9313",
+   "COMP9319"
+  ],
+  "key_points": [
+   "COMP9311 在 Term 1, Term 2, Term 3 开设",
+   "COMP9315 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "topic-bigdata",
+  "category": "topic",
+  "q": "想学大数据处理",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9313",
+   "COMP9312"
+  ],
+  "acceptable": [
+   "COMP9311",
+   "COMP9321",
+   "COMP9315",
+   "COMP9319",
+   "COMP9243"
+  ],
+  "key_points": [
+   "COMP9313 在 Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-blockchain",
+  "category": "topic",
+  "q": "区块链相关课程",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6451",
+   "COMP6452"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP6452 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-os",
+  "category": "topic",
+  "q": "操作系统方向有什么课",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9201",
+   "COMP9242",
+   "COMP9283"
+  ],
+  "acceptable": [
+   "COMP9243",
+   "COMP9211"
+  ],
+  "key_points": [
+   "COMP9201 在 Term 2 开设",
+   "COMP9242 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-crypto",
+  "category": "topic",
+  "q": "想学密码学",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6453"
+  ],
+  "acceptable": [
+   "COMP6451",
+   "COMP6441",
+   "COMP6841",
+   "COMP9337"
+  ],
+  "key_points": [
+   "COMP6453 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "topic-rust",
+  "category": "topic",
+  "q": "我想学 Rust",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6991"
+  ],
+  "acceptable": [
+   "COMP9164",
+   "COMP6771"
+  ],
+  "key_points": [
+   "COMP6991 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-cpp",
+  "category": "topic",
+  "q": "有 C++ 的课吗",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6771"
+  ],
+  "acceptable": [
+   "COMP9164"
+  ],
+  "key_points": [
+   "COMP6771 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-frontend",
+  "category": "topic",
+  "q": "想做网页前端开发",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6080"
+  ],
+  "acceptable": [
+   "COMP4511",
+   "COMP9321",
+   "COMP6443"
+  ],
+  "key_points": [
+   "COMP6080 在 Term 1, Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-recsys",
+  "category": "topic",
+  "q": "推荐系统怎么学",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9727"
+  ],
+  "acceptable": [
+   "COMP9417",
+   "COMP9444",
+   "COMP6714"
+  ],
+  "key_points": [
+   "COMP9727 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-stats",
+  "category": "topic",
+  "q": "统计学相关的课",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "MATH5905",
+   "MATH5855",
+   "MATH5845"
+  ],
+  "acceptable": [
+   "MATH5960",
+   "MATH5836",
+   "COMP9417"
+  ],
+  "key_points": [
+   "MATH5845 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-algo",
+  "category": "topic",
+  "q": "算法课程推荐",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9101",
+   "COMP9024",
+   "COMP4121"
+  ],
+  "acceptable": [
+   "COMP4128",
+   "COMP6741",
+   "COMP9020"
+  ],
+  "key_points": [
+   "COMP9101 在 Term 1, Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-project",
+  "category": "topic",
+  "q": "毕业研究项目有哪些",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9991",
+   "COMP9992",
+   "COMP9993"
+  ],
+  "acceptable": [
+   "COMP9900",
+   "GSOE9010",
+   "GSOE9011"
+  ],
+  "key_points": [
+   "COMP9991 在 Term 1, Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-hci",
+  "category": "topic",
+  "q": "人机交互和用户界面设计的课",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9511",
+   "COMP4511"
+  ],
+  "acceptable": [
+   "COMP6080"
+  ],
+  "key_points": [
+   "COMP9511 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "topic-iot",
+  "category": "topic",
+  "q": "物联网相关课程",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6733"
+  ],
+  "acceptable": [
+   "COMP9336",
+   "COMP9337"
+  ],
+  "key_points": [
+   "COMP6733 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "topic-forensics",
+  "category": "topic",
+  "q": "数字取证",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP6445",
+   "COMP6845"
+  ],
+  "acceptable": [
+   "COMP6447"
+  ],
+  "key_points": [
+   "COMP6445 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-startup",
+  "category": "topic",
+  "q": "有创业相关的课吗",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "GSOE9220"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "GSOE9220 的课程名称是 Launching a Startup"
+  ]
+ },
+ {
+  "id": "topic-robotics",
+  "category": "topic",
+  "q": "机器人软件",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9434"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9434 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-distributed",
+  "category": "topic",
+  "q": "分布式系统",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9243"
+  ],
+  "acceptable": [
+   "COMP9201",
+   "COMP9313",
+   "COMP6452"
+  ],
+  "key_points": [
+   "COMP9243 的课程名称是 Distributed Systems"
+  ]
+ },
+ {
+  "id": "topic-graphics",
+  "category": "topic",
+  "q": "计算机图形学",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9415"
+  ],
+  "acceptable": [
+   "COMP9517"
+  ],
+  "key_points": [
+   "COMP9415 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-pl",
+  "category": "topic",
+  "q": "编程语言和编译器",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9102",
+   "COMP9164"
+  ],
+  "acceptable": [
+   "COMP6991",
+   "COMP6771"
+  ],
+  "key_points": [
+   "COMP9102 在 Term 1 开设",
+   "COMP9164 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "topic-ethics",
+  "category": "topic",
+  "q": "计算机伦理",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9920"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9920 在 Term 1, Term 3 开设"
+  ]
+ },
+ {
+  "id": "code-9417",
+  "category": "code_lookup",
+  "q": "COMP9417 难不难？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9417"
+   ]
+  },
+  "must": [
+   "COMP9417"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9417 在 Term 1, Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "code-9444-when",
+  "category": "code_lookup",
+  "q": "COMP9444 什么时候开课？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9444"
+   ]
+  },
+  "must": [
+   "COMP9444"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9444 在 Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "code-6713",
+  "category": "code_lookup",
+  "q": "COMP6713 是几个学分，哪个学期开？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP6713"
+   ]
+  },
+  "must": [
+   "COMP6713"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP6713 在 Term 1 开设",
+   "COMP6713 为 6 个学分"
+  ]
+ },
+ {
+  "id": "cmp-9417-9418",
+  "category": "compare",
+  "q": "COMP9417 和 COMP9418 有什么区别？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9417",
+    "COMP9418"
+   ]
+  },
+  "must": [
+   "COMP9417",
+   "COMP9418"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9417 在 Term 1, Term 2, Term 3 开设",
+   "COMP9418 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "cmp-9311-9315",
+  "category": "compare",
+  "q": "COMP9311 和 COMP9315 哪个更偏底层实现？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9311",
+    "COMP9315"
+   ]
+  },
+  "must": [
+   "COMP9311",
+   "COMP9315"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9311 在 Term 1, Term 2, Term 3 开设",
+   "COMP9315 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "cmp-6441-6841",
+  "category": "compare",
+  "q": "COMP6441 和 COMP6841 有什么不同？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP6441",
+    "COMP6841"
+   ]
+  },
+  "must": [
+   "COMP6441",
+   "COMP6841"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP6441 在 Term 2 开设",
+   "COMP6841 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "cmp-9201-9242",
+  "category": "compare",
+  "q": "COMP9201 和 COMP9242 怎么选？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9201",
+    "COMP9242"
+   ]
+  },
+  "must": [
+   "COMP9201",
+   "COMP9242"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9201 在 Term 2 开设",
+   "COMP9242 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "cmp-9101-9024",
+  "category": "compare",
+  "q": "COMP9101 和 COMP9024 有什么区别？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9101",
+    "COMP9024"
+   ]
+  },
+  "must": [
+   "COMP9101",
+   "COMP9024"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9101 在 Term 1, Term 2, Term 3 开设",
+   "COMP9024 在 Summer Term, Term 1, Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "detail-9992",
+  "category": "detail",
+  "q": "COMP9992 有什么先修要求？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9992"
+   ]
+  },
+  "must": [
+   "COMP9992"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9992 要求在 COMP9991 中取得至少 75 分"
+  ]
+ },
+ {
+  "id": "detail-9900",
+  "category": "detail",
+  "q": "COMP9900 有什么选课限制？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9900"
+   ]
+  },
+  "must": [
+   "COMP9900"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9900 必须在最后一个学期修读",
+   "COMP9900 要求已完成 78 UOC"
+  ]
+ },
+ {
+  "id": "detail-6448",
+  "category": "detail",
+  "q": "COMP6448 能直接选吗？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP6448"
+   ]
+  },
+  "must": [
+   "COMP6448"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP6448 选课需要讲师同意"
+  ]
+ },
+ {
+  "id": "detail-9201-equiv",
+  "category": "detail",
+  "q": "COMP9201 的等价课程有哪些？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9201"
+   ]
+  },
+  "must": [
+   "COMP9201"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9201 的等价课程包括 COMP3231、COMP3891 和 COMP9283"
+  ]
+ },
+ {
+  "id": "detail-9727",
+  "category": "detail",
+  "q": "COMP9727 需要什么基础？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9727"
+   ]
+  },
+  "must": [
+   "COMP9727"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9727 建议具备神经网络、机器学习和基础统计知识"
+  ]
+ },
+ {
+  "id": "detail-9331",
+  "category": "detail",
+  "q": "COMP9331 和 COMP3331、ENGG9331 是什么关系？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9331",
+    "COMP3331",
+    "ENGG9331"
+   ]
+  },
+  "must": [
+   "COMP9331"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9331 的等价课程包括 COMP3331 和 ENGG9331",
+   "ENGG9331 仅用于 RPL 管理，不可选课"
+  ]
+ },
+ {
+  "id": "detail-5905",
+  "category": "detail",
+  "q": "MATH5905 需要哪些前置知识？",
+  "history": [],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "MATH5905"
+   ]
+  },
+  "must": [
+   "MATH5905"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "MATH5905 的假定知识包括微积分、线性代数、概率和入门统计"
+  ]
+ },
+ {
+  "id": "term-ai-t2",
+  "category": "term_filter",
+  "q": "Term 2 开的人工智能相关课程有哪些",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 2"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP9417",
+   "COMP9418",
+   "COMP9444",
+   "COMP9414"
+  ],
+  "acceptable": [
+   "COMP9517",
+   "COMP9727"
+  ],
+  "key_points": [
+   "COMP9418 在 Term 2 开设",
+   "COMP9444 在 Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "term-dbalgo-t1",
+  "category": "term_filter",
+  "q": "Term 1 开的数据库或算法相关课",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 1"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP9311",
+   "COMP9315",
+   "COMP9101",
+   "COMP9024"
+  ],
+  "acceptable": [
+   "COMP9321"
+  ],
+  "key_points": [
+   "COMP9315 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "term-security-t3",
+  "category": "term_filter",
+  "q": "Term 3 能选哪些安全方向的课",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 3"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP6445",
+   "COMP6447",
+   "COMP6845",
+   "COMP9447"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP6445 在 Term 3 开设",
+   "COMP6447 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "term-os-t2",
+  "category": "term_filter",
+  "q": "Term 2 能选哪些操作系统相关课程",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 2"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP9201",
+   "COMP9283"
+  ],
+  "acceptable": [
+   "COMP9211"
+  ],
+  "key_points": [
+   "COMP9201 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "term-web-t1",
+  "category": "term_filter",
+  "q": "Term 1 有哪些人机交互或网页方面的课",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 1"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP9511",
+   "COMP6080"
+  ],
+  "acceptable": [
+   "COMP6443",
+   "COMP6843"
+  ],
+  "key_points": [
+   "COMP9511 在 Term 1 开设",
+   "COMP6080 在 Term 1, Term 3 开设"
+  ]
+ },
+ {
+  "id": "term-ml-t3",
+  "category": "term_filter",
+  "q": "Term 3 开的机器学习相关课",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 3"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP9417",
+   "COMP9444",
+   "MATH5836"
+  ],
+  "acceptable": [
+   "COMP9414",
+   "COMP9517"
+  ],
+  "key_points": [
+   "MATH5836 在 Term 3 开设"
+  ]
+ },
+ {
+  "id": "term-stats-t2",
+  "category": "term_filter",
+  "q": "Term 2 想学统计，有什么课",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Term 2"
+   ],
+   "codes": []
+  },
+  "must": [
+   "MATH5845",
+   "MATH5905"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "MATH5845 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "term-summer",
+  "category": "term_filter",
+  "q": "Summer Term 有什么课可以选",
+  "history": [],
+  "constraints": {
+   "terms": [
+    "Summer Term"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP9024"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9024 在 Summer Term, Term 1, Term 2, Term 3 开设"
+  ]
+ },
+ {
+  "id": "mt-9418-advanced",
+  "category": "multi_turn",
+  "q": "那它的进阶课是哪门？",
+  "history": [
+   [
+    "user",
+    "COMP9417 难不难？"
+   ],
+   [
+    "assistant",
+    "COMP9417 Machine Learning 难度偏高，需要较强的数学基础。"
+   ]
+  ],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9418"
+  ],
+  "acceptable": [
+   "COMP9444"
+  ],
+  "key_points": [
+   "COMP9418 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "mt-security-t2",
+  "category": "multi_turn",
+  "q": "其中 Term 2 能上的有哪些？",
+  "history": [
+   [
+    "user",
+    "推荐几门安全方向的课"
+   ],
+   [
+    "assistant",
+    "可以考虑 COMP6441、COMP6443、COMP6841、COMP6131 等安全方向的课程。"
+   ]
+  ],
+  "constraints": {
+   "terms": [
+    "Term 2"
+   ],
+   "codes": []
+  },
+  "must": [
+   "COMP6441",
+   "COMP6841",
+   "COMP6131"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP6441 在 Term 2 开设"
+  ]
+ },
+ {
+  "id": "mt-db-compare",
+  "category": "multi_turn",
+  "q": "它和 COMP9315 比有什么区别？",
+  "history": [
+   [
+    "user",
+    "推荐一门入门数据库课"
+   ],
+   [
+    "assistant",
+    "推荐 COMP9311 Database Systems，是数据库方向的入门课程。"
+   ]
+  ],
+  "constraints": {
+   "terms": [],
+   "codes": [
+    "COMP9315"
+   ]
+  },
+  "must": [
+   "COMP9311",
+   "COMP9315"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9311 在 Term 1, Term 2, Term 3 开设",
+   "COMP9315 在 Term 1 开设"
+  ]
+ },
+ {
+  "id": "mt-9444-term",
+  "category": "multi_turn",
+  "q": "它在哪个学期开？",
+  "history": [
+   [
+    "user",
+    "我想学深度学习"
+   ],
+   [
+    "assistant",
+    "推荐 COMP9444 Neural Networks and Deep Learning。"
+   ]
+  ],
+  "constraints": {
+   "terms": [],
+   "codes": []
+  },
+  "must": [
+   "COMP9444"
+  ],
+  "acceptable": [],
+  "key_points": [
+   "COMP9444 在 Term 2, Term 3 开设"
+  ]
+ }
+]
