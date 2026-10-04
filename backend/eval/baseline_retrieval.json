@@ -1,0 +1,1178 @@
+{
+ "meta": {
+  "mode": "retrieval-only",
+  "system": "pre-change (commit 221b409)",
+  "n_cases": 53
+ },
+ "summary": {
+  "ALL": {
+   "recall": 0.3993710691823899,
+   "precision": 0.16981132075471697,
+   "precision_ceiling": 0.6556603773584906,
+   "mrr": 0.16216216216216217,
+   "term_ok": 0.9166666666666666,
+   "code_ok": 1.0,
+   "avg_docs": 4.0
+  },
+  "topic": {
+   "recall": 0.12179487179487179,
+   "precision": 0.07692307692307693,
+   "precision_ceiling": 0.8173076923076923,
+   "mrr": 0.1346153846153846,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0
+  },
+  "code_lookup": {
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0
+  },
+  "compare": {
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0
+  },
+  "detail": {
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0
+  },
+  "term_filter": {
+   "recall": 0.25,
+   "precision": 0.1875,
+   "precision_ceiling": 0.8125,
+   "mrr": 0.3125,
+   "term_ok": 0.90625,
+   "code_ok": null,
+   "avg_docs": 4.0
+  },
+  "multi_turn": {
+   "recall": 0.25,
+   "precision": 0.125,
+   "precision_ceiling": 0.5,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": 1.0,
+   "avg_docs": 4.0
+  }
+ },
+ "rows": [
+  {
+   "id": "topic-ml",
+   "category": "topic",
+   "q": "推荐几门机器学习相关的课程",
+   "returned": [
+    "COMP4121",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9417",
+    "COMP9418",
+    "COMP9444",
+    "MATH5836"
+   ]
+  },
+  {
+   "id": "topic-dl",
+   "category": "topic",
+   "q": "我想学深度学习",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9444"
+   ]
+  },
+  {
+   "id": "topic-nlp",
+   "category": "topic",
+   "q": "有没有讲自然语言处理的课",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6713"
+   ]
+  },
+  {
+   "id": "topic-cv",
+   "category": "topic",
+   "q": "计算机视觉相关的课程",
+   "returned": [
+    "COMP9020",
+    "COMP4121",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9517"
+   ]
+  },
+  {
+   "id": "topic-security",
+   "category": "topic",
+   "q": "想学网络安全，有哪些课",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6441",
+    "COMP6443",
+    "COMP6447",
+    "COMP9337"
+   ]
+  },
+  {
+   "id": "topic-db",
+   "category": "topic",
+   "q": "数据库相关的课程",
+   "returned": [
+    "COMP9311",
+    "COMP9024",
+    "COMP4121",
+    "COMP9020"
+   ],
+   "recall": 0.5,
+   "precision": 0.25,
+   "precision_ceiling": 1.0,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9315"
+   ]
+  },
+  {
+   "id": "topic-bigdata",
+   "category": "topic",
+   "q": "想学大数据处理",
+   "returned": [
+    "COMP9024",
+    "COMP9311",
+    "COMP4121",
+    "COMP9020"
+   ],
+   "recall": 0.0,
+   "precision": 0.25,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9312",
+    "COMP9313"
+   ]
+  },
+  {
+   "id": "topic-blockchain",
+   "category": "topic",
+   "q": "区块链相关课程",
+   "returned": [
+    "COMP4121",
+    "COMP9311",
+    "COMP4128",
+    "COMP9020"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.5,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6451",
+    "COMP6452"
+   ]
+  },
+  {
+   "id": "topic-os",
+   "category": "topic",
+   "q": "操作系统方向有什么课",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9201",
+    "COMP9242",
+    "COMP9283"
+   ]
+  },
+  {
+   "id": "topic-crypto",
+   "category": "topic",
+   "q": "想学密码学",
+   "returned": [
+    "COMP4121",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6453"
+   ]
+  },
+  {
+   "id": "topic-rust",
+   "category": "topic",
+   "q": "我想学 Rust",
+   "returned": [
+    "COMP6991",
+    "COMP9311",
+    "COMP9020",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.75,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "topic-cpp",
+   "category": "topic",
+   "q": "有 C++ 的课吗",
+   "returned": [
+    "COMP6771",
+    "COMP9102",
+    "COMP6131",
+    "COMP9020"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.5,
+   "mrr": 1.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "topic-frontend",
+   "category": "topic",
+   "q": "想做网页前端开发",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6080"
+   ]
+  },
+  {
+   "id": "topic-recsys",
+   "category": "topic",
+   "q": "推荐系统怎么学",
+   "returned": [
+    "COMP4121",
+    "COMP4128",
+    "COMP9020",
+    "COMP9021"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9727"
+   ]
+  },
+  {
+   "id": "topic-stats",
+   "category": "topic",
+   "q": "统计学相关的课",
+   "returned": [
+    "COMP9020",
+    "COMP4121",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "MATH5845",
+    "MATH5855",
+    "MATH5905"
+   ]
+  },
+  {
+   "id": "topic-algo",
+   "category": "topic",
+   "q": "算法课程推荐",
+   "returned": [
+    "COMP9020",
+    "COMP9024",
+    "COMP4121",
+    "COMP4128"
+   ],
+   "recall": 0.6666666666666666,
+   "precision": 1.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.5,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9101"
+   ]
+  },
+  {
+   "id": "topic-project",
+   "category": "topic",
+   "q": "毕业研究项目有哪些",
+   "returned": [
+    "COMP9820",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9991",
+    "COMP9992",
+    "COMP9993"
+   ]
+  },
+  {
+   "id": "topic-hci",
+   "category": "topic",
+   "q": "人机交互和用户界面设计的课",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.75,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP4511",
+    "COMP9511"
+   ]
+  },
+  {
+   "id": "topic-iot",
+   "category": "topic",
+   "q": "物联网相关课程",
+   "returned": [
+    "COMP4121",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.75,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6733"
+   ]
+  },
+  {
+   "id": "topic-forensics",
+   "category": "topic",
+   "q": "数字取证",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.75,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6445",
+    "COMP6845"
+   ]
+  },
+  {
+   "id": "topic-startup",
+   "category": "topic",
+   "q": "有创业相关的课吗",
+   "returned": [
+    "COMP4121",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.25,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "GSOE9220"
+   ]
+  },
+  {
+   "id": "topic-robotics",
+   "category": "topic",
+   "q": "机器人软件",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.25,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9434"
+   ]
+  },
+  {
+   "id": "topic-distributed",
+   "category": "topic",
+   "q": "分布式系统",
+   "returned": [
+    "COMP9311",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9243"
+   ]
+  },
+  {
+   "id": "topic-graphics",
+   "category": "topic",
+   "q": "计算机图形学",
+   "returned": [
+    "COMP9020",
+    "COMP9024",
+    "COMP9021",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.5,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9415"
+   ]
+  },
+  {
+   "id": "topic-pl",
+   "category": "topic",
+   "q": "编程语言和编译器",
+   "returned": [
+    "COMP4128",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9102",
+    "COMP9164"
+   ]
+  },
+  {
+   "id": "topic-ethics",
+   "category": "topic",
+   "q": "计算机伦理",
+   "returned": [
+    "COMP9020",
+    "COMP9024",
+    "COMP9021",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.25,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9920"
+   ]
+  },
+  {
+   "id": "code-9417",
+   "category": "code_lookup",
+   "q": "COMP9417 难不难？",
+   "returned": [
+    "COMP9311",
+    "COMP9417",
+    "COMP9020",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "code-9444-when",
+   "category": "code_lookup",
+   "q": "COMP9444 什么时候开课？",
+   "returned": [
+    "COMP9444",
+    "COMP9331",
+    "COMP9020",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "code-6713",
+   "category": "code_lookup",
+   "q": "COMP6713 是几个学分，哪个学期开？",
+   "returned": [
+    "COMP6713",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "cmp-9417-9418",
+   "category": "compare",
+   "q": "COMP9417 和 COMP9418 有什么区别？",
+   "returned": [
+    "COMP9331",
+    "COMP9418",
+    "COMP9417",
+    "COMP9020"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "cmp-9311-9315",
+   "category": "compare",
+   "q": "COMP9311 和 COMP9315 哪个更偏底层实现？",
+   "returned": [
+    "COMP9315",
+    "COMP9331",
+    "COMP9311",
+    "COMP9020"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "cmp-6441-6841",
+   "category": "compare",
+   "q": "COMP6441 和 COMP6841 有什么不同？",
+   "returned": [
+    "COMP6441",
+    "COMP6841",
+    "COMP9020",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "cmp-9201-9242",
+   "category": "compare",
+   "q": "COMP9201 和 COMP9242 怎么选？",
+   "returned": [
+    "COMP9201",
+    "COMP9331",
+    "COMP9242",
+    "COMP9283"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "cmp-9101-9024",
+   "category": "compare",
+   "q": "COMP9101 和 COMP9024 有什么区别？",
+   "returned": [
+    "COMP9101",
+    "COMP9020",
+    "COMP9331",
+    "COMP9024"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-9992",
+   "category": "detail",
+   "q": "COMP9992 有什么先修要求？",
+   "returned": [
+    "COMP9992",
+    "COMP9993",
+    "COMP9020",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-9900",
+   "category": "detail",
+   "q": "COMP9900 有什么选课限制？",
+   "returned": [
+    "COMP9991",
+    "COMP9900",
+    "COMP9331",
+    "COMP9020"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-6448",
+   "category": "detail",
+   "q": "COMP6448 能直接选吗？",
+   "returned": [
+    "COMP6448",
+    "COMP9020",
+    "COMP9021",
+    "COMP9024"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-9201-equiv",
+   "category": "detail",
+   "q": "COMP9201 的等价课程有哪些？",
+   "returned": [
+    "COMP9201",
+    "COMP9020",
+    "COMP9283",
+    "COMP9331"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-9727",
+   "category": "detail",
+   "q": "COMP9727 需要什么基础？",
+   "returned": [
+    "COMP9020",
+    "COMP9311",
+    "COMP9727",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-9331",
+   "category": "detail",
+   "q": "COMP9331 和 COMP3331、ENGG9331 是什么关系？",
+   "returned": [
+    "COMP9331",
+    "COMP9020",
+    "COMP9311",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "detail-5905",
+   "category": "detail",
+   "q": "MATH5905 需要哪些前置知识？",
+   "returned": [
+    "MATH5905",
+    "COMP9020",
+    "COMP4121",
+    "COMP9021"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "term-ai-t2",
+   "category": "term_filter",
+   "q": "Term 2 开的人工智能相关课程有哪些",
+   "returned": [
+    "COMP9414",
+    "COMP9101",
+    "COMP9020",
+    "COMP9024"
+   ],
+   "recall": 0.25,
+   "precision": 0.25,
+   "precision_ceiling": 1.0,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9417",
+    "COMP9418",
+    "COMP9444"
+   ]
+  },
+  {
+   "id": "term-dbalgo-t1",
+   "category": "term_filter",
+   "q": "Term 1 开的数据库或算法相关课",
+   "returned": [
+    "COMP9101",
+    "COMP9311",
+    "COMP9024",
+    "COMP9414"
+   ],
+   "recall": 0.75,
+   "precision": 0.75,
+   "precision_ceiling": 1.0,
+   "mrr": 1.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9315"
+   ]
+  },
+  {
+   "id": "term-security-t3",
+   "category": "term_filter",
+   "q": "Term 3 能选哪些安全方向的课",
+   "returned": [
+    "COMP9101",
+    "COMP9992",
+    "COMP9024",
+    "COMP9020"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6445",
+    "COMP6447",
+    "COMP6845",
+    "COMP9447"
+   ]
+  },
+  {
+   "id": "term-os-t2",
+   "category": "term_filter",
+   "q": "Term 2 能选哪些操作系统相关课程",
+   "returned": [
+    "COMP9101",
+    "COMP9020",
+    "COMP9024",
+    "COMP9993"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.75,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9201",
+    "COMP9283"
+   ]
+  },
+  {
+   "id": "term-web-t1",
+   "category": "term_filter",
+   "q": "Term 1 有哪些人机交互或网页方面的课",
+   "returned": [
+    "COMP9992",
+    "COMP9101",
+    "COMP9020",
+    "COMP9993"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6080",
+    "COMP9511"
+   ]
+  },
+  {
+   "id": "term-ml-t3",
+   "category": "term_filter",
+   "q": "Term 3 开的机器学习相关课",
+   "returned": [
+    "COMP9414",
+    "COMP9101",
+    "COMP9992",
+    "COMP9024"
+   ],
+   "recall": 0.0,
+   "precision": 0.25,
+   "precision_ceiling": 1.0,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9417",
+    "COMP9444",
+    "MATH5836"
+   ]
+  },
+  {
+   "id": "term-stats-t2",
+   "category": "term_filter",
+   "q": "Term 2 想学统计，有什么课",
+   "returned": [
+    "COMP9020",
+    "COMP9101",
+    "COMP9024",
+    "COMP9993"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.5,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "MATH5845",
+    "MATH5905"
+   ]
+  },
+  {
+   "id": "term-summer",
+   "category": "term_filter",
+   "q": "Summer Term 有什么课可以选",
+   "returned": [
+    "COMP9020",
+    "COMP9024",
+    "COMP9101",
+    "COMP9992"
+   ],
+   "recall": 1.0,
+   "precision": 0.25,
+   "precision_ceiling": 0.25,
+   "mrr": 0.5,
+   "term_ok": 0.25,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "mt-9418-advanced",
+   "category": "multi_turn",
+   "q": "那它的进阶课是哪门？",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9331",
+    "COMP9417"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.5,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9418"
+   ]
+  },
+  {
+   "id": "mt-security-t2",
+   "category": "multi_turn",
+   "q": "其中 Term 2 能上的有哪些？",
+   "returned": [
+    "COMP9101",
+    "COMP9020",
+    "COMP9024",
+    "COMP9993"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.75,
+   "mrr": 0.0,
+   "term_ok": 1.0,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP6131",
+    "COMP6441",
+    "COMP6841"
+   ]
+  },
+  {
+   "id": "mt-db-compare",
+   "category": "multi_turn",
+   "q": "它和 COMP9315 比有什么区别？",
+   "returned": [
+    "COMP9311",
+    "COMP9315",
+    "COMP9312",
+    "COMP9201"
+   ],
+   "recall": 1.0,
+   "precision": 0.5,
+   "precision_ceiling": 0.5,
+   "mrr": null,
+   "term_ok": null,
+   "code_ok": 1.0,
+   "avg_docs": 4.0,
+   "missed": []
+  },
+  {
+   "id": "mt-9444-term",
+   "category": "multi_turn",
+   "q": "它在哪个学期开？",
+   "returned": [
+    "COMP9020",
+    "COMP9021",
+    "COMP9024",
+    "COMP9311"
+   ],
+   "recall": 0.0,
+   "precision": 0.0,
+   "precision_ceiling": 0.25,
+   "mrr": 0.0,
+   "term_ok": null,
+   "code_ok": null,
+   "avg_docs": 4.0,
+   "missed": [
+    "COMP9444"
+   ]
+  }
+ ]
+}

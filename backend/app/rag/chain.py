@@ -64,12 +64,11 @@ def _to_messages(history_items: list) -> List[BaseMessage]:
     ]
 
 
-def retrieve_for_query(message: str, history_items: list) -> tuple[ParsedQuery, List[Document]]:
-    """Parse the query and retrieve the courses to answer it (blocking; run in a thread from async code)."""
-    parsed = parse_query(message, _to_messages(history_items))
+def retrieve_with_parsed(message: str, parsed: ParsedQuery) -> List[Document]:
+    """Retrieve courses for an already-parsed query (blocking)."""
     # BM25 only understands the English keywords + codes; FAISS also sees the user's own wording,
     # which matches the Chinese search aids added to the index.
-    docs = hybrid_search(
+    return hybrid_search(
         bm25_query=f"{parsed.english_query} {' '.join(parsed.course_codes)}",
         semantic_query=f"{parsed.english_query}\n{parsed.standalone_question}",
         k=_K_BY_INTENT[parsed.intent],
@@ -77,7 +76,33 @@ def retrieve_for_query(message: str, history_items: list) -> tuple[ParsedQuery, 
         pinned_codes=parsed.course_codes,
         explicit_codes=[c.upper() for c in COURSE_CODE_RE.findall(message)],
     )
-    return parsed, docs
+
+
+def retrieve_for_query(message: str, history_items: list) -> tuple[ParsedQuery, List[Document]]:
+    """Parse the query and retrieve the courses to answer it (blocking; run in a thread from async code)."""
+    parsed = parse_query(message, _to_messages(history_items))
+    return parsed, retrieve_with_parsed(message, parsed)
+
+
+def build_context(docs: List[Document]) -> str:
+    """The exact text the LLM sees: original course data only (never the generated search aids)."""
+    texts = course_texts()
+    return "\n\n---\n\n".join(texts[d.metadata["course_code"]] for d in docs)
+
+
+def build_messages(context: str, history: List[BaseMessage], message: str) -> List[BaseMessage]:
+    return [SystemMessage(content=_QA_SYSTEM_PREFIX + context), *history, HumanMessage(content=message)]
+
+
+def answer_query(message: str, history_items: list) -> dict:
+    """Non-streaming end-to-end answer, sharing every step with stream_query (used by the offline eval).
+
+    Returns {"parsed", "docs", "context", "answer"} so metrics can inspect exactly what the LLM saw.
+    """
+    parsed, docs = retrieve_for_query(message, history_items)
+    context = build_context(docs)
+    result = _get_llm().invoke(build_messages(context, _to_messages(history_items), message))
+    return {"parsed": parsed, "docs": docs, "context": context, "answer": result.text}
 
 
 # ---------------------------------------------------------------------------
@@ -100,16 +125,10 @@ async def stream_query(
     try:
         # Steps 1-2 — parse the query and retrieve (blocking calls, keep them off the event loop)
         parsed, docs = await asyncio.to_thread(retrieve_for_query, message, history_items)
-        texts = course_texts()
-        context = "\n\n---\n\n".join(texts[d.metadata["course_code"]] for d in docs)
+        context = build_context(docs)
 
         # Step 3 — stream answer
-        messages: List[BaseMessage] = [
-            SystemMessage(content=_QA_SYSTEM_PREFIX + context),
-            *history,
-            HumanMessage(content=message),
-        ]
-        async for chunk in llm.astream(messages):
+        async for chunk in llm.astream(build_messages(context, history, message)):
             token: str = chunk.text
             if token:
                 yield {"type": "token", "content": token}
