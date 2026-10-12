@@ -23,8 +23,11 @@ def get_jwks_client() -> PyJWKClient:
     return _jwks_client
 
 
-async def require_auth(authorization: str | None = Header(default=None)) -> dict:
+def require_auth(authorization: str | None = Header(default=None)) -> dict:
     """Verify Supabase JWT (ES256) and return the decoded payload.
+
+    Deliberately a plain `def`: PyJWKClient does blocking network I/O when it refreshes the JWKS,
+    and FastAPI runs sync dependencies in a thread pool so that doesn't stall the event loop.
 
     Raises HTTP 401 if the token is missing, expired, or invalid.
     """
