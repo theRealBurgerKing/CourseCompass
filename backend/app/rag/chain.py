@@ -8,6 +8,7 @@ Flow:
   5. Yields SSE-style dicts
 """
 import asyncio
+import logging
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage, BaseMessage
@@ -16,6 +17,8 @@ from .loader import course_texts
 from .query_parser import COURSE_CODE_RE, ParsedQuery, parse_query
 from .retriever import hybrid_search
 from typing import AsyncGenerator, List
+
+logger = logging.getLogger(__name__)
 
 _QA_SYSTEM_PREFIX = """你是 CourseCompass，新南威尔士大学（UNSW）的 AI 选课顾问。\
 帮助学生根据其兴趣、背景和学习目标选择合适的课程。
@@ -136,5 +139,7 @@ async def stream_query(
         # Step 4 — emit sources
         yield {"type": "sources", "sources": [doc.metadata for doc in docs]}
 
-    except Exception as exc:
-        yield {"type": "error", "content": str(exc)}
+    except Exception:
+        # Full details go to the server log only; the client gets a generic message.
+        logger.exception("chat stream failed")
+        yield {"type": "error", "content": "服务暂时出错，请稍后重试"}

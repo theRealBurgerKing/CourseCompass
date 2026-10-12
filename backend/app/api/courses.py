@@ -2,14 +2,10 @@ import json
 from fastapi import APIRouter, HTTPException, Query
 from app.schemas import CourseItem
 from typing import List, Optional
-from pathlib import Path
 from functools import lru_cache
+from app.rag.loader import DATA_PATH
 
 router = APIRouter()
-
-DATA_PATH = (
-    Path(__file__).parent.parent.parent.parent / "output" / "unsw_8543_courses.json"
-)
 
 
 @lru_cache(maxsize=1)

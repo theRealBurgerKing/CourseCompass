@@ -64,9 +64,9 @@ CourseCompass/
 │   │       └── loader.py      # 课程数据加载
 │   ├── scripts/
 │   │   └── build_index.py     # 构建 FAISS 索引
+│   ├── output/
+│   │   └── unsw_8543_courses.json # 课程数据（爬虫产出后复制到这里）
 │   └── faiss_index/           # 持久化向量索引
-├── output/
-│   └── unsw_8543_courses.json # 爬取的课程数据
 └── supabase/
     └── schema.sql             # 数据库表、RLS 策略、权限与头像存储桶
 ```
@@ -91,6 +91,8 @@ OPENAI_MODEL=gpt-5.6-sol                      # 可选，对话模型，默认 g
 OPENAI_PARSER_MODEL=                          # 可选，查询解析模型，默认同 OPENAI_MODEL
 OPENAI_EMBEDDING_MODEL=text-embedding-3-small # 可选，需与 FAISS 索引一致，修改后须重建索引
 SUPABASE_URL=https://your-project.supabase.co
+RATE_LIMIT_PER_MINUTE=10                      # 可选，每位用户每分钟最多提问次数，默认 10
+RATE_LIMIT_PER_DAY=200                        # 可选，每位用户每天最多提问次数，默认 200
 ```
 
 **`frontend/.env.local`**
@@ -208,6 +210,16 @@ https://frontend-pink-eight-23.vercel.app/auth/callback
 **文档增强**：`scripts/enrich_courses.py` 离线为每门课生成中文简介、中英文关键词和适合人群（`backend/output/course_enrichment.json`），
 只拼进用于检索的文本；给 LLM 的 context 仍是课程原始数据，避免把生成内容当成事实。
 修改课程数据或增强内容后需重建索引：`python -m scripts.enrich_courses && python -m scripts.build_index`。
+
+## 测试
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+python -m pytest        # 聊天接口的长度限制、限流、错误脱敏，以及 JWT 鉴权各分支（不调用 OpenAI）
+```
+
+聊天接口限制：单条消息 1–2000 字；历史只保留最近 20 条、每条截断到 8000 字；限流为进程内计数，重启清零、多实例各自独立。
 
 ## 离线评测
 

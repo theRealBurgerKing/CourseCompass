@@ -39,6 +39,7 @@ export default function ChatInput({ value, onChange, onSubmit, disabled }: Props
         onKeyDown={handleKeyDown}
         placeholder="Ask about UNSW courses… (Enter to send, Shift+Enter for newline)"
         disabled={disabled}
+        maxLength={2000}
         className="flex-1 resize-none bg-transparent text-sm text-gray-800 placeholder-gray-400 outline-none leading-relaxed disabled:opacity-50"
       />
 
