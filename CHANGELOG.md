@@ -12,7 +12,30 @@
 
 ## 未发布
 
-分支 `fix/hardening`（基于 `main` 的 `cbc2140`，已推送并开 PR，待审）。只改后端接口层和少量前端，**没有改任何检索 / 生成逻辑**。
+分支 `ci/github-actions`（基于 `main` 的 `589e6f7`，尚未推送、未开 PR）。
+
+### 新增
+- **GitHub Actions CI**（`.github/workflows/ci.yml`）：每次开 PR、以及往 `main` 推代码时自动跑两个并行任务。只做检查，**不部署、不需要任何密钥**。
+  - 后端：Python 3.11，安装 `requirements.txt` + `requirements-dev.txt`，运行 `python -m pytest`（29 项）。
+  - 前端：Node 22，`npm ci` → `npx tsc --noEmit` → `npm run build`（构建用占位的 Supabase / API 环境变量，只编译，不连接任何服务）。
+  - 同一分支有新推送时，自动取消旧的运行；权限仅 `contents: read`。
+  - 不跑 `eval.run_eval`：它会调用 OpenAI，需要在 GitHub 里存 key 并产生费用。以后如需要，应做成手动触发。
+
+### 文档
+- README 新增「持续集成」小节。
+
+### 验证与遗留
+- 已验证：在干净临时目录里按 workflow 的步骤逐条执行——全新虚拟环境（Python 3.11.5）从零安装依赖并清掉 `OPENAI_API_KEY` / `SUPABASE_URL` 后 `pytest` 29 项通过；前端 `npm ci`、`tsc`、`next build` 通过；workflow 文件能被 YAML 解析。
+- **未验证**：workflow 本身在 GitHub 上的真实运行（只有推送后才能看到）；本机 Node 是 v26，CI 用的 Node 22 没有在本地跑过。
+- 默认**不会拦截合并**，失败时只在 PR 上显示红叉。要强制拦截，需在 GitHub 网页 Settings → Branches 里给 `main` 加分支保护并勾选「Require status checks」（只能由仓库管理员操作）。
+
+---
+
+---
+
+## 2026-10-13
+
+分支 `fix/hardening`，已通过 PR #3 合并进 `main`（合并提交 `589e6f7`）。**线上部署状态未确认**：README 里的 Railway 地址当前返回 `Application not found`，无法从外部验证。只改后端接口层和少量前端，**没有改任何检索 / 生成逻辑**。
 
 ### 修复
 - **课程数据路径**（`c6e522b`）：`courses.py` 用 `parent×4` 找仓库根目录的 `output/`，在 Railway（Root Directory 为 `backend`）的 Docker 镜像里会解析成 `/output/...`，导致 `/api/courses` 部署后失败。现改为复用 `loader.DATA_PATH`，两处共用一个常量。聊天不受影响。
@@ -52,7 +75,7 @@
 - 限流计数在进程内存里，重启清零、多实例各自独立；单实例够用，扩容后应换 Redis 等共享存储。
 - 无效 token 时，401 的 `detail` 里仍带 JWT 库的原始报错（如 `Invalid header padding`），信息量很小，未处理。
 - 未做的建议项：CI（GitHub Actions）、扩充评测集（hold-out、拒答用例）、前端取消生成（`AbortController`）、拆分 `ChatWindow.tsx`。
-- 部署：`main` 若被 Vercel / Railway 跟踪，合并本分支会触发自动部署。
+- 部署：`main` 若被 Vercel / Railway 跟踪，合并本分支会触发自动部署；上线后请确认 `/api/courses/COMP9021` 返回 200、无 token 调用 `/api/chat` 返回 401。
 
 ---
 
