@@ -64,9 +64,9 @@ CourseCompass/
 │   │       └── loader.py      # 课程数据加载
 │   ├── scripts/
 │   │   └── build_index.py     # 构建 FAISS 索引
+│   ├── output/
+│   │   └── unsw_8543_courses.json # 课程数据（爬虫产出后复制到这里）
 │   └── faiss_index/           # 持久化向量索引
-├── output/
-│   └── unsw_8543_courses.json # 爬取的课程数据
 └── supabase/
     └── schema.sql             # 数据库表、RLS 策略、权限与头像存储桶
 ```
