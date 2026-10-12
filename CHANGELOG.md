@@ -12,7 +12,13 @@
 
 ## 未发布
 
-分支 `fix/hardening`（基于 `main` 的 `cbc2140`，已推送并开 PR，待审）。只改后端接口层和少量前端，**没有改任何检索 / 生成逻辑**。
+（暂无）
+
+---
+
+## 2026-10-13
+
+分支 `fix/hardening`，已通过 PR #3 合并进 `main`（合并提交 `589e6f7`）。**线上部署状态未确认**：README 里的 Railway 地址当前返回 `Application not found`，无法从外部验证。只改后端接口层和少量前端，**没有改任何检索 / 生成逻辑**。
 
 ### 修复
 - **课程数据路径**（`c6e522b`）：`courses.py` 用 `parent×4` 找仓库根目录的 `output/`，在 Railway（Root Directory 为 `backend`）的 Docker 镜像里会解析成 `/output/...`，导致 `/api/courses` 部署后失败。现改为复用 `loader.DATA_PATH`，两处共用一个常量。聊天不受影响。
@@ -52,7 +58,7 @@
 - 限流计数在进程内存里，重启清零、多实例各自独立；单实例够用，扩容后应换 Redis 等共享存储。
 - 无效 token 时，401 的 `detail` 里仍带 JWT 库的原始报错（如 `Invalid header padding`），信息量很小，未处理。
 - 未做的建议项：CI（GitHub Actions）、扩充评测集（hold-out、拒答用例）、前端取消生成（`AbortController`）、拆分 `ChatWindow.tsx`。
-- 部署：`main` 若被 Vercel / Railway 跟踪，合并本分支会触发自动部署。
+- 部署：`main` 若被 Vercel / Railway 跟踪，合并本分支会触发自动部署；上线后请确认 `/api/courses/COMP9021` 返回 200、无 token 调用 `/api/chat` 返回 401。
 
 ---
 
