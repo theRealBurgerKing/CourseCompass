@@ -219,6 +219,11 @@ pip install -r requirements-dev.txt
 python -m pytest        # 聊天接口的长度限制、限流、错误脱敏，以及 JWT 鉴权各分支（不调用 OpenAI）
 ```
 
+### 持续集成
+
+`.github/workflows/ci.yml` 在每次开 PR 和往 `main` 推代码时自动运行（只检查，不部署，不需要配置任何密钥）：后端跑上面的 `pytest`，前端跑类型检查和 `next build`。
+CI 不跑 `eval.run_eval`（会调用 OpenAI），检索质量请在本地手动评测。
+
 聊天接口限制：单条消息 1–2000 字；历史只保留最近 20 条、每条截断到 8000 字；限流为进程内计数，重启清零、多实例各自独立。
 
 ## 离线评测
