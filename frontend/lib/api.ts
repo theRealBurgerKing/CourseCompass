@@ -25,7 +25,10 @@ export async function streamMessage(
     let msg = `HTTP ${res.status}`
     try {
       const body = await res.json()
-      msg = body.detail ?? body.message ?? msg
+      // FastAPI: `detail` is a string for HTTPException, an array of objects for 422 validation errors
+      if (typeof body.detail === 'string') msg = body.detail
+      else if (res.status === 422) msg = '消息为空或超过 2000 字，请精简后重试'
+      else msg = body.message ?? msg
     } catch {
       if ([502, 503, 504].includes(res.status))
         msg = 'Backend unreachable — is the FastAPI server running on port 8000?'

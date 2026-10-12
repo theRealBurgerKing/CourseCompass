@@ -3,16 +3,17 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from app.schemas import ChatRequest
 from app.rag.chain import stream_query
-from app.dependencies import require_auth
+from app.rate_limit import rate_limit_chat
 
 router = APIRouter()
 
 
 @router.post("/chat")
-async def chat(request: ChatRequest, _user: dict = Depends(require_auth)):
+async def chat(request: ChatRequest, _user: dict = Depends(rate_limit_chat)):
     """Stream the AI answer as Server-Sent Events (SSE).
 
-    Requires a valid Supabase JWT in the Authorization header.
+    Requires a valid Supabase JWT in the Authorization header. Limited per user (see app/rate_limit.py):
+    HTTP 429 with Retry-After when exceeded; HTTP 422 when the message is empty or too long.
 
     SSE event types:
       data: {"type":"token",   "content":"<chunk>"}
